@@ -6,39 +6,39 @@ const Intro = () => {
       <div className="intro-content">
         <div className="intro-hero">
           <h1 className="intro-title">
-            你好，我是 <span className="highlight">MeBot</span>
+            Hello, I'm <span className="highlight">MeBot</span>
           </h1>
           <p className="intro-subtitle">
-            欢迎来到我的个人网站
+            Welcome to My Personal Website
           </p>
         </div>
 
         <div className="intro-description">
           <p>
-            我是一个热爱技术的开发者，专注于构建现代化的Web应用程序。
-            这个网站使用React和Python构建，展示了我的项目、经验和专业知识。
+            I'm a technology enthusiast and developer focused on building modern web applications.
+            This website is built with React and Python, showcasing my projects, experience, and expertise.
           </p>
           <p>
-            你可以通过导航栏中的Chat页面与我的AI助手MeBot交流，
-            它经过训练，能够像我一样回答问题和进行对话。
+            You can chat with my AI assistant MeBot through the Chat page in the navigation bar.
+            It's trained to answer questions and converse just like me.
           </p>
         </div>
 
         <div className="intro-features">
           <div className="feature-card">
             <div className="feature-icon">🚀</div>
-            <h3>现代技术栈</h3>
-            <p>使用React和Python构建的全栈应用</p>
+            <h3>Modern Tech Stack</h3>
+            <p>Full-stack application built with React and Python</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">💡</div>
-            <h3>创新项目</h3>
-            <p>展示各种技术项目和创意作品</p>
+            <h3>Innovative Projects</h3>
+            <p>Showcasing various technical projects and creative works</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">🤖</div>
-            <h3>AI助手</h3>
-            <p>智能聊天机器人随时为你服务</p>
+            <h3>AI Assistant</h3>
+            <p>Intelligent chatbot ready to serve you</p>
           </div>
         </div>
       </div>

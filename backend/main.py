@@ -58,7 +58,7 @@ async def chat_with_mebot(message: ChatMessage):
         # For now, return a mock response if API is not configured
         if not mebot_api_url or not mebot_api_key:
             return ChatResponse(
-                response=f"你好！我是MeBot，你的AI助手。你说: '{message.message}'。API配置后我将能够提供更智能的回复。",
+                response=f"Hello! I'm MeBot, your AI assistant. You said: '{message.message}'. Once the API is configured, I'll be able to provide more intelligent responses.",
                 timestamp=datetime.datetime.now().isoformat()
             )
         

@@ -4,32 +4,32 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      company: '公司名称',
-      position: '软件工程师',
-      period: '2022 - 至今',
+      company: 'Company Name',
+      position: 'Software Engineer',
+      period: '2022 - Present',
       description: [
-        '开发和维护高性能的Web应用程序',
-        '使用React和Python构建全栈解决方案',
-        '协作团队完成复杂的技术项目',
+        'Develop and maintain high-performance web applications',
+        'Build full-stack solutions using React and Python',
+        'Collaborate with team to deliver complex technical projects',
       ],
     },
     {
       id: 2,
-      company: '示例公司',
-      position: '初级开发者',
+      company: 'Example Company',
+      position: 'Junior Developer',
       period: '2020 - 2022',
       description: [
-        '参与前端开发和UI/UX改进',
-        '学习并应用现代开发最佳实践',
-        '与团队协作交付高质量代码',
+        'Participate in frontend development and UI/UX improvements',
+        'Learn and apply modern development best practices',
+        'Collaborate with team to deliver high-quality code',
       ],
     },
   ];
 
   return (
     <div className="page-container experience-page">
-      <h1 className="page-title">工作经验</h1>
-      <p className="page-subtitle">我的职业发展历程</p>
+      <h1 className="page-title">Work Experience</h1>
+      <p className="page-subtitle">My professional journey</p>
       
       <div className="experience-timeline">
         {experiences.map((exp) => (

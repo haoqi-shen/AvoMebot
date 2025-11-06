@@ -4,26 +4,26 @@ const Education = () => {
   const education = [
     {
       id: 1,
-      school: '大学名称',
-      degree: '计算机科学学士',
+      school: 'University Name',
+      degree: 'Bachelor of Computer Science',
       period: '2016 - 2020',
-      description: '主修计算机科学，专注于软件工程和人工智能',
+      description: 'Major in Computer Science, focused on Software Engineering and Artificial Intelligence',
       gpa: 'GPA: 3.8/4.0',
     },
     {
       id: 2,
-      school: '示例大学',
-      degree: '硕士学位',
+      school: 'Example University',
+      degree: 'Master\'s Degree',
       period: '2020 - 2022',
-      description: '深入研究机器学习和深度学习技术',
+      description: 'In-depth research in Machine Learning and Deep Learning technologies',
       gpa: 'GPA: 3.9/4.0',
     },
   ];
 
   return (
     <div className="page-container education-page">
-      <h1 className="page-title">教育背景</h1>
-      <p className="page-subtitle">我的学习经历</p>
+      <h1 className="page-title">Education</h1>
+      <p className="page-subtitle">My academic journey</p>
       
       <div className="education-list">
         {education.map((edu) => (

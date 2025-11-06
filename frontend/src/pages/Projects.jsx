@@ -4,22 +4,22 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'MeBot个人网站',
-      description: '使用React和Python构建的现代化个人网站，集成AI聊天功能',
+      title: 'MeBot Personal Website',
+      description: 'Modern personal website built with React and Python, featuring integrated AI chat functionality',
       technologies: ['React', 'Python', 'FastAPI', 'Vite'],
       link: '#',
     },
     {
       id: 2,
-      title: '示例项目2',
-      description: '这是一个示例项目的描述，展示你的技术能力和创新思维',
+      title: 'Example Project 2',
+      description: 'A sample project description showcasing technical skills and innovative thinking',
       technologies: ['JavaScript', 'Node.js', 'MongoDB'],
       link: '#',
     },
     {
       id: 3,
-      title: '示例项目3',
-      description: '另一个展示你专业技能的项目',
+      title: 'Example Project 3',
+      description: 'Another project demonstrating professional expertise',
       technologies: ['Python', 'Django', 'PostgreSQL'],
       link: '#',
     },
@@ -27,8 +27,8 @@ const Projects = () => {
 
   return (
     <div className="page-container projects-page">
-      <h1 className="page-title">我的项目</h1>
-      <p className="page-subtitle">展示我开发的一些有趣的项目</p>
+      <h1 className="page-title">My Projects</h1>
+      <p className="page-subtitle">Showcasing some of my interesting projects</p>
       
       <div className="projects-grid">
         {projects.map((project) => (
@@ -41,7 +41,7 @@ const Projects = () => {
               ))}
             </div>
             <a href={project.link} className="project-link">
-              查看项目 →
+              View Project →
             </a>
           </div>
         ))}

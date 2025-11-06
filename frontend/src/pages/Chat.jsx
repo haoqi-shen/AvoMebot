@@ -6,7 +6,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([
     {
       type: 'bot',
-      text: '你好！我是MeBot，一个训练得很像作者的AI助手。有什么我可以帮助你的吗？',
+      text: 'Hello! I\'m MeBot, an AI assistant trained to be just like the author. How can I help you today?',
       timestamp: new Date().toISOString(),
     },
   ]);
@@ -54,7 +54,7 @@ const Chat = () => {
       console.error('Error sending message:', error);
       const errorMessage = {
         type: 'bot',
-        text: '抱歉，我现在无法回复。请稍后再试。',
+        text: 'Sorry, I\'m unable to respond right now. Please try again later.',
         timestamp: new Date().toISOString(),
       };
       setMessages((prev) => [...prev, errorMessage]);
@@ -65,7 +65,7 @@ const Chat = () => {
 
   const formatTime = (timestamp) => {
     const date = new Date(timestamp);
-    return date.toLocaleTimeString('zh-CN', {
+    return date.toLocaleTimeString('en-US', {
       hour: '2-digit',
       minute: '2-digit',
     });
@@ -76,7 +76,7 @@ const Chat = () => {
       <div className="chat-container-center">
         <div className="chat-header-center">
           <h1>MeBot</h1>
-          <p>与我的AI助手对话</p>
+          <p>Chat with my AI Assistant</p>
         </div>
 
         <div className="chat-messages-area">
@@ -108,7 +108,7 @@ const Chat = () => {
               type="text"
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
-              placeholder="输入消息..."
+              placeholder="Type a message..."
               disabled={isLoading}
               className="chat-input-field"
             />

@@ -4,31 +4,31 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: '如何使用React和Python构建全栈应用',
+      title: 'How to Build Full-Stack Applications with React and Python',
       date: '2024-01-15',
-      excerpt: '在这篇文章中，我将分享如何使用React作为前端框架和Python FastAPI作为后端来构建现代化的全栈Web应用...',
-      readTime: '5分钟阅读',
+      excerpt: 'In this article, I will share how to build modern full-stack web applications using React as the frontend framework and Python FastAPI as the backend...',
+      readTime: '5 min read',
     },
     {
       id: 2,
-      title: 'AI聊天机器人集成指南',
+      title: 'AI Chatbot Integration Guide',
       date: '2024-01-10',
-      excerpt: '探索如何将AI聊天机器人集成到你的网站中，提供更好的用户体验和交互性...',
-      readTime: '8分钟阅读',
+      excerpt: 'Explore how to integrate AI chatbots into your website for better user experience and interactivity...',
+      readTime: '8 min read',
     },
     {
       id: 3,
-      title: '现代前端开发最佳实践',
+      title: 'Modern Frontend Development Best Practices',
       date: '2024-01-05',
-      excerpt: '了解当前前端开发的最佳实践，包括代码组织、性能优化和可访问性...',
-      readTime: '10分钟阅读',
+      excerpt: 'Learn current frontend development best practices, including code organization, performance optimization, and accessibility...',
+      readTime: '10 min read',
     },
   ];
 
   return (
     <div className="page-container blog-page">
-      <h1 className="page-title">博客</h1>
-      <p className="page-subtitle">我的技术文章和思考</p>
+      <h1 className="page-title">Blog</h1>
+      <p className="page-subtitle">My technical articles and thoughts</p>
       
       <div className="blog-list">
         {blogPosts.map((post) => (
@@ -42,7 +42,7 @@ const Blog = () => {
             </div>
             <p className="blog-excerpt">{post.excerpt}</p>
             <a href="#" className="blog-read-more">
-              阅读更多 →
+              Read More →
             </a>
           </article>
         ))}

@@ -1,0 +1,50 @@
+import './Certifications.css';
+
+const Certifications = () => {
+  const certifications = [
+    {
+      id: 1,
+      name: 'AWS认证解决方案架构师',
+      issuer: 'Amazon Web Services',
+      date: '2023',
+      credentialId: 'AWS-12345',
+    },
+    {
+      id: 2,
+      name: 'Python专业认证',
+      issuer: 'Python Institute',
+      date: '2022',
+      credentialId: 'PCAP-54321',
+    },
+    {
+      id: 3,
+      name: 'React开发者认证',
+      issuer: 'Meta',
+      date: '2023',
+      credentialId: 'META-67890',
+    },
+  ];
+
+  return (
+    <div className="page-container certifications-page">
+      <h1 className="page-title">专业认证</h1>
+      <p className="page-subtitle">我获得的专业资格认证</p>
+      
+      <div className="certifications-grid">
+        {certifications.map((cert) => (
+          <div key={cert.id} className="certification-card">
+            <div className="cert-badge">🏆</div>
+            <h2 className="cert-name">{cert.name}</h2>
+            <p className="cert-issuer">{cert.issuer}</p>
+            <div className="cert-details">
+              <span className="cert-date">📅 {cert.date}</span>
+              <span className="cert-id">🔑 {cert.credentialId}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Certifications;

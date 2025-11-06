@@ -15,7 +15,7 @@
   --card-bg: #ffffff;
   
   color: var(--text-primary);
-  background-color: var(--avocado-light-bg);
+  background: linear-gradient(135deg, #f5f9f0 0%, #e8f5e0 50%, #f0f8eb 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,19 +27,46 @@
   box-sizing: border-box;
 }
 
+/* Tech-inspired lighting effects */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 50%, rgba(139, 195, 74, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(86, 130, 3, 0.06) 0%, transparent 50%);
+  animation: rotateGradient 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes rotateGradient {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
 a {
   font-weight: 500;
   color: var(--avocado-green);
   text-decoration: inherit;
+  transition: all 0.3s ease;
 }
 a:hover {
   color: var(--avocado-green-dark);
+  text-shadow: 0 0 8px rgba(86, 130, 3, 0.3);
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  position: relative;
 }
 
 h1 {
@@ -57,8 +84,30 @@ button {
   background-color: var(--card-bg);
   color: var(--text-primary);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(86, 130, 3, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
 button:hover {
   border-color: var(--avocado-green);
+  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.2);
 }

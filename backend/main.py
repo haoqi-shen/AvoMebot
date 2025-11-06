@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from typing import Optional
 import httpx
 import os
+import datetime
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -57,7 +58,7 @@ async def chat_with_mebot(message: ChatMessage):
         if not mebot_api_url or not mebot_api_key:
             return ChatResponse(
                 response=f"你好！我是MeBot，你的AI助手。你说: '{message.message}'。API配置后我将能够提供更智能的回复。",
-                timestamp=__import__('datetime').datetime.now().isoformat()
+                timestamp=datetime.datetime.now().isoformat()
             )
         
         # Make request to external MeBot API
@@ -73,7 +74,7 @@ async def chat_with_mebot(message: ChatMessage):
             
         return ChatResponse(
             response=data.get("response", "Sorry, no response available"),
-            timestamp=data.get("timestamp", __import__('datetime').datetime.now().isoformat())
+            timestamp=data.get("timestamp", datetime.datetime.now().isoformat())
         )
         
     except httpx.HTTPError as e:

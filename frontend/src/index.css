@@ -3,9 +3,19 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #1a1a1a;
+  /* Avocado green color palette */
+  --avocado-green: #568203;
+  --avocado-green-dark: #3d5f02;
+  --avocado-green-light: #7ba805;
+  --avocado-light-bg: #f5f9f0;
+  --avocado-accent: #8bc34a;
+  --text-primary: #2d3e1a;
+  --text-secondary: #5a6c4a;
+  --border-color: #d4e4c5;
+  --card-bg: #ffffff;
+  
+  color: var(--text-primary);
+  background-color: var(--avocado-light-bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,11 +29,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--avocado-green);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--avocado-green-dark);
 }
 
 body {
@@ -44,27 +54,11 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  border-color: var(--avocado-green);
 }

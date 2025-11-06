@@ -16,7 +16,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #646cff 0%, #535bf2 100%);
+  background: linear-gradient(180deg, var(--avocado-green) 0%, var(--avocado-green-light) 100%);
 }
 
 .experience-item {
@@ -31,40 +31,41 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #646cff;
-  border: 3px solid #1a1a1a;
-  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.3);
+  background-color: var(--avocado-green);
+  border: 3px solid var(--card-bg);
+  box-shadow: 0 0 0 3px rgba(86, 130, 3, 0.3);
 }
 
 .experience-content {
-  background-color: #242424;
-  border: 1px solid #383838;
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
   border-radius: 12px;
   padding: 2rem;
   margin-left: 1.5rem;
   transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(86, 130, 3, 0.1);
 }
 
 .experience-content:hover {
-  border-color: #646cff;
-  box-shadow: 0 4px 16px rgba(100, 108, 255, 0.2);
+  border-color: var(--avocado-green);
+  box-shadow: 0 4px 16px rgba(86, 130, 3, 0.2);
   transform: translateX(8px);
 }
 
 .experience-company {
   font-size: 1.5rem;
-  color: #646cff;
+  color: var(--avocado-green);
   margin-bottom: 0.5rem;
 }
 
 .experience-position {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .experience-period {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   font-size: 0.95rem;
   margin-bottom: 1rem;
 }
@@ -76,7 +77,7 @@
 }
 
 .experience-description li {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
@@ -87,7 +88,7 @@
   content: '▹';
   position: absolute;
   left: 0;
-  color: #646cff;
+  color: var(--avocado-green);
   font-weight: bold;
 }
 

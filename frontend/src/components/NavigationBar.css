@@ -1,10 +1,11 @@
 .navigation-bar {
-  background-color: #1a1a1a;
+  background-color: var(--card-bg);
   padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(86, 130, 3, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 2px solid var(--avocado-green);
 }
 
 .nav-container {
@@ -17,7 +18,7 @@
 }
 
 .nav-brand a {
-  color: #646cff;
+  color: var(--avocado-green);
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
@@ -25,7 +26,7 @@
 }
 
 .nav-brand a:hover {
-  color: #535bf2;
+  color: var(--avocado-green-dark);
 }
 
 .nav-menu {
@@ -41,7 +42,7 @@
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 1rem;
   padding: 0.5rem 1rem;
@@ -50,12 +51,12 @@
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #646cff;
+  background-color: var(--avocado-light-bg);
+  color: var(--avocado-green);
 }
 
 .nav-link.active {
-  background-color: #646cff;
+  background-color: var(--avocado-green);
   color: white;
 }
 

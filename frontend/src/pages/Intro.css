@@ -12,7 +12,7 @@
   position: relative;
 }
 
-/* Subtle tech glow effect in background */
+/* Subtle tech glow effect with yellow accent */
 .intro-page::before {
   content: '';
   position: absolute;
@@ -21,7 +21,7 @@
   transform: translateX(-50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(139, 195, 74, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(244, 224, 77, 0.12) 0%, rgba(139, 195, 74, 0.08) 50%, transparent 70%);
   border-radius: 50%;
   filter: blur(60px);
   pointer-events: none;
@@ -54,7 +54,7 @@
 .intro-title {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--avocado-green) 0%, var(--avocado-green-light) 100%);
+  background: linear-gradient(135deg, var(--avocado-green) 0%, var(--avocado-green-light) 50%, var(--avocado-yellow) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -101,21 +101,21 @@
 }
 
 .feature-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 254, 240, 0.75) 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 16px;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(212, 228, 197, 0.5);
-  box-shadow: 0 4px 16px rgba(86, 130, 3, 0.08),
-              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(232, 242, 216, 0.6);
+  box-shadow: 0 4px 16px rgba(244, 224, 77, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.9);
   position: relative;
   overflow: hidden;
 }
 
-/* Glass morphism highlight effect */
+/* Glass morphism highlight effect with yellow */
 .feature-card::before {
   content: '';
   position: absolute;
@@ -123,7 +123,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(139, 195, 74, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(244, 224, 77, 0.15), rgba(139, 195, 74, 0.1), transparent);
   transition: left 0.6s;
 }
 
@@ -138,7 +138,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(139, 195, 74, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(244, 224, 77, 0.12) 0%, rgba(139, 195, 74, 0.08) 50%, transparent 70%);
   opacity: 0;
   transition: opacity 0.4s;
   pointer-events: none;
@@ -146,8 +146,8 @@
 
 .feature-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 12px 32px rgba(86, 130, 3, 0.15),
-              0 0 0 1px rgba(86, 130, 3, 0.2),
+  box-shadow: 0 12px 32px rgba(244, 224, 77, 0.18),
+              0 0 0 1px rgba(139, 195, 74, 0.25),
               inset 0 1px 0 rgba(255, 255, 255, 1);
   border-color: rgba(86, 130, 3, 0.3);
 }

@@ -3,19 +3,25 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* Avocado green color palette */
+  /* Avocado-inspired color palette - greens and yellows */
   --avocado-green: #568203;
   --avocado-green-dark: #3d5f02;
   --avocado-green-light: #7ba805;
-  --avocado-light-bg: #f5f9f0;
+  --avocado-yellow: #f4e04d;
+  --avocado-yellow-light: #fef6c8;
+  --avocado-cream: #fffef0;
+  --avocado-flesh: #e8f5d0;
+  --avocado-light-bg: #fafdf5;
   --avocado-accent: #8bc34a;
   --text-primary: #2d3e1a;
   --text-secondary: #5a6c4a;
-  --border-color: #d4e4c5;
+  --text-light: #7a8c6a;
+  --border-color: #e8f2d8;
+  --border-light: #f2f9e8;
   --card-bg: #ffffff;
   
   color: var(--text-primary);
-  background: linear-gradient(135deg, #f5f9f0 0%, #e8f5e0 50%, #f0f8eb 100%);
+  background: linear-gradient(135deg, #fafdf5 0%, #f8fced 30%, #fffef0 70%, #fafdf5 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,7 +33,7 @@
   box-sizing: border-box;
 }
 
-/* Tech-inspired lighting effects */
+/* Tech-inspired lighting effects with yellow accents */
 body::before {
   content: '';
   position: fixed;
@@ -35,8 +41,9 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at 20% 50%, rgba(139, 195, 74, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(86, 130, 3, 0.06) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 50%, rgba(244, 224, 77, 0.06) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(139, 195, 74, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 50% 20%, rgba(255, 254, 240, 0.08) 0%, transparent 50%);
   animation: rotateGradient 20s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;
@@ -97,7 +104,7 @@ button::before {
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(86, 130, 3, 0.1);
+  background: rgba(244, 224, 77, 0.15);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
 }

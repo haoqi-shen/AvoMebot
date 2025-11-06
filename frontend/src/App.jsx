@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import Intro from './pages/Intro';
 import Chat from './pages/Chat';
@@ -20,6 +20,7 @@ function App() {
             <Route path="/" element={<Intro />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/projects" element={<Navigate to="/products" replace />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/education" element={<Education />} />
             <Route path="/certifications" element={<Certifications />} />

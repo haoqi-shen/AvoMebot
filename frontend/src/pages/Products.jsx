@@ -4,7 +4,7 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      title: 'MeBot Personal Website',
+      title: 'AvoMeBot Personal Website',
       description: 'Modern personal website built with React and Python, featuring integrated AI chat functionality',
       technologies: ['React', 'Python', 'FastAPI', 'Vite'],
       link: '#',

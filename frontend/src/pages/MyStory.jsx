@@ -30,7 +30,7 @@ const ImageGallery = ({ images, alt }) => {
       <div className="gallery-container">
         <img 
           src={images[currentImageIndex]} 
-          alt={`${alt} - ${currentImageIndex + 1}`} 
+          alt={`${alt}, image ${currentImageIndex + 1} of ${images.length}`} 
           className="gallery-image"
         />
         {images.length > 1 && (
@@ -57,7 +57,6 @@ const ImageGallery = ({ images, alt }) => {
                   onClick={() => setCurrentImageIndex(index)}
                   aria-label={`Go to image ${index + 1}`}
                 >
-                  <span className="sr-only">Image {index + 1}</span>
                 </button>
               ))}
             </div>

@@ -61,6 +61,7 @@
 /* Image Gallery Component */
 .image-gallery {
   margin-bottom: 2rem;
+  --gallery-control-z-index: 10;
 }
 
 .gallery-container {
@@ -96,7 +97,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  z-index: var(--gallery-control-z-index);
 }
 
 .gallery-nav:hover {
@@ -120,7 +121,7 @@
   transform: translateX(-50%);
   display: flex;
   gap: 0.5rem;
-  z-index: 10;
+  z-index: var(--gallery-control-z-index);
 }
 
 .indicator {
@@ -143,18 +144,6 @@
   background: var(--avocado-green);
   border-color: white;
   transform: scale(1.2);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
 }
 
 

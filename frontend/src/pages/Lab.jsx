@@ -43,9 +43,9 @@ const Lab = () => {
     );
   }
 
-  // Get research notes (all articles) - show first 5 for preview
+  // Get research notes (all articles) - show first 3 for compact preview
   const researchNotes = articles || [];
-  const previewResearchNotes = researchNotes.slice(0, 5);
+  const previewResearchNotes = researchNotes.slice(0, 3);
 
   return (
     <div className="page-container lab-page">
@@ -159,7 +159,7 @@ const Lab = () => {
               </article>
             ))}
           </div>
-          {researchNotes.length > 5 && (
+          {researchNotes.length > 3 && (
             <div className="view-more">
               <button className="view-more-btn">View All {researchNotes.length} Notes →</button>
             </div>

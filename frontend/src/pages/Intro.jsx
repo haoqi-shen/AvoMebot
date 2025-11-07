@@ -83,7 +83,7 @@ const Intro = () => {
             
             return (
               <FeatureWrapper key={feature.id} {...wrapperProps}>
-                <div className={`feature-card ${feature.callToAction ? 'feature-card-cta' : ''}`}>
+                <div className="feature-card">
                   <div className="feature-icon">{feature.icon}</div>
                   <h3>{feature.title}</h3>
                   {Array.isArray(feature.description) ? (
@@ -95,7 +95,7 @@ const Intro = () => {
                   )}
                   {feature.callToAction && (
                     <div className="feature-cta-badge">
-                      <span>📅 Book Now</span>
+                      <span>{feature.callToAction}</span>
                     </div>
                   )}
                 </div>

@@ -47,32 +47,32 @@
   },
   "topics": [
     {
-      "id": "learning-material",
-      "name": "Learning Material",
+      "id": "behavioural-interview",
+      "name": "Behavioural Interview",
+      "icon": "🎯",
+      "description": "STAR method, common questions, and behavioral interview strategies",
+      "count": 0
+    },
+    {
+      "id": "amazon-leadership-principle",
+      "name": "Amazon Leadership Principle",
+      "icon": "🏆",
+      "description": "Understanding and applying Amazon's leadership principles",
+      "count": 0
+    },
+    {
+      "id": "awesome-material",
+      "name": "Awesome Material",
       "icon": "📚",
-      "description": "Tutorials, guides, and educational content",
-      "count": 24
-    },
-    {
-      "id": "my-project",
-      "name": "My Project",
-      "icon": "🚀",
-      "description": "Personal projects and showcases",
-      "count": 15
-    },
-    {
-      "id": "good-templates",
-      "name": "Good Templates",
-      "icon": "✨",
-      "description": "Reusable templates and best practices",
-      "count": 18
+      "description": "Comprehensive guides, tutorials, and learning resources",
+      "count": 0
     },
     {
       "id": "philosophy",
       "name": "Philosophy",
       "icon": "💭",
-      "description": "Deep thoughts, ethics, and the human experience",
-      "count": 12
+      "description": "Deep thoughts, career reflections, and personal growth",
+      "count": 0
     }
   ],
   "communitySpaces": [

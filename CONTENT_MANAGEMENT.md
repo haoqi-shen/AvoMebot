@@ -133,7 +133,7 @@ Manages community content with featured items, topics, and browsable content.
       "name": "Topic Name",
       "icon": "🤖",
       "description": "Topic description",
-      "count": 24
+      "count": 0
     }
   ],
   "recentContent": [
@@ -158,9 +158,64 @@ Manages community content with featured items, topics, and browsable content.
 **Features:**
 - **Overview Section**: Introduction to the community space
 - **Featured Content**: Highlighted posts, projects, and conversations
-- **Topic Filtering**: Browse content by AI, Design, Product, or Philosophy
+- **Topic Filtering**: Browse content by different categories (Behavioural Interview, Amazon Leadership Principle, Awesome Material, Philosophy)
 - **Content Cards**: Lightweight cards with metadata, tags, and engagement metrics
 - **Interactive Filtering**: Click topic buttons to filter content dynamically
+- **Dynamic Counts**: Topic counts are automatically calculated based on articles in `articles.json`
+
+**Note:** Topic counts in `community.json` are set to 0 as they are dynamically calculated from `articles.json` at runtime.
+
+### 4b. articles.json (NEW)
+**Location:** `frontend/public/data/articles.json`
+
+Manages all community articles with Notion integration. Each article belongs to a category that corresponds to a topic filter.
+
+**Structure:**
+```json
+{
+  "articles": [
+    {
+      "id": "article-1",
+      "title": "Article Title",
+      "excerpt": "Brief description of the article content",
+      "category": "Behavioural Interview|Amazon Leadership Principle|Awesome Material|Philosophy",
+      "notionUrl": "https://www.notion.so/your-notion-page-id",
+      "author": "Author Name",
+      "date": "2024-01-15",
+      "readTime": "5 min read",
+      "tags": ["Tag1", "Tag2", "Tag3"],
+      "likes": 45,
+      "comments": 8
+    }
+  ]
+}
+```
+
+**Categories (Must match topic filters):**
+- **Behavioural Interview**: STAR method, interview questions, and behavioral interview strategies
+- **Amazon Leadership Principle**: Understanding and applying Amazon's leadership principles
+- **Awesome Material**: Comprehensive guides, tutorials, and learning resources
+- **Philosophy**: Deep thoughts, career reflections, and personal growth
+
+**Fields:**
+- **id**: Unique identifier for the article
+- **title**: Article title (clickable link to Notion if notionUrl is provided)
+- **excerpt**: Brief description or summary
+- **category**: Must match one of the four categories above (case-sensitive)
+- **notionUrl**: Link to the Notion page for this article
+- **author**: Article author name
+- **date**: Publication date (YYYY-MM-DD format)
+- **readTime**: Estimated reading time
+- **tags**: Array of topic tags for the article
+- **likes**: Number of likes (for display purposes)
+- **comments**: Number of comments (for display purposes)
+
+**How it works:**
+1. Articles are defined in `articles.json` with categories
+2. The Community page automatically counts articles per category
+3. Topic filter buttons show the actual count of articles in each category
+4. Clicking a filter shows only articles from that category
+5. Article titles link to their Notion pages when `notionUrl` is provided
 
 ### 5. footer.json
 **Location:** `frontend/public/data/footer.json`
@@ -308,18 +363,30 @@ Site-wide configuration settings.
 }
 ```
 
-### Add a new topic:
-1. Open `community.json`
-2. Add a new object to the `topics` array:
+### Add a new article with Notion link:
+1. Open `articles.json`
+2. Add a new object to the `articles` array:
 ```json
 {
-  "id": "newtopic",
-  "name": "New Topic",
-  "icon": "🎯",
-  "description": "Topic description",
-  "count": 5
+  "id": "article-11",
+  "title": "Your Article Title",
+  "excerpt": "Brief description of your article...",
+  "category": "Behavioural Interview",
+  "notionUrl": "https://www.notion.so/your-notion-page-id",
+  "author": "Your Name",
+  "date": "2024-01-20",
+  "readTime": "7 min read",
+  "tags": ["Interview", "STAR", "Tips"],
+  "likes": 0,
+  "comments": 0
 }
 ```
+
+**Important Notes:**
+- The `category` field must exactly match one of: "Behavioural Interview", "Amazon Leadership Principle", "Awesome Material", or "Philosophy"
+- The topic count for each category will automatically update based on the number of articles
+- Provide valid Notion URLs for the `notionUrl` field
+- Article titles will be clickable links to the Notion pages
 
 ### Add a new navigation item:
 1. Open `navigation.json`

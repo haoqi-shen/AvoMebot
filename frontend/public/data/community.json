@@ -1,27 +1,106 @@
 {
   "pageTitle": "Community",
-  "pageSubtitle": "My technical articles and thoughts",
-  "blogPosts": [
+  "pageSubtitle": "Connect, share, and collaborate",
+  "sections": [
     {
-      "id": 1,
-      "title": "How to Build Full-Stack Applications with React and Python",
-      "date": "2024-01-15",
-      "excerpt": "In this article, I will share how to build modern full-stack web applications using React as the frontend framework and Python FastAPI as the backend...",
-      "readTime": "5 min read"
+      "id": "highlights",
+      "title": "Highlights",
+      "icon": "✨",
+      "items": [
+        {
+          "id": "featured-conversations",
+          "title": "Featured Conversations",
+          "description": "Explore noteworthy discussions and exchanges",
+          "count": 12
+        },
+        {
+          "id": "hot-topics",
+          "title": "Hot Topics",
+          "description": "Trending subjects in our community",
+          "count": 8
+        },
+        {
+          "id": "mebot-reactions",
+          "title": "MeBot Reactions",
+          "description": "AI-powered insights and responses",
+          "count": 25
+        }
+      ]
     },
     {
-      "id": 2,
-      "title": "AI Chatbot Integration Guide",
-      "date": "2024-01-10",
-      "excerpt": "Explore how to integrate AI chatbots into your website for better user experience and interactivity...",
-      "readTime": "8 min read"
+      "id": "ideas-posts",
+      "title": "Ideas & Posts",
+      "icon": "💡",
+      "items": [
+        {
+          "id": "essays",
+          "title": "Essays",
+          "description": "Long-form thoughts and technical articles",
+          "count": 5
+        },
+        {
+          "id": "notes",
+          "title": "Notes",
+          "description": "Quick insights and observations",
+          "count": 18
+        },
+        {
+          "id": "labs",
+          "title": "Labs",
+          "description": "Experimental projects and prototypes",
+          "count": 7
+        }
+      ]
     },
     {
-      "id": 3,
-      "title": "Modern Frontend Development Best Practices",
-      "date": "2024-01-05",
-      "excerpt": "Learn current frontend development best practices, including code organization, performance optimization, and accessibility...",
-      "readTime": "10 min read"
+      "id": "collabs",
+      "title": "Collabs",
+      "icon": "🤝",
+      "items": [
+        {
+          "id": "open-projects",
+          "title": "Open Projects",
+          "description": "Collaborative initiatives seeking contributors",
+          "count": 3
+        },
+        {
+          "id": "brainstorming-threads",
+          "title": "Brainstorming Threads",
+          "description": "Active ideation and discussion spaces",
+          "count": 9
+        },
+        {
+          "id": "contributor-wall",
+          "title": "Contributor Wall",
+          "description": "Recognizing community members",
+          "count": 42
+        }
+      ]
+    },
+    {
+      "id": "visitors",
+      "title": "Visitors",
+      "icon": "👋",
+      "items": [
+        {
+          "id": "message-board",
+          "title": "Message Board",
+          "description": "Leave your thoughts and feedback",
+          "count": 31
+        },
+        {
+          "id": "conversations-mebot",
+          "title": "Conversations with MeBot",
+          "description": "Chat history and AI interactions",
+          "count": 156
+        },
+        {
+          "id": "analytics-map",
+          "title": "Analytics / Map",
+          "description": "Community statistics and visitor insights",
+          "count": null
+        }
+      ]
     }
   ]
 }

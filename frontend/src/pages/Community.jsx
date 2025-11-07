@@ -12,29 +12,38 @@ const Community = () => {
   }, []);
 
   if (!content) {
-    return <div className="page-container blog-page">Loading...</div>;
+    return <div className="page-container community-page">Loading...</div>;
   }
 
   return (
-    <div className="page-container blog-page">
+    <div className="page-container community-page">
       <h1 className="page-title">{content.pageTitle}</h1>
       <p className="page-subtitle">{content.pageSubtitle}</p>
       
-      <div className="blog-list">
-        {content.blogPosts.map((post) => (
-          <article key={post.id} className="blog-card">
-            <div className="blog-header">
-              <h2 className="blog-title">{post.title}</h2>
-              <div className="blog-meta">
-                <span className="blog-date">📅 {post.date}</span>
-                <span className="blog-read-time">⏱️ {post.readTime}</span>
-              </div>
+      <div className="community-sections">
+        {content.sections.map((section) => (
+          <section key={section.id} className="community-section">
+            <div className="section-header">
+              <span className="section-icon">{section.icon}</span>
+              <h2 className="section-title">{section.title}</h2>
             </div>
-            <p className="blog-excerpt">{post.excerpt}</p>
-            <a href="#" className="blog-read-more">
-              Read More →
-            </a>
-          </article>
+            
+            <div className="section-items">
+              {section.items.map((item) => (
+                <div key={item.id} className="section-item-card">
+                  <div className="item-content">
+                    <h3 className="item-title">{item.title}</h3>
+                    <p className="item-description">{item.description}</p>
+                  </div>
+                  {item.count !== null && (
+                    <div className="item-count">
+                      <span className="count-number">{item.count}</span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
         ))}
       </div>
     </div>

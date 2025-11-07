@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Intro.css';
 
 const Intro = () => {
   const navigate = useNavigate();
   const [chatInput, setChatInput] = useState('');
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/intro.json')
+      .then(response => response.json())
+      .then(data => setContent(data))
+      .catch(error => console.error('Error loading intro content:', error));
+  }, []);
 
   const handleChatSubmit = (e) => {
     e.preventDefault();
@@ -13,39 +21,39 @@ const Intro = () => {
     }
   };
 
+  if (!content) {
+    return <div className="page-container intro-page">Loading...</div>;
+  }
+
   return (
     <div className="page-container intro-page">
       <div className="intro-content">
         <div className="intro-hero">
           <h1 className="intro-title">
-            Hello, I'm <span className="highlight">Haoqi</span>
+            {content.hero.title.replace('{name}', '')}
+            <span className="highlight">{content.hero.name}</span>
           </h1>
           <p className="intro-subtitle">
-            Welcome to My Personal Website
+            {content.hero.subtitle}
           </p>
         </div>
 
         <div className="intro-description">
-          <p>
-            I'm a technology enthusiast and developer focused on building modern web applications.
-            This website is built with React and Python, showcasing my projects, experience, and expertise.
-          </p>
-          <p>
-            You can chat with my AI assistant MeBot through the Chat page in the navigation bar.
-            It's trained to answer questions and converse just like me.
-          </p>
+          {content.description.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
         </div>
 
         <div className="chat-entrance-section">
-          <h2 className="chat-entrance-title">Chat with MeBot</h2>
+          <h2 className="chat-entrance-title">{content.chatEntrance.title}</h2>
           <p className="chat-entrance-description">
-            Start a conversation with my AI assistant now
+            {content.chatEntrance.description}
           </p>
           <form className="chat-entrance-form" onSubmit={handleChatSubmit}>
             <input
               type="text"
               className="chat-entrance-input"
-              placeholder="Type your message and press Enter..."
+              placeholder={content.chatEntrance.placeholder}
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
             />
@@ -58,21 +66,13 @@ const Intro = () => {
         </div>
 
         <div className="intro-features">
-          <div className="feature-card">
-            <div className="feature-icon">🚀</div>
-            <h3>Modern Tech Stack</h3>
-            <p>Full-stack application built with React and Python</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">💡</div>
-            <h3>Innovative Projects</h3>
-            <p>Showcasing various technical projects and creative works</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">🤖</div>
-            <h3>AI Assistant</h3>
-            <p>Intelligent chatbot ready to serve you</p>
-          </div>
+          {content.features.map((feature) => (
+            <div key={feature.id} className="feature-card">
+              <div className="feature-icon">{feature.icon}</div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

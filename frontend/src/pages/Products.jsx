@@ -1,37 +1,27 @@
+import { useState, useEffect } from 'react';
 import './Products.css';
 
 const Products = () => {
-  const products = [
-    {
-      id: 1,
-      title: 'AvoMeBot Personal Website',
-      description: 'Modern personal website built with React and Python, featuring integrated AI chat functionality',
-      technologies: ['React', 'Python', 'FastAPI', 'Vite'],
-      link: '#',
-    },
-    {
-      id: 2,
-      title: 'Example Product 2',
-      description: 'A sample product description showcasing technical skills and innovative thinking',
-      technologies: ['JavaScript', 'Node.js', 'MongoDB'],
-      link: '#',
-    },
-    {
-      id: 3,
-      title: 'Example Product 3',
-      description: 'Another product demonstrating professional expertise',
-      technologies: ['Python', 'Django', 'PostgreSQL'],
-      link: '#',
-    },
-  ];
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/products.json')
+      .then(response => response.json())
+      .then(data => setContent(data))
+      .catch(error => console.error('Error loading products content:', error));
+  }, []);
+
+  if (!content) {
+    return <div className="page-container products-page">Loading...</div>;
+  }
 
   return (
     <div className="page-container products-page">
-      <h1 className="page-title">Products and Services</h1>
-      <p className="page-subtitle">Showcasing some of my interesting products</p>
+      <h1 className="page-title">{content.pageTitle}</h1>
+      <p className="page-subtitle">{content.pageSubtitle}</p>
       
       <div className="products-grid">
-        {products.map((product) => (
+        {content.products.map((product) => (
           <div key={product.id} className="product-card">
             <h2 className="product-title">{product.title}</h2>
             <p className="product-description">{product.description}</p>

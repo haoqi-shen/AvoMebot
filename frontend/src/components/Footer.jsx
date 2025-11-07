@@ -1,55 +1,70 @@
+import { useState, useEffect } from 'react';
 import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/footer.json')
+      .then(response => response.json())
+      .then(data => setContent(data))
+      .catch(error => console.error('Error loading footer content:', error));
+  }, []);
+
+  if (!content) {
+    return null;
+  }
 
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-heading">About AvoMeBot</h3>
+            <h3 className="footer-heading">{content.about.heading}</h3>
             <p className="footer-text">
-              Your personal AI-powered assistant for exploring skills, experience, and professional journey.
+              {content.about.text}
             </p>
           </div>
           
           <div className="footer-section">
-            <h3 className="footer-heading">Quick Links</h3>
+            <h3 className="footer-heading">{content.quickLinks.heading}</h3>
             <ul className="footer-links">
-              <li><a href="/">Intro</a></li>
-              <li><a href="/chat">Chat</a></li>
-              <li><a href="/products">Products</a></li>
-              <li><a href="/experience">Experience</a></li>
+              {content.quickLinks.links.map((link, index) => (
+                <li key={index}><a href={link.url}>{link.label}</a></li>
+              ))}
             </ul>
           </div>
           
           <div className="footer-section">
-            <h3 className="footer-heading">Contact</h3>
+            <h3 className="footer-heading">{content.contact.heading}</h3>
             <ul className="footer-contact">
-              <li>📧 contact@avomebot.com</li>
-              <li>📱 Connect with us</li>
-              <li>🌐 Follow on social media</li>
+              {content.contact.items.map((item, index) => (
+                <li key={index}>{item.icon} {item.text}</li>
+              ))}
             </ul>
           </div>
           
           <div className="footer-section footer-cta">
-            <h3 className="footer-heading">Get Started</h3>
+            <h3 className="footer-heading">{content.cta.heading}</h3>
             <p className="footer-text">
-              Ready to explore? Start a conversation with AvoMeBot today!
+              {content.cta.text}
             </p>
-            <a href="/chat" className="footer-cta-button">
-              Chat Now
+            <a href={content.cta.buttonUrl} className="footer-cta-button">
+              {content.cta.buttonText}
             </a>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {currentYear} AvoMeBot. All rights reserved.</p>
+          <p>&copy; {currentYear} {content.copyright}</p>
           <div className="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <span>|</span>
-            <a href="#">Terms of Service</a>
+            {content.bottomLinks.map((link, index) => (
+              <span key={index}>
+                {index > 0 && <span>|</span>}
+                <a href={link.url}>{link.label}</a>
+              </span>
+            ))}
           </div>
         </div>
       </div>

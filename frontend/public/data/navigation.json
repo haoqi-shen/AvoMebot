@@ -1,0 +1,13 @@
+{
+  "brand": {
+    "name": "MeBot",
+    "url": "/"
+  },
+  "navItems": [
+    { "path": "/", "label": "Intro" },
+    { "path": "/chat", "label": "Chat" },
+    { "path": "/products", "label": "Products and Services" },
+    { "path": "/mystory", "label": "My Story" },
+    { "path": "/community", "label": "Community" }
+  ]
+}

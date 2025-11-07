@@ -1,0 +1,13 @@
+{
+  "siteName": "AvoMeBot",
+  "siteTitle": "AvoMeBot - Personal Website",
+  "siteDescription": "Personal website featuring AI-powered assistant and professional portfolio",
+  "author": "Haoqi",
+  "theme": {
+    "primaryColor": "#6B8E23",
+    "accentColor": "#9ACD32"
+  },
+  "api": {
+    "baseUrl": "http://localhost:8000"
+  }
+}

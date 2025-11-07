@@ -1,0 +1,34 @@
+{
+  "about": {
+    "heading": "About AvoMeBot",
+    "text": "Your personal AI-powered assistant for exploring skills, experience, and professional journey."
+  },
+  "quickLinks": {
+    "heading": "Quick Links",
+    "links": [
+      { "label": "Intro", "url": "/" },
+      { "label": "Chat", "url": "/chat" },
+      { "label": "Products", "url": "/products" },
+      { "label": "Experience", "url": "/experience" }
+    ]
+  },
+  "contact": {
+    "heading": "Contact",
+    "items": [
+      { "icon": "📧", "text": "contact@avomebot.com" },
+      { "icon": "📱", "text": "Connect with us" },
+      { "icon": "🌐", "text": "Follow on social media" }
+    ]
+  },
+  "cta": {
+    "heading": "Get Started",
+    "text": "Ready to explore? Start a conversation with AvoMeBot today!",
+    "buttonText": "Chat Now",
+    "buttonUrl": "/chat"
+  },
+  "copyright": "AvoMeBot. All rights reserved.",
+  "bottomLinks": [
+    { "label": "Privacy Policy", "url": "#" },
+    { "label": "Terms of Service", "url": "#" }
+  ]
+}

@@ -1,37 +1,27 @@
+import { useState, useEffect } from 'react';
 import './Community.css';
 
 const Community = () => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'How to Build Full-Stack Applications with React and Python',
-      date: '2024-01-15',
-      excerpt: 'In this article, I will share how to build modern full-stack web applications using React as the frontend framework and Python FastAPI as the backend...',
-      readTime: '5 min read',
-    },
-    {
-      id: 2,
-      title: 'AI Chatbot Integration Guide',
-      date: '2024-01-10',
-      excerpt: 'Explore how to integrate AI chatbots into your website for better user experience and interactivity...',
-      readTime: '8 min read',
-    },
-    {
-      id: 3,
-      title: 'Modern Frontend Development Best Practices',
-      date: '2024-01-05',
-      excerpt: 'Learn current frontend development best practices, including code organization, performance optimization, and accessibility...',
-      readTime: '10 min read',
-    },
-  ];
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/community.json')
+      .then(response => response.json())
+      .then(data => setContent(data))
+      .catch(error => console.error('Error loading community content:', error));
+  }, []);
+
+  if (!content) {
+    return <div className="page-container blog-page">Loading...</div>;
+  }
 
   return (
     <div className="page-container blog-page">
-      <h1 className="page-title">Community</h1>
-      <p className="page-subtitle">My technical articles and thoughts</p>
+      <h1 className="page-title">{content.pageTitle}</h1>
+      <p className="page-subtitle">{content.pageSubtitle}</p>
       
       <div className="blog-list">
-        {blogPosts.map((post) => (
+        {content.blogPosts.map((post) => (
           <article key={post.id} className="blog-card">
             <div className="blog-header">
               <h2 className="blog-title">{post.title}</h2>

@@ -1,94 +1,193 @@
+import { useState } from 'react';
 import './MyStory.css';
 
 const MyStory = () => {
-  const experiences = [
-    {
-      id: 1,
-      company: 'Company Name',
-      position: 'Software Engineer',
-      period: '2022 - Present',
-      description: [
-        'Develop and maintain high-performance web applications',
-        'Build full-stack solutions using React and Python',
-        'Collaborate with team to deliver complex technical projects',
-      ],
-    },
-    {
-      id: 2,
-      company: 'Example Company',
-      position: 'Junior Developer',
-      period: '2020 - 2022',
-      description: [
-        'Participate in frontend development and UI/UX improvements',
-        'Learn and apply modern development best practices',
-        'Collaborate with team to deliver high-quality code',
-      ],
-    },
-  ];
+  const [activeSection, setActiveSection] = useState('intro');
 
-  const education = [
-    {
-      id: 1,
-      school: 'University Name',
-      degree: 'Bachelor of Computer Science',
-      period: '2016 - 2020',
-      description: 'Major in Computer Science, focused on Software Engineering and Artificial Intelligence',
-      gpa: 'GPA: 3.8/4.0',
+  const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const storyData = {
+    intro: {
+      title: "My Journey",
+      content: "Welcome to my story! Here's a glimpse into my professional journey and the experiences that have shaped who I am today.",
+      image: null, // Placeholder for future photo
     },
-    {
-      id: 2,
-      school: 'Example University',
-      degree: 'Master\'s Degree',
-      period: '2020 - 2022',
-      description: 'In-depth research in Machine Learning and Deep Learning technologies',
-      gpa: 'GPA: 3.9/4.0',
-    },
-  ];
+    experiences: [
+      {
+        id: 'exp-1',
+        title: 'Software Engineer at Company Name',
+        period: '2022 - Present',
+        story: 'This is where my journey truly took off. Working on cutting-edge web applications, I discovered my passion for building solutions that make a difference. Each day brings new challenges and opportunities to grow.',
+        highlights: [
+          'Led development of high-performance web applications',
+          'Collaborated with cross-functional teams to deliver innovative solutions',
+          'Mentored junior developers and contributed to team growth',
+        ],
+        image: null, // Placeholder for future photo
+      },
+      {
+        id: 'exp-2',
+        title: 'Junior Developer at Example Company',
+        period: '2020 - 2022',
+        story: 'My first step into the professional world. This is where I learned the fundamentals and developed my problem-solving skills. Every project was a learning opportunity.',
+        highlights: [
+          'Built responsive user interfaces using modern frameworks',
+          'Participated in code reviews and improved code quality',
+          'Learned agile development methodologies',
+        ],
+        image: null, // Placeholder for future photo
+      },
+    ],
+    education: [
+      {
+        id: 'edu-1',
+        title: "Master's Degree in Computer Science",
+        institution: 'Example University',
+        period: '2020 - 2022',
+        story: 'Diving deeper into the world of machine learning and artificial intelligence. This program challenged me to think critically and push the boundaries of what\'s possible.',
+        achievements: 'GPA: 3.9/4.0 - Research focus on Deep Learning',
+        image: null, // Placeholder for future photo
+      },
+      {
+        id: 'edu-2',
+        title: 'Bachelor of Computer Science',
+        institution: 'University Name',
+        period: '2016 - 2020',
+        story: 'Where it all began. I discovered my love for coding and technology. The foundation I built here continues to serve me well.',
+        achievements: 'GPA: 3.8/4.0 - Focused on Software Engineering and AI',
+        image: null, // Placeholder for future photo
+      },
+    ],
+  };
 
   return (
     <div className="page-container mystory-page">
-      <h1 className="page-title">My Story</h1>
-      <p className="page-subtitle">My professional journey and educational background</p>
-      
-      {/* Experience Section */}
-      <div className="story-section">
-        <h2 className="section-title">Work Experience</h2>
-        <div className="experience-timeline">
-          {experiences.map((exp) => (
-            <div key={exp.id} className="experience-item">
-              <div className="experience-marker"></div>
-              <div className="experience-content">
-                <h2 className="experience-company">{exp.company}</h2>
-                <h3 className="experience-position">{exp.position}</h3>
-                <p className="experience-period">{exp.period}</p>
-                <ul className="experience-description">
-                  {exp.description.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+      <div className="mystory-layout">
+        {/* Sidebar Navigation */}
+        <aside className="mystory-sidebar">
+          <h3 className="sidebar-title">Navigate My Story</h3>
+          <nav className="sidebar-nav">
+            <button
+              className={`nav-item ${activeSection === 'intro' ? 'active' : ''}`}
+              onClick={() => scrollToSection('intro')}
+            >
+              📖 Introduction
+            </button>
+            <div className="nav-section">
+              <span className="nav-section-label">Professional Journey</span>
+              {storyData.experiences.map((exp, index) => (
+                <button
+                  key={exp.id}
+                  className={`nav-item sub-item ${activeSection === exp.id ? 'active' : ''}`}
+                  onClick={() => scrollToSection(exp.id)}
+                >
+                  💼 Chapter {index + 1}
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+            <div className="nav-section">
+              <span className="nav-section-label">Academic Background</span>
+              {storyData.education.map((edu, index) => (
+                <button
+                  key={edu.id}
+                  className={`nav-item sub-item ${activeSection === edu.id ? 'active' : ''}`}
+                  onClick={() => scrollToSection(edu.id)}
+                >
+                  🎓 Chapter {index + 1}
+                </button>
+              ))}
+            </div>
+          </nav>
+        </aside>
 
-      {/* Education Section */}
-      <div className="story-section">
-        <h2 className="section-title">Education</h2>
-        <div className="education-list">
-          {education.map((edu) => (
-            <div key={edu.id} className="education-card">
-              <div className="education-icon">🎓</div>
-              <div className="education-details">
-                <h2 className="education-school">{edu.school}</h2>
-                <h3 className="education-degree">{edu.degree}</h3>
-                <p className="education-period">{edu.period}</p>
-                <p className="education-description">{edu.description}</p>
-                <p className="education-gpa">{edu.gpa}</p>
-              </div>
+        {/* Main Content */}
+        <main className="mystory-content">
+          {/* Introduction */}
+          <section id="intro" className="story-chapter">
+            <h1 className="chapter-title">{storyData.intro.title}</h1>
+            <div className="chapter-content">
+              <p className="chapter-text">{storyData.intro.content}</p>
+              {storyData.intro.image && (
+                <div className="chapter-image">
+                  <img src={storyData.intro.image} alt="Introduction" />
+                </div>
+              )}
             </div>
-          ))}
-        </div>
+          </section>
+
+          {/* Professional Journey */}
+          <section className="story-section-group">
+            <h2 className="section-group-title">Professional Journey</h2>
+            {storyData.experiences.map((exp) => (
+              <section key={exp.id} id={exp.id} className="story-chapter">
+                <div className="chapter-header">
+                  <h3 className="chapter-title">{exp.title}</h3>
+                  <span className="chapter-period">{exp.period}</span>
+                </div>
+                <div className="chapter-content">
+                  {exp.image && (
+                    <div className="chapter-image">
+                      <img src={exp.image} alt={exp.title} />
+                      <div className="image-placeholder">📷 Add Photo</div>
+                    </div>
+                  )}
+                  {!exp.image && (
+                    <div className="chapter-image-placeholder">
+                      <span className="placeholder-icon">📷</span>
+                      <span className="placeholder-text">Photo Coming Soon</span>
+                    </div>
+                  )}
+                  <p className="chapter-story">{exp.story}</p>
+                  <div className="chapter-highlights">
+                    <h4>Key Highlights:</h4>
+                    <ul>
+                      {exp.highlights.map((highlight, index) => (
+                        <li key={index}>{highlight}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            ))}
+          </section>
+
+          {/* Academic Background */}
+          <section className="story-section-group">
+            <h2 className="section-group-title">Academic Background</h2>
+            {storyData.education.map((edu) => (
+              <section key={edu.id} id={edu.id} className="story-chapter">
+                <div className="chapter-header">
+                  <h3 className="chapter-title">{edu.title}</h3>
+                  <span className="chapter-period">{edu.period}</span>
+                </div>
+                <div className="chapter-subtitle">{edu.institution}</div>
+                <div className="chapter-content">
+                  {edu.image && (
+                    <div className="chapter-image">
+                      <img src={edu.image} alt={edu.title} />
+                    </div>
+                  )}
+                  {!edu.image && (
+                    <div className="chapter-image-placeholder">
+                      <span className="placeholder-icon">📷</span>
+                      <span className="placeholder-text">Photo Coming Soon</span>
+                    </div>
+                  )}
+                  <p className="chapter-story">{edu.story}</p>
+                  <div className="chapter-achievements">
+                    <strong>Achievements:</strong> {edu.achievements}
+                  </div>
+                </div>
+              </section>
+            ))}
+          </section>
+        </main>
       </div>
     </div>
   );

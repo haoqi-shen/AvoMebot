@@ -24,7 +24,10 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    scrollToBottom();
+    // Only scroll to bottom when new messages are added (after initial load)
+    if (messages.length > 1) {
+      scrollToBottom();
+    }
   }, [messages]);
 
   // Handle initial message from intro page
@@ -94,7 +97,7 @@ const Chat = () => {
           {messages.map((message, index) => (
             <div key={index} className={`chat-message ${message.type}`}>
               <div className="chat-avatar">
-                {message.type === 'bot' ? '🤖' : '👤'}
+                {message.type === 'bot' ? '🥑' : '👤'}
               </div>
               <div className="message-bubble">
                 <p>{message.text}</p>
@@ -104,7 +107,7 @@ const Chat = () => {
           ))}
           {isLoading && (
             <div className="chat-message bot">
-              <div className="chat-avatar">🤖</div>
+              <div className="chat-avatar">🥑</div>
               <div className="message-bubble">
                 <div className="typing-dots">
                   <span></span>

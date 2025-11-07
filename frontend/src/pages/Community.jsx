@@ -16,9 +16,20 @@ const Community = () => {
     return <div className="page-container community-page">Loading...</div>;
   }
 
-  const filteredContent = activeFilter === 'all' 
-    ? (content.recentContent || [])
-    : (content.recentContent || []).filter(item => item.topic.toLowerCase() === activeFilter.toLowerCase());
+  // Get content based on filter
+  const getFilteredContent = () => {
+    if (activeFilter === 'all') {
+      // Show featured content when no filter is applied
+      return content.featured.items;
+    } else {
+      // Filter recentContent by topic
+      return (content.recentContent || []).filter(item => 
+        item.topic.toLowerCase().replace(/\s+/g, '-') === activeFilter
+      );
+    }
+  };
+
+  const displayContent = getFilteredContent();
 
   return (
     <div className="page-container community-page">
@@ -29,43 +40,8 @@ const Community = () => {
         <p className="community-description">{content.overview.description}</p>
       </div>
 
-      {/* Featured Content Section */}
-      <section className="featured-section">
-        <h2 className="section-title">
-          <span className="section-icon">✨</span>
-          {content.featured.title}
-        </h2>
-        <div className="featured-grid">
-          {content.featured.items.map((item) => (
-            <article key={item.id} className="featured-card">
-              {item.image && <div className="card-image" style={{backgroundImage: `url(${item.image})`}}></div>}
-              <div className="card-content">
-                <div className="card-meta">
-                  <span className="card-topic">{item.topic}</span>
-                  <span className="card-type">{item.type}</span>
-                </div>
-                <h3 className="card-title">{item.title}</h3>
-                <p className="card-excerpt">{item.excerpt}</p>
-                <div className="card-footer">
-                  <span className="card-author">by {item.author}</span>
-                  <span className="card-date">{item.date}</span>
-                  <div className="card-engagement">
-                    <span>❤️ {item.likes}</span>
-                    <span>💬 {item.comments}</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Topics Filter Section */}
+      {/* Topics Filter Section - Moved to top */}
       <section className="topics-section">
-        <h2 className="section-title">
-          <span className="section-icon">🔍</span>
-          Browse by Topic
-        </h2>
         <div className="topics-filter">
           <button 
             className={`topic-btn ${activeFilter === 'all' ? 'active' : ''}`}
@@ -87,67 +63,71 @@ const Community = () => {
         </div>
       </section>
 
-      {/* Community Spaces Section */}
-      {content.communitySpaces && (
-        <section className="community-spaces-section">
+      {/* Two-column layout: Content + Community Spaces */}
+      <div className="community-layout">
+        {/* Main Content Column */}
+        <section className="content-column">
           <h2 className="section-title">
-            <span className="section-icon">🏘️</span>
-            Community Spaces
+            <span className="section-icon">{activeFilter === 'all' ? '✨' : '📚'}</span>
+            {activeFilter === 'all' ? 'Featured Content' : `${content.topics.find(t => t.id === activeFilter)?.name || 'Content'}`}
           </h2>
-          <div className="spaces-grid">
-            {content.communitySpaces.map((space) => (
-              <article key={space.id} className="space-card">
-                <div className="space-icon-large">{space.icon}</div>
-                <div className="space-content">
-                  <h3 className="space-title">{space.title}</h3>
-                  <p className="space-description">{space.description}</p>
-                  <div className="space-footer">
-                    <span className="space-category">{space.category}</span>
-                    <span className="space-count">{space.count} items</span>
+          <div className="content-list">
+            {displayContent.map((item) => (
+              <article key={item.id} className="content-card-compact">
+                <div className="card-content">
+                  <div className="card-meta">
+                    <span className="card-topic">{item.topic}</span>
+                    <span className="card-type">{item.type}</span>
+                    {item.readTime && <span className="card-read-time">{item.readTime}</span>}
+                  </div>
+                  <h3 className="card-title">{item.title}</h3>
+                  <p className="card-excerpt">{item.excerpt}</p>
+                  {item.tags && (
+                    <div className="card-tags">
+                      {(item.tags || []).map((tag) => (
+                        <span key={tag} className="tag">{tag}</span>
+                      ))}
+                    </div>
+                  )}
+                  <div className="card-footer">
+                    <span className="card-author">by {item.author}</span>
+                    <span className="card-date">{item.date}</span>
+                    <div className="card-engagement">
+                      <span>❤️ {item.likes}</span>
+                      <span>💬 {item.comments}</span>
+                    </div>
                   </div>
                 </div>
               </article>
             ))}
           </div>
         </section>
-      )}
 
-      {/* Content Grid Section */}
-      <section className="content-section">
-        <h2 className="section-title">
-          <span className="section-icon">📚</span>
-          {activeFilter === 'all' ? 'Recent Content' : `${activeFilter.charAt(0).toUpperCase() + activeFilter.slice(1)} Content`}
-        </h2>
-        <div className="content-grid">
-          {filteredContent.map((item) => (
-            <article key={item.id} className="content-card">
-              {item.image && <div className="card-image" style={{backgroundImage: `url(${item.image})`}}></div>}
-              <div className="card-content">
-                <div className="card-meta">
-                  <span className="card-topic">{item.topic}</span>
-                  <span className="card-type">{item.type}</span>
-                  <span className="card-read-time">{item.readTime}</span>
-                </div>
-                <h3 className="card-title">{item.title}</h3>
-                <p className="card-excerpt">{item.excerpt}</p>
-                <div className="card-tags">
-                  {(item.tags || []).map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
-                </div>
-                <div className="card-footer">
-                  <span className="card-author">by {item.author}</span>
-                  <span className="card-date">{item.date}</span>
-                  <div className="card-engagement">
-                    <span>❤️ {item.likes}</span>
-                    <span>💬 {item.comments}</span>
+        {/* Community Spaces Sidebar */}
+        <aside className="sidebar-column">
+          <section className="community-spaces-compact">
+            <h2 className="section-title">
+              <span className="section-icon">🏘️</span>
+              Community Spaces
+            </h2>
+            <div className="spaces-list">
+              {(content.communitySpaces || []).map((space) => (
+                <article key={space.id} className="space-card-compact">
+                  <div className="space-icon">{space.icon}</div>
+                  <div className="space-info">
+                    <h3 className="space-title">{space.title}</h3>
+                    <p className="space-description">{space.description}</p>
+                    <div className="space-meta">
+                      <span className="space-category">{space.category}</span>
+                      <span className="space-count">{space.count} items</span>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+                </article>
+              ))}
+            </div>
+          </section>
+        </aside>
+      </div>
     </div>
   );
 };

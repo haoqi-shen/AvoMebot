@@ -12,7 +12,7 @@
         "type": "conversation",
         "title": "The Future of AI-Human Collaboration",
         "excerpt": "An in-depth discussion on how AI assistants are reshaping creative workflows and decision-making processes.",
-        "topic": "AI",
+        "topic": "Philosophy",
         "author": "Haoqi",
         "date": "2024-01-15",
         "image": null,
@@ -24,7 +24,7 @@
         "type": "project",
         "title": "Community Analytics Dashboard",
         "excerpt": "Open project seeking contributors to build real-time community engagement analytics.",
-        "topic": "Product",
+        "topic": "My Project",
         "author": "MeBot Team",
         "date": "2024-01-12",
         "image": null,
@@ -36,7 +36,7 @@
         "type": "post",
         "title": "Design Principles for AI Interfaces",
         "excerpt": "Exploring how to create intuitive and delightful experiences when humans interact with AI.",
-        "topic": "Design",
+        "topic": "Learning Material",
         "author": "Haoqi",
         "date": "2024-01-10",
         "image": null,
@@ -47,25 +47,25 @@
   },
   "topics": [
     {
-      "id": "ai",
-      "name": "AI",
-      "icon": "🤖",
-      "description": "Artificial Intelligence, machine learning, and the future of technology",
+      "id": "learning-material",
+      "name": "Learning Material",
+      "icon": "📚",
+      "description": "Tutorials, guides, and educational content",
       "count": 24
     },
     {
-      "id": "design",
-      "name": "Design",
-      "icon": "🎨",
-      "description": "User experience, interface design, and creative thinking",
-      "count": 18
+      "id": "my-project",
+      "name": "My Project",
+      "icon": "🚀",
+      "description": "Personal projects and showcases",
+      "count": 15
     },
     {
-      "id": "product",
-      "name": "Product",
-      "icon": "🚀",
-      "description": "Product development, strategy, and innovation",
-      "count": 15
+      "id": "good-templates",
+      "name": "Good Templates",
+      "icon": "✨",
+      "description": "Reusable templates and best practices",
+      "count": 18
     },
     {
       "id": "philosophy",
@@ -107,7 +107,7 @@
       "type": "essay",
       "title": "Building Full-Stack Applications with React and Python",
       "excerpt": "A comprehensive guide to modern web development using React and FastAPI...",
-      "topic": "Product",
+      "topic": "Learning Material",
       "author": "Haoqi",
       "date": "2024-01-15",
       "readTime": "8 min read",
@@ -135,7 +135,7 @@
       "type": "lab",
       "title": "Experimenting with Voice UI Patterns",
       "excerpt": "Testing new interaction patterns for voice-based AI assistants...",
-      "topic": "Design",
+      "topic": "Good Templates",
       "author": "Haoqi",
       "date": "2024-01-13",
       "readTime": "5 min read",
@@ -149,7 +149,7 @@
       "type": "project",
       "title": "Open Source MeBot SDK",
       "excerpt": "Collaborate with us to build developer tools for MeBot integration...",
-      "topic": "Product",
+      "topic": "My Project",
       "author": "MeBot Team",
       "date": "2024-01-11",
       "readTime": "6 min read",
@@ -163,7 +163,7 @@
       "type": "conversation",
       "title": "What Makes a Great AI Conversation?",
       "excerpt": "Community discussion on the key elements of meaningful human-AI interactions...",
-      "topic": "AI",
+      "topic": "Philosophy",
       "author": "Community",
       "date": "2024-01-09",
       "readTime": "4 min read",
@@ -185,6 +185,34 @@
       "tags": ["Philosophy", "AI", "Future"],
       "likes": 67,
       "comments": 23
+    },
+    {
+      "id": "post-7",
+      "type": "template",
+      "title": "React Component Design Patterns",
+      "excerpt": "Best practices and reusable patterns for building React components...",
+      "topic": "Good Templates",
+      "author": "Haoqi",
+      "date": "2024-01-07",
+      "readTime": "7 min read",
+      "image": null,
+      "tags": ["React", "Patterns", "Best Practices"],
+      "likes": 41,
+      "comments": 9
+    },
+    {
+      "id": "post-8",
+      "type": "tutorial",
+      "title": "Getting Started with FastAPI",
+      "excerpt": "A beginner-friendly guide to building APIs with Python and FastAPI...",
+      "topic": "Learning Material",
+      "author": "Haoqi",
+      "date": "2024-01-06",
+      "readTime": "12 min read",
+      "image": null,
+      "tags": ["Python", "FastAPI", "API", "Tutorial"],
+      "likes": 58,
+      "comments": 14
     }
   ]
 }

@@ -129,11 +129,15 @@
 .chat-message.user {
   justify-content: flex-end;
   flex-direction: row-reverse;
+  align-self: flex-end;
+  max-width: 75%;
 }
 
 .chat-message.bot {
   justify-content: flex-start;
   flex-direction: row;
+  align-self: flex-start;
+  max-width: 75%;
 }
 
 .chat-avatar {

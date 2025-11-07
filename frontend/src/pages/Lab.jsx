@@ -4,7 +4,6 @@ import './Lab.css';
 const Lab = () => {
   const [content, setContent] = useState(null);
   const [articles, setArticles] = useState([]);
-  const [activeSection, setActiveSection] = useState('experiments'); // experiments, research, colab
   const [error, setError] = useState(null);
 
   // Utility function to normalize topic names for comparison
@@ -44,8 +43,9 @@ const Lab = () => {
     );
   }
 
-  // Get research notes (all articles)
+  // Get research notes (all articles) - show first 5 for preview
   const researchNotes = articles || [];
+  const previewResearchNotes = researchNotes.slice(0, 5);
 
   return (
     <div className="page-container lab-page">
@@ -56,172 +56,144 @@ const Lab = () => {
         <p className="hero-description">{content.overview.description}</p>
       </div>
 
-      {/* Section Navigation */}
-      <nav className="lab-nav">
-        <button 
-          className={`lab-nav-btn ${activeSection === 'experiments' ? 'active' : ''}`}
-          onClick={() => setActiveSection('experiments')}
-        >
-          <span className="nav-icon">🔬</span>
-          <span className="nav-label">Featured Experiments</span>
-          <span className="nav-count">{content.featured.items.length}</span>
-        </button>
-        <button 
-          className={`lab-nav-btn ${activeSection === 'research' ? 'active' : ''}`}
-          onClick={() => setActiveSection('research')}
-        >
-          <span className="nav-icon">📝</span>
-          <span className="nav-label">Research Notes</span>
-          <span className="nav-count">{researchNotes.length}</span>
-        </button>
-        <button 
-          className={`lab-nav-btn ${activeSection === 'colab' ? 'active' : ''}`}
-          onClick={() => setActiveSection('colab')}
-        >
-          <span className="nav-icon">🤝</span>
-          <span className="nav-label">Co-Lab</span>
-          <span className="nav-count">{content.coLabSpaces.length}</span>
-        </button>
-      </nav>
-
-      {/* Main Content Area */}
+      {/* Main Content - All Sections Visible */}
+      {/* Main Content - All Sections Visible */}
       <div className="lab-content">
         {/* Featured Experiments Section */}
-        {activeSection === 'experiments' && (
-          <section className="experiments-section">
-            <div className="section-header">
-              <h2 className="section-title">
-                <span className="section-icon">🔬</span>
-                Featured Experiments
-              </h2>
-              <p className="section-description">
-                Explore my latest projects, prototypes, and thought experiments around AI, design, and human collaboration.
-              </p>
-            </div>
-            <div className="experiments-grid">
-              {content.featured.items.map((item) => (
-                <article key={item.id} className="experiment-card">
-                  <div className="card-header">
-                    <span className="card-badge">{item.topic}</span>
-                    <span className="card-type">{item.type}</span>
+        <section className="experiments-section">
+          <div className="section-header">
+            <h2 className="section-title">
+              <span className="section-icon">🔬</span>
+              Featured Experiments
+            </h2>
+            <p className="section-description">
+              Explore my latest projects, prototypes, and thought experiments around AI, design, and human collaboration.
+            </p>
+          </div>
+          <div className="experiments-grid">
+            {content.featured.items.map((item) => (
+              <article key={item.id} className="experiment-card">
+                <div className="card-header">
+                  <span className="card-badge">{item.topic}</span>
+                  <span className="card-type">{item.type}</span>
+                </div>
+                <h3 className="card-title">{item.title}</h3>
+                <p className="card-excerpt">{item.excerpt}</p>
+                {item.tags && (
+                  <div className="card-tags">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="tag">{tag}</span>
+                    ))}
                   </div>
-                  <h3 className="card-title">{item.title}</h3>
-                  <p className="card-excerpt">{item.excerpt}</p>
-                  {item.tags && (
-                    <div className="card-tags">
-                      {item.tags.map((tag) => (
-                        <span key={tag} className="tag">{tag}</span>
-                      ))}
-                    </div>
-                  )}
-                  <div className="card-footer">
-                    <span className="card-author">by {item.author}</span>
-                    <span className="card-date">{item.date}</span>
-                    <div className="card-engagement">
-                      <span>❤️ {item.likes}</span>
-                      <span>💬 {item.comments}</span>
-                    </div>
+                )}
+                <div className="card-footer">
+                  <span className="card-author">by {item.author}</span>
+                  <span className="card-date">{item.date}</span>
+                  <div className="card-engagement">
+                    <span>❤️ {item.likes}</span>
+                    <span>💬 {item.comments}</span>
                   </div>
-                </article>
-              ))}
-            </div>
-          </section>
-        )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
         {/* Research Notes Section */}
-        {activeSection === 'research' && (
-          <section className="research-section">
-            <div className="section-header">
-              <h2 className="section-title">
-                <span className="section-icon">📝</span>
-                Research Notes
-              </h2>
-              <p className="section-description">
-                Thought fragments, technical summaries, and MeBot dialogues — my research and ideation space.
-              </p>
-            </div>
-            
-            {/* Topic Filters */}
-            <div className="topic-filters">
-              {content.topics.map((topic) => (
-                <div key={topic.id} className="topic-filter-item">
-                  <span className="topic-icon">{topic.icon}</span>
-                  <div className="topic-info">
-                    <h4 className="topic-name">{topic.name}</h4>
-                    <p className="topic-description">{topic.description}</p>
-                  </div>
-                  <span className="topic-count">{topic.count} notes</span>
+        <section className="research-section">
+          <div className="section-header">
+            <h2 className="section-title">
+              <span className="section-icon">📝</span>
+              Research Notes
+            </h2>
+            <p className="section-description">
+              Thought fragments, technical summaries, and MeBot dialogues — my research and ideation space.
+            </p>
+          </div>
+          
+          {/* Topic Filters */}
+          <div className="topic-filters">
+            {content.topics.map((topic) => (
+              <div key={topic.id} className="topic-filter-item">
+                <span className="topic-icon">{topic.icon}</span>
+                <div className="topic-info">
+                  <h4 className="topic-name">{topic.name}</h4>
+                  <p className="topic-description">{topic.description}</p>
                 </div>
-              ))}
-            </div>
+                <span className="topic-count">{topic.count} notes</span>
+              </div>
+            ))}
+          </div>
 
-            {/* Articles List */}
-            <div className="research-list">
-              {researchNotes.map((article) => (
-                <article key={article.id} className="research-item">
-                  <div className="research-meta">
-                    <span className="research-category">{article.category}</span>
-                    <span className="research-type">{article.type || 'article'}</span>
-                    <span className="research-date">{article.date}</span>
-                    <span className="research-time">{article.readTime}</span>
+          {/* Articles List - Show preview of 5 */}
+          <div className="research-list">
+            {previewResearchNotes.map((article) => (
+              <article key={article.id} className="research-item">
+                <div className="research-meta">
+                  <span className="research-category">{article.category}</span>
+                  <span className="research-type">{article.type || 'article'}</span>
+                  <span className="research-date">{article.date}</span>
+                  <span className="research-time">{article.readTime}</span>
+                </div>
+                <h3 className="research-title">
+                  {article.notionUrl ? (
+                    <a href={article.notionUrl} target="_blank" rel="noopener noreferrer">
+                      {article.title}
+                    </a>
+                  ) : (
+                    article.title
+                  )}
+                </h3>
+                <p className="research-excerpt">{article.excerpt}</p>
+                <div className="research-footer">
+                  <div className="research-tags">
+                    {article.tags.map((tag) => (
+                      <span key={tag} className="tag">{tag}</span>
+                    ))}
                   </div>
-                  <h3 className="research-title">
-                    {article.notionUrl ? (
-                      <a href={article.notionUrl} target="_blank" rel="noopener noreferrer">
-                        {article.title}
-                      </a>
-                    ) : (
-                      article.title
-                    )}
-                  </h3>
-                  <p className="research-excerpt">{article.excerpt}</p>
-                  <div className="research-footer">
-                    <div className="research-tags">
-                      {article.tags.map((tag) => (
-                        <span key={tag} className="tag">{tag}</span>
-                      ))}
-                    </div>
-                    <div className="research-engagement">
-                      <span>❤️ {article.likes}</span>
-                      <span>💬 {article.comments}</span>
-                    </div>
+                  <div className="research-engagement">
+                    <span>❤️ {article.likes}</span>
+                    <span>💬 {article.comments}</span>
                   </div>
-                </article>
-              ))}
+                </div>
+              </article>
+            ))}
+          </div>
+          {researchNotes.length > 5 && (
+            <div className="view-more">
+              <button className="view-more-btn">View All {researchNotes.length} Notes →</button>
             </div>
-          </section>
-        )}
+          )}
+        </section>
 
         {/* Co-Lab Section */}
-        {activeSection === 'colab' && (
-          <section className="colab-section">
-            <div className="section-header">
-              <h2 className="section-title">
-                <span className="section-icon">🤝</span>
-                Co-Lab: Collaborative Space
-              </h2>
-              <p className="section-description">
-                Connect, collaborate, and co-create. Join open discussions, propose projects, and share your ideas.
-              </p>
-            </div>
-            <div className="colab-grid">
-              {content.coLabSpaces.map((space) => (
-                <article key={space.id} className="colab-card">
-                  <div className="colab-icon">{space.icon}</div>
-                  <div className="colab-content">
-                    <h3 className="colab-title">{space.title}</h3>
-                    <p className="colab-description">{space.description}</p>
-                    <div className="colab-meta">
-                      <span className="colab-category">{space.category}</span>
-                      <span className="colab-count">{space.count} active items</span>
-                    </div>
-                    <button className="colab-action">Explore →</button>
+        <section className="colab-section">
+          <div className="section-header">
+            <h2 className="section-title">
+              <span className="section-icon">🤝</span>
+              Co-Lab: Collaborative Space
+            </h2>
+            <p className="section-description">
+              Connect, collaborate, and co-create. Join open discussions, propose projects, and share your ideas.
+            </p>
+          </div>
+          <div className="colab-grid">
+            {content.coLabSpaces.map((space) => (
+              <article key={space.id} className="colab-card">
+                <div className="colab-icon">{space.icon}</div>
+                <div className="colab-content">
+                  <h3 className="colab-title">{space.title}</h3>
+                  <p className="colab-description">{space.description}</p>
+                  <div className="colab-meta">
+                    <span className="colab-category">{space.category}</span>
+                    <span className="colab-count">{space.count} active items</span>
                   </div>
-                </article>
-              ))}
-            </div>
-          </section>
-        )}
+                  <button className="colab-action">Explore →</button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@
 .lab-hero {
   text-align: center;
   padding: 3rem 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   background: linear-gradient(135deg, rgba(107, 142, 35, 0.05) 0%, rgba(86, 130, 3, 0.02) 100%);
   border-radius: 16px;
   border: 1px solid var(--border-color);
@@ -39,65 +39,12 @@
   line-height: 1.6;
 }
 
-/* Lab Navigation */
-.lab-nav {
+/* Main Content Area - All sections visible */
+.lab-content {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 3rem;
-  padding: 0.5rem;
-  background: var(--card-bg);
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
+  flex-direction: column;
+  gap: 4rem;
 }
-
-.lab-nav-btn {
-  flex: 1;
-  max-width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  background: transparent;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.lab-nav-btn:hover {
-  background: rgba(107, 142, 35, 0.05);
-  border-color: var(--avocado-green);
-}
-
-.lab-nav-btn.active {
-  background: var(--avocado-green);
-  color: white;
-  border-color: var(--avocado-green);
-}
-
-.nav-icon {
-  font-size: 1.5rem;
-}
-
-.nav-label {
-  flex: 1;
-  text-align: left;
-}
-
-.nav-count {
-  background: rgba(0, 0, 0, 0.1);
-  padding: 0.25rem 0.6rem;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.lab-nav-btn.active .nav-count {
   background: rgba(255, 255, 255, 0.25);
 }
 
@@ -481,6 +428,32 @@
   transform: scale(1.05);
 }
 
+/* View More Button */
+.view-more {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.view-more-btn {
+  background: var(--avocado-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+  background: #567A02;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.2);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .experiments-grid,
@@ -510,13 +483,8 @@
     font-size: 1rem;
   }
 
-  .lab-nav {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .lab-nav-btn {
-    max-width: 100%;
+  .lab-content {
+    gap: 3rem;
   }
 
   .section-title {

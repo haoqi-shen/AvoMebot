@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Avocado outer skin -->
+  <ellipse cx="32" cy="36" rx="20" ry="26" fill="#5C7C3B"/>
+  
+  <!-- Highlight on skin -->
+  <ellipse cx="26" cy="28" rx="6" ry="10" fill="#7A9E50" opacity="0.6"/>
+  
+  <!-- Inner flesh -->
+  <ellipse cx="32" cy="36" rx="14" ry="18" fill="#C5E384"/>
+  
+  <!-- Seed -->
+  <ellipse cx="32" cy="38" rx="7" ry="9" fill="#8B5A3C"/>
+  
+  <!-- Highlight on seed -->
+  <ellipse cx="29" cy="35" rx="2.5" ry="3" fill="#A67C52" opacity="0.7"/>
+  
+  <!-- Stem/top -->
+  <rect x="30" y="8" width="4" height="6" fill="#6B4423" rx="1"/>
+  <ellipse cx="32" cy="9" rx="3" ry="2" fill="#8B6239"/>
+</svg>

@@ -9,7 +9,7 @@ const Intro = () => {
   const handleChatSubmit = (e) => {
     e.preventDefault();
     if (chatInput.trim()) {
-      navigate('/chat');
+      navigate('/chat', { state: { initialMessage: chatInput.trim() } });
     }
   };
 

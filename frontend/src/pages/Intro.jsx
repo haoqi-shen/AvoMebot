@@ -81,7 +81,13 @@ const Intro = () => {
             <div key={feature.id} className="feature-card">
               <div className="feature-icon">{feature.icon}</div>
               <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
+              {Array.isArray(feature.description) ? (
+                feature.description.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))
+              ) : (
+                <p>{feature.description}</p>
+              )}
             </div>
           ))}
         </div>

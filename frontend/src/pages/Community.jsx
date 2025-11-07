@@ -5,6 +5,7 @@ const Community = () => {
   const [content, setContent] = useState(null);
   const [articles, setArticles] = useState([]);
   const [activeFilter, setActiveFilter] = useState('all');
+  const [error, setError] = useState(null);
 
   // Utility function to normalize topic names for comparison
   const normalizeTopicName = (topicName) => {
@@ -20,16 +21,19 @@ const Community = () => {
       .then(([communityData, articlesData]) => {
         // Calculate topic counts based on actual articles
         const topicsWithCounts = communityData.topics.map(topic => {
-          const count = articlesData.articles.filter(article => 
+          const count = (articlesData.articles || []).filter(article => 
             normalizeTopicName(article.category) === topic.id
           ).length;
           return { ...topic, count };
         });
         
         setContent({ ...communityData, topics: topicsWithCounts });
-        setArticles(articlesData.articles);
+        setArticles(articlesData.articles || []);
       })
-      .catch(error => console.error('Error loading community content:', error));
+      .catch(error => {
+        console.error('Error loading community content:', error);
+        setError('Failed to load community content. Please try again later.');
+      });
   }, []);
 
   // Memoize the active topic name to avoid recalculating on every render
@@ -39,7 +43,11 @@ const Community = () => {
   }, [content, activeFilter]);
 
   if (!content) {
-    return <div className="page-container community-page">Loading...</div>;
+    return (
+      <div className="page-container community-page">
+        {error ? error : 'Loading...'}
+      </div>
+    );
   }
 
   // Get content based on filter
@@ -49,7 +57,7 @@ const Community = () => {
       return content.featured.items;
     } else {
       // Filter articles by category
-      return articles.filter(article => 
+      return (articles || []).filter(article => 
         normalizeTopicName(article.category) === activeFilter
       );
     }

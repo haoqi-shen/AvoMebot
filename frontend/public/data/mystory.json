@@ -6,44 +6,67 @@
   },
   "milestones": [
     {
-      "id": "milestone-1",
+      "id": "northeastern",
       "year": "2016",
-      "title": "The Beginning",
+      "title": "Northeastern University",
       "story": "Where it all began. I discovered my love for coding and technology. The foundation I built here continues to serve me well.",
       "emotion": "Wonder & Discovery",
-      "image": null
+      "image": null,
+      "category": "education"
     },
     {
-      "id": "milestone-2",
+      "id": "johns-hopkins",
       "year": "2020",
-      "title": "First Steps",
-      "story": "My first step into the professional world. This is where I learned the fundamentals and developed my problem-solving skills. Every project was a learning opportunity.",
-      "emotion": "Growth & Learning",
-      "image": null
-    },
-    {
-      "id": "milestone-3",
-      "year": "2022",
-      "title": "Deep Dive",
+      "title": "Johns Hopkins University",
       "story": "Diving deeper into the world of machine learning and artificial intelligence. This program challenged me to think critically and push the boundaries of what's possible.",
       "emotion": "Challenge & Exploration",
-      "image": null
+      "image": null,
+      "category": "education"
     },
     {
-      "id": "milestone-4",
+      "id": "bytedance",
+      "year": "2020",
+      "title": "ByteDance",
+      "story": "My first step into the professional world. This is where I learned the fundamentals and developed my problem-solving skills. Every project was a learning opportunity.",
+      "emotion": "Growth & Learning",
+      "image": null,
+      "category": "work"
+    },
+    {
+      "id": "tencent",
+      "year": "2021",
+      "title": "Tencent",
+      "story": "Expanding my horizons and working on large-scale systems. Each challenge taught me new ways to approach complex problems.",
+      "emotion": "Expansion & Scale",
+      "image": null,
+      "category": "work"
+    },
+    {
+      "id": "pingan",
+      "year": "2022",
+      "title": "Pingan AI Lab",
+      "story": "Exploring the cutting edge of artificial intelligence. This experience shaped my understanding of how technology can transform industries.",
+      "emotion": "Innovation & Discovery",
+      "image": null,
+      "category": "work"
+    },
+    {
+      "id": "amazon",
       "year": "2023",
-      "title": "Taking Flight",
+      "title": "Amazon",
       "story": "This is where my journey truly took off. Working on cutting-edge web applications, I discovered my passion for building solutions that make a difference. Each day brings new challenges and opportunities to grow.",
       "emotion": "Passion & Purpose",
-      "image": null
+      "image": null,
+      "category": "work"
     },
     {
-      "id": "milestone-5",
+      "id": "avomebot",
       "year": "Today",
-      "title": "Creating Impact",
+      "title": "AvoMeBot",
       "story": "Today, I'm building AvoMeBot - a personal brand that reflects my journey and helps others discover their own path. It's not just about technology; it's about connection, growth, and making a difference.",
       "emotion": "Vision & Creation",
-      "image": null
+      "image": null,
+      "category": "current"
     }
   ],
   "philosophy": {

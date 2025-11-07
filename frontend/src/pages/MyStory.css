@@ -1,12 +1,87 @@
 .mystory-page {
-  padding: 0;
-  max-width: 100%;
+  padding: 2rem;
+  max-width: 1400px;
 }
 
-.mystory-container {
+.mystory-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Sidebar Navigation */
+.mystory-sidebar {
+  position: sticky;
+  top: 100px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 254, 240, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  border: 2px solid rgba(139, 195, 74, 0.2);
+  box-shadow: 0 8px 24px rgba(86, 130, 3, 0.1);
+}
+
+.sidebar-title {
+  font-size: 1.3rem;
+  color: var(--avocado-green);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background: rgba(139, 195, 74, 0.1);
+  transform: translateX(5px);
+}
+
+.nav-item.active {
+  background: var(--avocado-green);
+  color: white;
+  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.3);
+}
+
+.nav-section {
+  margin-top: 1rem;
+}
+
+.nav-section-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 1rem 0 0.5rem;
+  padding-left: 1rem;
+}
+
+.nav-item.sub-item {
+  font-size: 0.9rem;
+  padding-left: 1.5rem;
+}
+
+/* Main Content */
+.mystory-content {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
 }
 
 /* Hero Section */
@@ -199,9 +274,36 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .mystory-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .mystory-sidebar {
+    position: relative;
+    top: 0;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-section {
+    width: 100%;
+  }
+
+  .nav-item {
+    flex: 1;
+    min-width: 150px;
+  }
+}
+
 @media (max-width: 768px) {
-  .mystory-container {
-    padding: 2rem 1rem;
+  .mystory-page {
+    padding: 1rem;
   }
 
   .story-hero {
@@ -271,5 +373,9 @@
 
   .philosophy-content {
     font-size: 1rem;
+  }
+
+  .sidebar-nav {
+    flex-direction: column;
   }
 }

@@ -82,7 +82,7 @@
       "icon": "💭",
       "description": "Active ideation and discussion spaces for collaborative thinking",
       "count": 9,
-      "category": "collabs"
+      "category": "Collabs"
     },
     {
       "id": "contributor-wall",
@@ -90,7 +90,7 @@
       "icon": "🏆",
       "description": "Recognizing and celebrating our community members",
       "count": 42,
-      "category": "collabs"
+      "category": "Collabs"
     },
     {
       "id": "message-board",
@@ -98,7 +98,7 @@
       "icon": "📌",
       "description": "Leave your thoughts, feedback, and connect with others",
       "count": 31,
-      "category": "visitors"
+      "category": "Visitors"
     }
   ],
   "recentContent": [

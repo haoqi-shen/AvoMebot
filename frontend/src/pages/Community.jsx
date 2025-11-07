@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import './Community.css';
 
 const Community = () => {
@@ -12,6 +12,17 @@ const Community = () => {
       .catch(error => console.error('Error loading community content:', error));
   }, []);
 
+  // Utility function to normalize topic names for comparison
+  const normalizeTopicName = (topicName) => {
+    return topicName.toLowerCase().replace(/\s+/g, '-');
+  };
+
+  // Memoize the active topic name to avoid recalculating on every render
+  const activeTopicName = useMemo(() => {
+    if (!content || activeFilter === 'all') return null;
+    return content.topics.find(t => t.id === activeFilter)?.name;
+  }, [content, activeFilter]);
+
   if (!content) {
     return <div className="page-container community-page">Loading...</div>;
   }
@@ -24,7 +35,7 @@ const Community = () => {
     } else {
       // Filter recentContent by topic
       return (content.recentContent || []).filter(item => 
-        item.topic.toLowerCase().replace(/\s+/g, '-') === activeFilter
+        normalizeTopicName(item.topic) === activeFilter
       );
     }
   };
@@ -69,7 +80,7 @@ const Community = () => {
         <section className="content-column">
           <h2 className="section-title">
             <span className="section-icon">{activeFilter === 'all' ? '✨' : '📚'}</span>
-            {activeFilter === 'all' ? 'Featured Content' : `${content.topics.find(t => t.id === activeFilter)?.name || 'Content'}`}
+            {activeFilter === 'all' ? 'Featured Content' : activeTopicName || 'Content'}
           </h2>
           <div className="content-list">
             {displayContent.map((item) => (

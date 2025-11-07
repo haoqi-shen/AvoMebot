@@ -1,5 +1,6 @@
 .community-page {
   padding: 3rem 2rem;
+  --sidebar-width: 380px;
 }
 
 /* Header Section */
@@ -92,7 +93,7 @@
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr var(--sidebar-width);
   gap: 2rem;
   align-items: start;
 }

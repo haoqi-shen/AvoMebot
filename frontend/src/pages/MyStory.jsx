@@ -134,7 +134,6 @@ const MyStory = () => {
                   {exp.image && (
                     <div className="chapter-image">
                       <img src={exp.image} alt={exp.title} />
-                      <div className="image-placeholder">📷 Add Photo</div>
                     </div>
                   )}
                   {!exp.image && (

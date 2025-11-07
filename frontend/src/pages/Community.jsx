@@ -17,8 +17,8 @@ const Community = () => {
   }
 
   const filteredContent = activeFilter === 'all' 
-    ? content.recentContent 
-    : content.recentContent.filter(item => item.topic.toLowerCase() === activeFilter.toLowerCase());
+    ? (content.recentContent || [])
+    : (content.recentContent || []).filter(item => item.topic.toLowerCase() === activeFilter.toLowerCase());
 
   return (
     <div className="page-container community-page">
@@ -106,8 +106,8 @@ const Community = () => {
                 <h3 className="card-title">{item.title}</h3>
                 <p className="card-excerpt">{item.excerpt}</p>
                 <div className="card-tags">
-                  {item.tags.map((tag, index) => (
-                    <span key={index} className="tag">{tag}</span>
+                  {(item.tags || []).map((tag) => (
+                    <span key={tag} className="tag">{tag}</span>
                   ))}
                 </div>
                 <div className="card-footer">

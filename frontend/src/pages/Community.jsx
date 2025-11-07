@@ -35,7 +35,7 @@ const Community = () => {
                     <h3 className="item-title">{item.title}</h3>
                     <p className="item-description">{item.description}</p>
                   </div>
-                  {item.count !== null && (
+                  {item.count != null && (
                     <div className="item-count">
                       <span className="count-number">{item.count}</span>
                     </div>

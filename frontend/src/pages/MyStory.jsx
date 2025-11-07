@@ -56,7 +56,9 @@ const ImageGallery = ({ images, alt }) => {
                   className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
                   onClick={() => setCurrentImageIndex(index)}
                   aria-label={`Go to image ${index + 1}`}
-                />
+                >
+                  <span className="sr-only">Image {index + 1}</span>
+                </button>
               ))}
             </div>
           </>

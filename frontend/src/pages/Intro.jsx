@@ -6,12 +6,19 @@ const Intro = () => {
   const navigate = useNavigate();
   const [chatInput, setChatInput] = useState('');
   const [content, setContent] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch('/data/intro.json')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to load content');
+        return response.json();
+      })
       .then(data => setContent(data))
-      .catch(error => console.error('Error loading intro content:', error));
+      .catch(error => {
+        console.error('Error loading intro content:', error);
+        setError('Failed to load page content. Please refresh the page.');
+      });
   }, []);
 
   const handleChatSubmit = (e) => {
@@ -20,6 +27,10 @@ const Intro = () => {
       navigate('/chat', { state: { initialMessage: chatInput.trim() } });
     }
   };
+
+  if (error) {
+    return <div className="page-container intro-page"><p style={{ color: 'red', textAlign: 'center', padding: '2rem' }}>{error}</p></div>;
+  }
 
   if (!content) {
     return <div className="page-container intro-page">Loading...</div>;

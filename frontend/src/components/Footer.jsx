@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import './Footer.css';
 
 const Footer = () => {
@@ -60,10 +60,10 @@ const Footer = () => {
           <p>&copy; {currentYear} {content.copyright}</p>
           <div className="footer-bottom-links">
             {content.bottomLinks.map((link, index) => (
-              <span key={index}>
+              <Fragment key={index}>
                 {index > 0 && <span>|</span>}
                 <a href={link.url}>{link.label}</a>
-              </span>
+              </Fragment>
             ))}
           </div>
         </div>

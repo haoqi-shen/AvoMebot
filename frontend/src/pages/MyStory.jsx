@@ -35,16 +35,13 @@ const MyStory = () => {
                 <span className="timeline-year">{milestone.year}</span>
               </div>
               <div className="timeline-content">
-                {milestone.image && (
-                  <div className="milestone-image">
+                <div className={milestone.image ? "milestone-image" : "milestone-image-placeholder"}>
+                  {milestone.image ? (
                     <img src={milestone.image} alt={milestone.title} />
-                  </div>
-                )}
-                {!milestone.image && (
-                  <div className="milestone-image-placeholder">
+                  ) : (
                     <span className="placeholder-icon">📷</span>
-                  </div>
-                )}
+                  )}
+                </div>
                 <div className="milestone-text">
                   <h3 className="milestone-title">{milestone.title}</h3>
                   <p className="milestone-emotion">{milestone.emotion}</p>

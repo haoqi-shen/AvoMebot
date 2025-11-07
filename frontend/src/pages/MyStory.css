@@ -1,7 +1,32 @@
-.experience-page {
+.mystory-page {
   padding: 3rem 2rem;
 }
 
+.story-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--avocado-green);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--avocado-green), transparent);
+}
+
+/* Experience Styles */
 .experience-timeline {
   max-width: 800px;
   margin: 0 auto;
@@ -92,6 +117,73 @@
   font-weight: bold;
 }
 
+/* Education Styles */
+.education-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.education-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(86, 130, 3, 0.1);
+}
+
+.education-card:hover {
+  border-color: var(--avocado-green);
+  box-shadow: 0 8px 24px rgba(86, 130, 3, 0.2);
+  transform: translateY(-4px);
+}
+
+.education-icon {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-details {
+  flex: 1;
+}
+
+.education-school {
+  font-size: 1.5rem;
+  color: var(--avocado-green);
+  margin-bottom: 0.5rem;
+}
+
+.education-degree {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.education-period {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.education-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.education-gpa {
+  color: var(--avocado-green);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 768px) {
   .experience-timeline {
     padding-left: 1.5rem;
@@ -103,5 +195,14 @@
 
   .experience-content {
     margin-left: 1rem;
+  }
+
+  .education-card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .education-icon {
+    font-size: 2rem;
   }
 }

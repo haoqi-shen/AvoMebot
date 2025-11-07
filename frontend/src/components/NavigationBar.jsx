@@ -7,11 +7,9 @@ const NavigationBar = () => {
   const navItems = [
     { path: '/', label: 'Intro' },
     { path: '/chat', label: 'Chat' },
-    { path: '/products', label: 'Products' },
-    { path: '/experience', label: 'Experience' },
-    { path: '/education', label: 'Education' },
-    { path: '/certifications', label: 'Certifications' },
-    { path: '/blog', label: 'Blog' },
+    { path: '/products', label: 'Products and Services' },
+    { path: '/mystory', label: 'My Story' },
+    { path: '/community', label: 'Community' },
   ];
 
   return (

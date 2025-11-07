@@ -1,6 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import './Intro.css';
 
 const Intro = () => {
+  const navigate = useNavigate();
+
+  const handleChatNavigate = () => {
+    navigate('/chat');
+  };
+
   return (
     <div className="page-container intro-page">
       <div className="intro-content">
@@ -39,6 +46,12 @@ const Intro = () => {
             <div className="feature-icon">🤖</div>
             <h3>AI Assistant</h3>
             <p>Intelligent chatbot ready to serve you</p>
+          </div>
+          <div className="feature-card chatbox-card" onClick={handleChatNavigate}>
+            <div className="feature-icon">💬</div>
+            <h3>Chat with MeBot</h3>
+            <p>Start a conversation with my AI assistant now</p>
+            <div className="chat-arrow">→</div>
           </div>
         </div>
       </div>

@@ -100,24 +100,67 @@ Lists products and services.
 ### 4. community.json
 **Location:** `frontend/public/data/community.json`
 
-Manages blog posts and community content.
+Manages community content with featured items, topics, and browsable content.
 
 **Structure:**
 ```json
 {
   "pageTitle": "Community",
-  "pageSubtitle": "Subtitle text",
-  "blogPosts": [
+  "pageSubtitle": "A living space for ideas and collaboration around MeBot",
+  "overview": {
+    "description": "Welcome description text"
+  },
+  "featured": {
+    "title": "Featured Content",
+    "items": [
+      {
+        "id": "feat-1",
+        "type": "conversation|post|project",
+        "title": "Content Title",
+        "excerpt": "Brief description",
+        "topic": "AI|Design|Product|Philosophy",
+        "author": "Author Name",
+        "date": "2024-01-15",
+        "image": null,
+        "likes": 42,
+        "comments": 12
+      }
+    ]
+  },
+  "topics": [
     {
-      "id": 1,
-      "title": "Post Title",
+      "id": "topic-id",
+      "name": "Topic Name",
+      "icon": "🤖",
+      "description": "Topic description",
+      "count": 24
+    }
+  ],
+  "recentContent": [
+    {
+      "id": "post-1",
+      "type": "essay|note|lab|project|conversation",
+      "title": "Content Title",
+      "excerpt": "Brief description",
+      "topic": "AI|Design|Product|Philosophy",
+      "author": "Author Name",
       "date": "2024-01-15",
-      "excerpt": "Brief description...",
-      "readTime": "5 min read"
+      "readTime": "8 min read",
+      "image": null,
+      "tags": ["Tag1", "Tag2"],
+      "likes": 34,
+      "comments": 7
     }
   ]
 }
 ```
+
+**Features:**
+- **Overview Section**: Introduction to the community space
+- **Featured Content**: Highlighted posts, projects, and conversations
+- **Topic Filtering**: Browse content by AI, Design, Product, or Philosophy
+- **Content Cards**: Lightweight cards with metadata, tags, and engagement metrics
+- **Interactive Filtering**: Click topic buttons to filter content dynamically
 
 ### 5. footer.json
 **Location:** `frontend/public/data/footer.json`
@@ -227,16 +270,54 @@ Site-wide configuration settings.
 }
 ```
 
-### Add a new blog post:
+### Add a featured community item:
 1. Open `community.json`
-2. Add a new object to the `blogPosts` array:
+2. Add a new object to the `featured.items` array:
 ```json
 {
-  "id": 4,
-  "title": "New Post",
+  "id": "feat-4",
+  "type": "post",
+  "title": "New Featured Post",
+  "excerpt": "Brief description...",
+  "topic": "Design",
+  "author": "Author Name",
   "date": "2024-01-20",
-  "excerpt": "Description...",
-  "readTime": "7 min read"
+  "image": null,
+  "likes": 15,
+  "comments": 3
+}
+```
+
+### Add recent community content:
+1. Open `community.json`
+2. Add a new object to the `recentContent` array:
+```json
+{
+  "id": "post-7",
+  "type": "essay",
+  "title": "New Content Title",
+  "excerpt": "Brief description...",
+  "topic": "Philosophy",
+  "author": "Author Name",
+  "date": "2024-01-20",
+  "readTime": "5 min read",
+  "image": null,
+  "tags": ["Tag1", "Tag2", "Tag3"],
+  "likes": 20,
+  "comments": 4
+}
+```
+
+### Add a new topic:
+1. Open `community.json`
+2. Add a new object to the `topics` array:
+```json
+{
+  "id": "newtopic",
+  "name": "New Topic",
+  "icon": "🎯",
+  "description": "Topic description",
+  "count": 5
 }
 ```
 

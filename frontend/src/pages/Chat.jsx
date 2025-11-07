@@ -8,7 +8,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([
     {
       type: 'bot',
-      text: 'Hello! I\'m MeBot, an AI assistant trained to be just like the author. How can I help you today?',
+      text: 'Hello, I am MeBot of Haoqi. I\'m still in training and will be on duty soon. Please stay tuned.',
       timestamp: new Date().toISOString(),
     },
   ]);
@@ -24,7 +24,10 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    scrollToBottom();
+    // Only scroll to bottom when new messages are added (after initial load)
+    if (messages.length > 1) {
+      scrollToBottom();
+    }
   }, [messages]);
 
   // Handle initial message from intro page
@@ -93,6 +96,9 @@ const Chat = () => {
         <div className="chat-messages-area">
           {messages.map((message, index) => (
             <div key={index} className={`chat-message ${message.type}`}>
+              <div className="chat-avatar">
+                {message.type === 'bot' ? '🥑' : '👤'}
+              </div>
               <div className="message-bubble">
                 <p>{message.text}</p>
                 <span className="message-timestamp">{formatTime(message.timestamp)}</span>
@@ -101,6 +107,7 @@ const Chat = () => {
           ))}
           {isLoading && (
             <div className="chat-message bot">
+              <div className="chat-avatar">🥑</div>
               <div className="message-bubble">
                 <div className="typing-dots">
                   <span></span>

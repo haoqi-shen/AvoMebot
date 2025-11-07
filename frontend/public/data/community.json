@@ -1,0 +1,27 @@
+{
+  "pageTitle": "Community",
+  "pageSubtitle": "My technical articles and thoughts",
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "How to Build Full-Stack Applications with React and Python",
+      "date": "2024-01-15",
+      "excerpt": "In this article, I will share how to build modern full-stack web applications using React as the frontend framework and Python FastAPI as the backend...",
+      "readTime": "5 min read"
+    },
+    {
+      "id": 2,
+      "title": "AI Chatbot Integration Guide",
+      "date": "2024-01-10",
+      "excerpt": "Explore how to integrate AI chatbots into your website for better user experience and interactivity...",
+      "readTime": "8 min read"
+    },
+    {
+      "id": 3,
+      "title": "Modern Frontend Development Best Practices",
+      "date": "2024-01-05",
+      "excerpt": "Learn current frontend development best practices, including code organization, performance optimization, and accessibility...",
+      "readTime": "10 min read"
+    }
+  ]
+}

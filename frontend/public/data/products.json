@@ -1,0 +1,27 @@
+{
+  "pageTitle": "Products and Services",
+  "pageSubtitle": "Showcasing some of my interesting products",
+  "products": [
+    {
+      "id": 1,
+      "title": "AvoMeBot Personal Website",
+      "description": "Modern personal website built with React and Python, featuring integrated AI chat functionality",
+      "technologies": ["React", "Python", "FastAPI", "Vite"],
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "Example Product 2",
+      "description": "A sample product description showcasing technical skills and innovative thinking",
+      "technologies": ["JavaScript", "Node.js", "MongoDB"],
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "Example Product 3",
+      "description": "Another product demonstrating professional expertise",
+      "technologies": ["Python", "Django", "PostgreSQL"],
+      "link": "#"
+    }
+  ]
+}

@@ -52,13 +52,16 @@ const MyStory = () => {
         <aside className="mystory-sidebar">
           <h3 className="sidebar-title">Navigate My Story</h3>
           <nav className="sidebar-nav">
-            <button
-              className={`nav-item ${activeSection === 'hero' ? 'active' : ''}`}
-              onClick={() => scrollToSection('hero')}
-            >
-              📖 Introduction
-            </button>
-            
+            {current.length > 0 && current.map((milestone) => (
+              <button
+                key={milestone.id}
+                className={`nav-item ${activeSection === milestone.id ? 'active' : ''}`}
+                onClick={() => scrollToSection(milestone.id)}
+              >
+                ✨ {milestone.title}
+              </button>
+            ))}
+
             {work.length > 0 && (
               <div className="nav-section">
                 <span className="nav-section-label">Professional Journey</span>
@@ -73,16 +76,6 @@ const MyStory = () => {
                 ))}
               </div>
             )}
-
-            {current.length > 0 && current.map((milestone) => (
-              <button
-                key={milestone.id}
-                className={`nav-item ${activeSection === milestone.id ? 'active' : ''}`}
-                onClick={() => scrollToSection(milestone.id)}
-              >
-                ✨ {milestone.title}
-              </button>
-            ))}
           </nav>
         </aside>
 

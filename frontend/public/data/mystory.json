@@ -6,26 +6,18 @@
   },
   "milestones": [
     {
-      "id": "bytedance",
-      "year": "2020",
-      "title": "ByteDance",
-      "story": "Start of my tech journey; built a real-time diagnostic BI dashboard for Douyin monetization",
+      "id": "avomebot",
+      "year": "2025",
+      "title": "Avo.ai",
+      "story": "Focused on PMF and GTM for GenAI/LLM applications and recommendations",
       "image": null,
-      "category": "work"
+      "category": "current"
     },
     {
-      "id": "tencent",
-      "year": "2021",
-      "title": "Tencent Ads",
-      "story": "Built a comprehensive foundation in computational advertising and monetization; deployed multi-objective optimization and embedding-based collaborative models to improve UX",
-      "image": null,
-      "category": "work"
-    },
-    {
-      "id": "johns-hopkins",
-      "year": "2022",
-      "title": "Johns Hopkins University",
-      "story": "Focused on HCI, cognitive psychology, and experimental research methods; built a searchable database for educators",
+      "id": "amazon",
+      "year": "2024",
+      "title": "Amazon (AI Science Team)",
+      "story": "Where I first connected with Web Agents; built a training sandbox and evaluation framework",
       "image": null,
       "category": "work"
     },
@@ -38,20 +30,28 @@
       "category": "work"
     },
     {
-      "id": "amazon",
-      "year": "2024",
-      "title": "Amazon (AI Science Team)",
-      "story": "Where I first connected with Web Agents; built a training sandbox and evaluation framework",
+      "id": "johns-hopkins",
+      "year": "2022",
+      "title": "Johns Hopkins University",
+      "story": "Focused on HCI, cognitive psychology, and experimental research methods; built a searchable database for educators",
       "image": null,
       "category": "work"
     },
     {
-      "id": "avomebot",
-      "year": "2025",
-      "title": "Avo.ai",
-      "story": "Focused on PMF and GTM for GenAI/LLM applications and recommendations",
+      "id": "tencent",
+      "year": "2021",
+      "title": "Tencent Ads",
+      "story": "Built a comprehensive foundation in computational advertising and monetization; deployed multi-objective optimization and embedding-based collaborative models to improve UX",
       "image": null,
-      "category": "current"
+      "category": "work"
+    },
+    {
+      "id": "bytedance",
+      "year": "2020",
+      "title": "ByteDance",
+      "story": "Start of my tech journey; built a real-time diagnostic BI dashboard for Douyin monetization",
+      "image": null,
+      "category": "work"
     }
   ],
   "philosophy": {

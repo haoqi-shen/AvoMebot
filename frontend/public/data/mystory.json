@@ -1,53 +1,76 @@
 {
-  "intro": {
-    "title": "My Journey",
-    "content": "Welcome to my story! Here's a glimpse into my professional journey and the experiences that have shaped who I am today.",
-    "image": null
+  "hero": {
+    "title": "The Journey",
+    "subtitle": "From curiosity to creation",
+    "quote": "Every great brand starts with a story, and mine began with a simple question: What if?"
   },
-  "experiences": [
+  "milestones": [
     {
-      "id": "exp-1",
-      "title": "Software Engineer at Company Name",
-      "period": "2022 - Present",
-      "story": "This is where my journey truly took off. Working on cutting-edge web applications, I discovered my passion for building solutions that make a difference. Each day brings new challenges and opportunities to grow.",
-      "highlights": [
-        "Led development of high-performance web applications",
-        "Collaborated with cross-functional teams to deliver innovative solutions",
-        "Mentored junior developers and contributed to team growth"
-      ],
-      "image": null
+      "id": "northeastern",
+      "year": "2016",
+      "title": "Northeastern University",
+      "story": "Where it all began. I discovered my love for coding and technology. The foundation I built here continues to serve me well.",
+      "emotion": "Wonder & Discovery",
+      "image": null,
+      "category": "education"
     },
     {
-      "id": "exp-2",
-      "title": "Junior Developer at Example Company",
-      "period": "2020 - 2022",
+      "id": "johns-hopkins",
+      "year": "2020",
+      "title": "Johns Hopkins University",
+      "story": "Diving deeper into the world of machine learning and artificial intelligence. This program challenged me to think critically and push the boundaries of what's possible.",
+      "emotion": "Challenge & Exploration",
+      "image": null,
+      "category": "education"
+    },
+    {
+      "id": "bytedance",
+      "year": "2020",
+      "title": "ByteDance",
       "story": "My first step into the professional world. This is where I learned the fundamentals and developed my problem-solving skills. Every project was a learning opportunity.",
-      "highlights": [
-        "Built responsive user interfaces using modern frameworks",
-        "Participated in code reviews and improved code quality",
-        "Learned agile development methodologies"
-      ],
-      "image": null
+      "emotion": "Growth & Learning",
+      "image": null,
+      "category": "work"
+    },
+    {
+      "id": "tencent",
+      "year": "2021",
+      "title": "Tencent",
+      "story": "Expanding my horizons and working on large-scale systems. Each challenge taught me new ways to approach complex problems.",
+      "emotion": "Expansion & Scale",
+      "image": null,
+      "category": "work"
+    },
+    {
+      "id": "pingan",
+      "year": "2022",
+      "title": "Pingan AI Lab",
+      "story": "Exploring the cutting edge of artificial intelligence. This experience shaped my understanding of how technology can transform industries.",
+      "emotion": "Innovation & Discovery",
+      "image": null,
+      "category": "work"
+    },
+    {
+      "id": "amazon",
+      "year": "2023",
+      "title": "Amazon",
+      "story": "This is where my journey truly took off. Working on cutting-edge web applications, I discovered my passion for building solutions that make a difference. Each day brings new challenges and opportunities to grow.",
+      "emotion": "Passion & Purpose",
+      "image": null,
+      "category": "work"
+    },
+    {
+      "id": "avomebot",
+      "year": "Today",
+      "title": "AvoMeBot",
+      "story": "Today, I'm building AvoMeBot - a personal brand that reflects my journey and helps others discover their own path. It's not just about technology; it's about connection, growth, and making a difference.",
+      "emotion": "Vision & Creation",
+      "image": null,
+      "category": "current"
     }
   ],
-  "education": [
-    {
-      "id": "edu-1",
-      "title": "Master's Degree in Computer Science",
-      "institution": "Example University",
-      "period": "2020 - 2022",
-      "story": "Diving deeper into the world of machine learning and artificial intelligence. This program challenged me to think critically and push the boundaries of what's possible.",
-      "achievements": "GPA: 3.9/4.0 - Research focus on Deep Learning",
-      "image": null
-    },
-    {
-      "id": "edu-2",
-      "title": "Bachelor of Computer Science",
-      "institution": "University Name",
-      "period": "2016 - 2020",
-      "story": "Where it all began. I discovered my love for coding and technology. The foundation I built here continues to serve me well.",
-      "achievements": "GPA: 3.8/4.0 - Focused on Software Engineering and AI",
-      "image": null
-    }
-  ]
+  "philosophy": {
+    "title": "My Philosophy",
+    "content": "I believe in continuous growth, authentic connection, and building things that matter. Every challenge is an opportunity, every project a canvas for innovation."
+  }
 }

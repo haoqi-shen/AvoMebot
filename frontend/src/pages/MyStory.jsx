@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './MyStory.css';
 
 const MyStory = () => {
-  const [activeSection, setActiveSection] = useState('intro');
+  const [activeSection, setActiveSection] = useState('hero');
   const [storyData, setStoryData] = useState(null);
 
   useEffect(() => {
@@ -12,8 +12,25 @@ const MyStory = () => {
       .catch(error => console.error('Error loading story content:', error));
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5, rootMargin: '-100px 0px -50% 0px' }
+    );
+
+    const sections = document.querySelectorAll('[id^="hero"], [id^="milestone-"], [id^="northeastern"], [id^="johns-hopkins"], [id^="bytedance"], [id^="tencent"], [id^="pingan"], [id^="amazon"], [id^="avomebot"]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [storyData]);
+
   const scrollToSection = (sectionId) => {
-    setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -24,6 +41,11 @@ const MyStory = () => {
     return <div className="page-container mystory-page">Loading...</div>;
   }
 
+  // Group milestones by category
+  const education = storyData.milestones.filter(m => m.category === 'education');
+  const work = storyData.milestones.filter(m => m.category === 'work');
+  const current = storyData.milestones.filter(m => m.category === 'current');
+
   return (
     <div className="page-container mystory-page">
       <div className="mystory-layout">
@@ -32,117 +54,94 @@ const MyStory = () => {
           <h3 className="sidebar-title">Navigate My Story</h3>
           <nav className="sidebar-nav">
             <button
-              className={`nav-item ${activeSection === 'intro' ? 'active' : ''}`}
-              onClick={() => scrollToSection('intro')}
+              className={`nav-item ${activeSection === 'hero' ? 'active' : ''}`}
+              onClick={() => scrollToSection('hero')}
             >
               📖 Introduction
             </button>
-            <div className="nav-section">
-              <span className="nav-section-label">Professional Journey</span>
-              {storyData.experiences.map((exp, index) => (
-                <button
-                  key={exp.id}
-                  className={`nav-item sub-item ${activeSection === exp.id ? 'active' : ''}`}
-                  onClick={() => scrollToSection(exp.id)}
-                >
-                  💼 Chapter {index + 1}
-                </button>
-              ))}
-            </div>
-            <div className="nav-section">
-              <span className="nav-section-label">Academic Background</span>
-              {storyData.education.map((edu, index) => (
-                <button
-                  key={edu.id}
-                  className={`nav-item sub-item ${activeSection === edu.id ? 'active' : ''}`}
-                  onClick={() => scrollToSection(edu.id)}
-                >
-                  🎓 Chapter {index + 1}
-                </button>
-              ))}
-            </div>
+            
+            {education.length > 0 && (
+              <div className="nav-section">
+                <span className="nav-section-label">Education</span>
+                {education.map((milestone) => (
+                  <button
+                    key={milestone.id}
+                    className={`nav-item sub-item ${activeSection === milestone.id ? 'active' : ''}`}
+                    onClick={() => scrollToSection(milestone.id)}
+                  >
+                    🎓 {milestone.title}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {work.length > 0 && (
+              <div className="nav-section">
+                <span className="nav-section-label">Professional Journey</span>
+                {work.map((milestone) => (
+                  <button
+                    key={milestone.id}
+                    className={`nav-item sub-item ${activeSection === milestone.id ? 'active' : ''}`}
+                    onClick={() => scrollToSection(milestone.id)}
+                  >
+                    💼 {milestone.title}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {current.length > 0 && current.map((milestone) => (
+              <button
+                key={milestone.id}
+                className={`nav-item ${activeSection === milestone.id ? 'active' : ''}`}
+                onClick={() => scrollToSection(milestone.id)}
+              >
+                ✨ {milestone.title}
+              </button>
+            ))}
           </nav>
         </aside>
 
         {/* Main Content */}
         <main className="mystory-content">
-          {/* Introduction */}
-          <section id="intro" className="story-chapter">
-            <h1 className="chapter-title">{storyData.intro.title}</h1>
-            <div className="chapter-content">
-              <p className="chapter-text">{storyData.intro.content}</p>
-              {storyData.intro.image && (
-                <div className="chapter-image">
-                  <img src={storyData.intro.image} alt="Introduction" />
-                </div>
-              )}
-            </div>
+          {/* Hero Section */}
+          <section id="hero" className="story-hero">
+            <h1 className="hero-title">{storyData.hero.title}</h1>
+            <p className="hero-subtitle">{storyData.hero.subtitle}</p>
+            <blockquote className="hero-quote">
+              "{storyData.hero.quote}"
+            </blockquote>
           </section>
 
-          {/* Professional Journey */}
-          <section className="story-section-group">
-            <h2 className="section-group-title">Professional Journey</h2>
-            {storyData.experiences.map((exp) => (
-              <section key={exp.id} id={exp.id} className="story-chapter">
-                <div className="chapter-header">
-                  <h3 className="chapter-title">{exp.title}</h3>
-                  <span className="chapter-period">{exp.period}</span>
+          {/* Timeline */}
+          <section className="story-timeline">
+            {storyData.milestones.map((milestone) => (
+              <div key={milestone.id} id={milestone.id} className="timeline-item">
+                <div className="timeline-marker">
+                  <span className="timeline-year">{milestone.year}</span>
                 </div>
-                <div className="chapter-content">
-                  {exp.image && (
-                    <div className="chapter-image">
-                      <img src={exp.image} alt={exp.title} />
-                    </div>
-                  )}
-                  {!exp.image && (
-                    <div className="chapter-image-placeholder">
+                <div className="timeline-content">
+                  <div className={milestone.image ? "milestone-image" : "milestone-image-placeholder"}>
+                    {milestone.image ? (
+                      <img src={milestone.image} alt={milestone.title} />
+                    ) : (
                       <span className="placeholder-icon">📷</span>
-                      <span className="placeholder-text">Photo Coming Soon</span>
-                    </div>
-                  )}
-                  <p className="chapter-story">{exp.story}</p>
-                  <div className="chapter-highlights">
-                    <h4>Key Highlights:</h4>
-                    <ul>
-                      {exp.highlights.map((highlight, index) => (
-                        <li key={index}>{highlight}</li>
-                      ))}
-                    </ul>
+                    )}
+                  </div>
+                  <div className="milestone-text">
+                    <h3 className="milestone-title">{milestone.title}</h3>
+                    <p className="milestone-emotion">{milestone.emotion}</p>
+                    <p className="milestone-story">{milestone.story}</p>
                   </div>
                 </div>
-              </section>
+              </div>
             ))}
           </section>
 
-          {/* Academic Background */}
-          <section className="story-section-group">
-            <h2 className="section-group-title">Academic Background</h2>
-            {storyData.education.map((edu) => (
-              <section key={edu.id} id={edu.id} className="story-chapter">
-                <div className="chapter-header">
-                  <h3 className="chapter-title">{edu.title}</h3>
-                  <span className="chapter-period">{edu.period}</span>
-                </div>
-                <div className="chapter-subtitle">{edu.institution}</div>
-                <div className="chapter-content">
-                  {edu.image && (
-                    <div className="chapter-image">
-                      <img src={edu.image} alt={edu.title} />
-                    </div>
-                  )}
-                  {!edu.image && (
-                    <div className="chapter-image-placeholder">
-                      <span className="placeholder-icon">📷</span>
-                      <span className="placeholder-text">Photo Coming Soon</span>
-                    </div>
-                  )}
-                  <p className="chapter-story">{edu.story}</p>
-                  <div className="chapter-achievements">
-                    <strong>Achievements:</strong> {edu.achievements}
-                  </div>
-                </div>
-              </section>
-            ))}
+          {/* Philosophy Section */}
+          <section className="story-philosophy">
+            <h2 className="philosophy-title">{storyData.philosophy.title}</h2>
+            <p className="philosophy-content">{storyData.philosophy.content}</p>
           </section>
         </main>
       </div>

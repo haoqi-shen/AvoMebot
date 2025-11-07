@@ -11,18 +11,19 @@
 }
 
 .education-card {
-  background-color: #242424;
-  border: 1px solid #383838;
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
   border-radius: 12px;
   padding: 2rem;
   display: flex;
   gap: 2rem;
   transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(86, 130, 3, 0.1);
 }
 
 .education-card:hover {
-  border-color: #646cff;
-  box-shadow: 0 8px 24px rgba(100, 108, 255, 0.3);
+  border-color: var(--avocado-green);
+  box-shadow: 0 8px 24px rgba(86, 130, 3, 0.2);
   transform: translateY(-4px);
 }
 
@@ -39,30 +40,30 @@
 
 .education-school {
   font-size: 1.5rem;
-  color: #646cff;
+  color: var(--avocado-green);
   margin-bottom: 0.5rem;
 }
 
 .education-degree {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .education-period {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   font-size: 0.95rem;
   margin-bottom: 1rem;
 }
 
 .education-description {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
 
 .education-gpa {
-  color: #646cff;
+  color: var(--avocado-green);
   font-weight: 600;
   font-size: 0.95rem;
 }

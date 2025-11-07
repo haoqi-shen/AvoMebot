@@ -9,10 +9,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+/* Subtle tech glow effect with yellow accent */
+.intro-page::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(244, 224, 77, 0.12) 0%, rgba(139, 195, 74, 0.08) 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.1);
+  }
 }
 
 .intro-content {
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .intro-hero {
@@ -23,10 +54,21 @@
 .intro-title {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  background: linear-gradient(135deg, var(--avocado-green) 0%, var(--avocado-green-light) 50%, var(--avocado-yellow) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 2px 8px rgba(86, 130, 3, 0.2));
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    filter: drop-shadow(0 2px 8px rgba(86, 130, 3, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 4px 16px rgba(86, 130, 3, 0.3));
+  }
 }
 
 .highlight {
@@ -35,7 +77,7 @@
 
 .intro-subtitle {
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
 }
 
 .intro-description {
@@ -44,7 +86,7 @@
   margin: 0 auto 3rem;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-primary);
 }
 
 .intro-description p {
@@ -59,33 +101,81 @@
 }
 
 .feature-card {
-  background-color: #242424;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 254, 240, 0.75) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 16px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid #383838;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(232, 242, 216, 0.6);
+  box-shadow: 0 4px 16px rgba(244, 224, 77, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glass morphism highlight effect with yellow */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(244, 224, 77, 0.15), rgba(139, 195, 74, 0.1), transparent);
+  transition: left 0.6s;
+}
+
+.feature-card:hover::before {
+  left: 100%;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(244, 224, 77, 0.12) 0%, rgba(139, 195, 74, 0.08) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
 }
 
 .feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(100, 108, 255, 0.3);
-  border-color: #646cff;
+  transform: translateY(-12px);
+  box-shadow: 0 12px 32px rgba(244, 224, 77, 0.18),
+              0 0 0 1px rgba(139, 195, 74, 0.25),
+              inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: rgba(86, 130, 3, 0.3);
+}
+
+.feature-card:hover::after {
+  opacity: 1;
 }
 
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(86, 130, 3, 0.2));
+  transition: filter 0.3s;
+}
+
+.feature-card:hover .feature-icon {
+  filter: drop-shadow(0 4px 8px rgba(86, 130, 3, 0.3));
 }
 
 .feature-card h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: #646cff;
+  color: var(--avocado-green);
+  text-shadow: 0 1px 2px rgba(86, 130, 3, 0.1);
 }
 
 .feature-card p {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 

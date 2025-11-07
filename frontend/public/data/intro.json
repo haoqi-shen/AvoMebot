@@ -16,21 +16,25 @@
   "features": [
     {
       "id": "feature-1",
-      "icon": "🚀",
+      "icon": "📚",
       "title": "Awesome Collection",
-      "description": "My 0-to-1 notes on algorithms and AI (neural networks) — plus the ultimate Amazon interview bible that guarantees a pass once you've read it."
+      "description": "My 0-to-1 notes on algorithms and AI (neural networks) — plus the ultimate Amazon interview bible that guarantees a pass once you've read it.",
+      "url": "/community"
     },
     {
       "id": "feature-2",
-      "icon": "💡",
+      "icon": "🧪",
       "title": "My Prototype Projects",
-      "description": "Early-stage product ideas, built with curiosity and collaboration in mind. Welcoming seed users and co-builders!"
+      "description": "Early-stage product ideas, built with curiosity and collaboration in mind. Welcoming seed users and co-builders!",
+      "url": "/products"
     },
     {
       "id": "feature-3",
-      "icon": "🤖",
+      "icon": "📅",
       "title": "Cyber Coffee Chat",
-      "description": "New to tech or exploring career shifts? I've been there — let's talk and find clarity together. Founders and recruiters are also welcome to connect."
+      "description": "New to tech or exploring career shifts? I've been there — let's talk and find clarity together. Founders and recruiters are also welcome to connect. Click to book a time!",
+      "url": "/chat",
+      "callToAction": true
     }
   ]
 }

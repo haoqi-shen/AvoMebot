@@ -100,6 +100,12 @@
   margin-top: 3rem;
 }
 
+.feature-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .feature-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 254, 240, 0.75) 100%);
   backdrop-filter: blur(10px);
@@ -173,11 +179,11 @@
 }
 
 .chat-entrance-button {
-  background: var(--avocado-green);
+  background: linear-gradient(135deg, var(--avocado-yellow) 0%, var(--avocado-green) 100%);
   border: none;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,16 +191,17 @@
   transition: all 0.3s;
   color: white;
   flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(244, 224, 77, 0.4), 0 2px 8px rgba(86, 130, 3, 0.3);
 }
 
 .chat-entrance-button:hover {
-  background: var(--avocado-green-dark);
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.3);
+  background: linear-gradient(135deg, var(--avocado-yellow-light) 0%, var(--avocado-green-light) 100%);
+  transform: scale(1.15);
+  box-shadow: 0 6px 24px rgba(244, 224, 77, 0.6), 0 4px 12px rgba(86, 130, 3, 0.4);
 }
 
 .chat-entrance-button:active {
-  transform: scale(0.95);
+  transform: scale(1.05);
 }
 
 /* Glass morphism highlight effect with yellow */
@@ -259,6 +266,43 @@
 .feature-card p {
   color: var(--text-secondary);
   line-height: 1.6;
+}
+
+.feature-card-cta {
+  border: 2px solid var(--avocado-yellow);
+  background: linear-gradient(135deg, rgba(244, 224, 77, 0.1) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(139, 195, 74, 0.08) 100%);
+  box-shadow: 0 6px 20px rgba(244, 224, 77, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.feature-card-cta:hover {
+  border-color: var(--avocado-green);
+  box-shadow: 0 12px 32px rgba(244, 224, 77, 0.25),
+              0 0 0 1px var(--avocado-green),
+              inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.feature-cta-badge {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--avocado-yellow) 0%, var(--avocado-green) 100%);
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.3);
+  transition: all 0.3s;
+}
+
+.feature-card-cta:hover .feature-cta-badge {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(86, 130, 3, 0.4);
+}
+
+.feature-cta-badge span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 @media (max-width: 768px) {

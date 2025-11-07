@@ -77,19 +77,31 @@ const Intro = () => {
         </div>
 
         <div className="intro-features">
-          {content.features.map((feature) => (
-            <div key={feature.id} className="feature-card">
-              <div className="feature-icon">{feature.icon}</div>
-              <h3>{feature.title}</h3>
-              {Array.isArray(feature.description) ? (
-                feature.description.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))
-              ) : (
-                <p>{feature.description}</p>
-              )}
-            </div>
-          ))}
+          {content.features.map((feature) => {
+            const FeatureWrapper = feature.url ? 'a' : 'div';
+            const wrapperProps = feature.url ? { href: feature.url, className: 'feature-card-link' } : {};
+            
+            return (
+              <FeatureWrapper key={feature.id} {...wrapperProps}>
+                <div className={`feature-card ${feature.callToAction ? 'feature-card-cta' : ''}`}>
+                  <div className="feature-icon">{feature.icon}</div>
+                  <h3>{feature.title}</h3>
+                  {Array.isArray(feature.description) ? (
+                    feature.description.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))
+                  ) : (
+                    <p>{feature.description}</p>
+                  )}
+                  {feature.callToAction && (
+                    <div className="feature-cta-badge">
+                      <span>📅 Book Now</span>
+                    </div>
+                  )}
+                </div>
+              </FeatureWrapper>
+            );
+          })}
         </div>
       </div>
     </div>

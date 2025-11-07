@@ -42,7 +42,6 @@ const MyStory = () => {
   }
 
   // Group milestones by category
-  const education = storyData.milestones.filter(m => m.category === 'education');
   const work = storyData.milestones.filter(m => m.category === 'work');
   const current = storyData.milestones.filter(m => m.category === 'current');
 
@@ -60,21 +59,6 @@ const MyStory = () => {
               📖 Introduction
             </button>
             
-            {education.length > 0 && (
-              <div className="nav-section">
-                <span className="nav-section-label">Education</span>
-                {education.map((milestone) => (
-                  <button
-                    key={milestone.id}
-                    className={`nav-item sub-item ${activeSection === milestone.id ? 'active' : ''}`}
-                    onClick={() => scrollToSection(milestone.id)}
-                  >
-                    🎓 {milestone.title}
-                  </button>
-                ))}
-              </div>
-            )}
-
             {work.length > 0 && (
               <div className="nav-section">
                 <span className="nav-section-label">Professional Journey</span>
@@ -130,7 +114,6 @@ const MyStory = () => {
                   </div>
                   <div className="milestone-text">
                     <h3 className="milestone-title">{milestone.title}</h3>
-                    <p className="milestone-emotion">{milestone.emotion}</p>
                     <p className="milestone-story">{milestone.story}</p>
                   </div>
                 </div>

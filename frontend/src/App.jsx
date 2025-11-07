@@ -16,12 +16,13 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Intro />} />
-            <Route path="/chat" element={<Chat />} />
+            <Route path="/Mebot" element={<Chat />} />
             <Route path="/products" element={<Products />} />
             <Route path="/projects" element={<Navigate to="/products" replace />} />
             <Route path="/mystory" element={<MyStory />} />
             <Route path="/community" element={<Community />} />
             {/* Redirect old routes to new ones */}
+            <Route path="/chat" element={<Navigate to="/Mebot" replace />} />
             <Route path="/experience" element={<Navigate to="/mystory" replace />} />
             <Route path="/education" element={<Navigate to="/mystory" replace />} />
             <Route path="/certifications" element={<Navigate to="/mystory" replace />} />

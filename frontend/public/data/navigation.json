@@ -5,7 +5,7 @@
   },
   "navItems": [
     { "path": "/", "label": "Intro" },
-    { "path": "/chat", "label": "Chat" },
+    { "path": "/Mebot", "label": "Mebot" },
     { "path": "/products", "label": "Products and Services" },
     { "path": "/mystory", "label": "My Story" },
     { "path": "/community", "label": "Community" }

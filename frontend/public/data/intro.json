@@ -16,21 +16,21 @@
   "features": [
     {
       "id": "feature-1",
-      "icon": "🚀",
-      "title": "Modern Tech Stack",
-      "description": "Full-stack application built with React and Python"
+      "icon": "🧭",
+      "title": "WebAgent Playground",
+      "description": "A behind-the-scenes look at how I design and build autonomous WebAgents — from framework logic to real-world reasoning demos. Explore architectures, experiments, and failures that shaped my approach."
     },
     {
       "id": "feature-2",
-      "icon": "💡",
-      "title": "Innovative Projects",
-      "description": "Showcasing various technical projects and creative works"
+      "icon": "🧱",
+      "title": "Amazon LP Practice Lab",
+      "description": "My personal workspace for mastering Amazon's Leadership Principles — an interactive record of examples, reflections, and structured preparation that shaped my interview philosophy."
     },
     {
       "id": "feature-3",
-      "icon": "🤖",
-      "title": "AI Assistant",
-      "description": "Intelligent chatbot ready to serve you"
+      "icon": "🌐",
+      "title": "Curiosity Feed",
+      "description": "A living stream of ideas, trends, and creative sparks — from cutting-edge AI experiments to design oddities worth discussing. It's where inspiration meets conversation."
     }
   ]
 }

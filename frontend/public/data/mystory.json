@@ -7,25 +7,48 @@
   "experiences": [
     {
       "id": "exp-1",
-      "title": "Software Engineer at Company Name",
-      "period": "2022 - Present",
-      "story": "This is where my journey truly took off. Working on cutting-edge web applications, I discovered my passion for building solutions that make a difference. Each day brings new challenges and opportunities to grow.",
+      "title": "Software Engineer – AWS AI Science Team",
+      "period": "2024",
+      "story": "My first experience building a WebAgent — learning how to design, train, and evaluate it within a large-scale system at Amazon AI. This was where the idea of scalable agent reasoning truly began to take shape.",
       "highlights": [
-        "Led development of high-performance web applications",
-        "Collaborated with cross-functional teams to deliver innovative solutions",
-        "Mentored junior developers and contributed to team growth"
+        "Agent Playground Productization",
+        "Agent Avail Flywheel",
+        "Benchmark-Grade Fidelity"
       ],
       "image": null
     },
     {
       "id": "exp-2",
-      "title": "Junior Developer at Example Company",
-      "period": "2020 - 2022",
-      "story": "My first step into the professional world. This is where I learned the fundamentals and developed my problem-solving skills. Every project was a learning opportunity.",
+      "title": "AI Product Engineer – PingAn AI Lab",
+      "period": "2023",
+      "story": "My first role in fintech, working with a computer vision team to develop a multimodal fraud detection system that combined AI infrastructure and business impact.",
       "highlights": [
-        "Built responsive user interfaces using modern frameworks",
-        "Participated in code reviews and improved code quality",
-        "Learned agile development methodologies"
+        "AI Fraud Platformization",
+        "Collaborated with CV and NLP scientists to build risk signal expansion"
+      ],
+      "image": null
+    },
+    {
+      "id": "exp-3",
+      "title": "Product Manager – Tencent Ads",
+      "period": "2021",
+      "story": "Worked on embedding-based collaborative models to improve ad targeting and multi-objective optimization across Tencent's advertising platform.",
+      "highlights": [
+        "Deployed embedding collaborative models for ad relevance optimization",
+        "Enhanced CTR-ROI balance through multi-objective modeling",
+        "Drove cross-team iteration between algorithm and UX groups"
+      ],
+      "image": null
+    },
+    {
+      "id": "exp-4",
+      "title": "Product Analytics Scientist – ByteDance",
+      "period": "2021",
+      "story": "Built the first commercial analytics dashboard for TikTok's monetization team, transforming fragmented data into real-time business insight.",
+      "highlights": [
+        "Developed end-to-end BI diagnostic dashboard for large-scale ad analytics",
+        "Streamlined data pipelines enabling real-time performance visualization",
+        "Enabled data-driven monetization decisions for Douyin Ads"
       ],
       "image": null
     }
@@ -33,20 +56,20 @@
   "education": [
     {
       "id": "edu-1",
-      "title": "Master's Degree in Computer Science",
-      "institution": "Example University",
-      "period": "2020 - 2022",
-      "story": "Diving deeper into the world of machine learning and artificial intelligence. This program challenged me to think critically and push the boundaries of what's possible.",
-      "achievements": "GPA: 3.9/4.0 - Research focus on Deep Learning",
+      "title": "Master of Science in Information Systems",
+      "institution": "Northeastern University",
+      "period": "2023 – 2025 · Oakland, CA",
+      "story": "Focused on building intelligent systems at the intersection of software engineering and AI. Courses include Machine Learning, Advanced LLM, Data Science, and Full-Stack Web Development.",
+      "achievements": "Graduate Teaching Assistant for Data Science & Career Management courses",
       "image": null
     },
     {
       "id": "edu-2",
-      "title": "Bachelor of Computer Science",
-      "institution": "University Name",
-      "period": "2016 - 2020",
-      "story": "Where it all began. I discovered my love for coding and technology. The foundation I built here continues to serve me well.",
-      "achievements": "GPA: 3.8/4.0 - Focused on Software Engineering and AI",
+      "title": "Master of Science in Education",
+      "institution": "The Johns Hopkins University",
+      "period": "2021 – 2022 · Baltimore, MD",
+      "story": "Explored human–computer interaction, cognitive psychology, and experimental design — a foundation that continues to influence how I think about AI and user experience.",
+      "achievements": "Research focus on cognitive modeling and interaction design",
       "image": null
     }
   ]

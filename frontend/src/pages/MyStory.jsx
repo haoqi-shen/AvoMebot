@@ -1,6 +1,71 @@
 import { useState, useEffect } from 'react';
 import './MyStory.css';
 
+const ImageGallery = ({ images, alt }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  if (!images || images.length === 0) {
+    return (
+      <div className="chapter-image-placeholder">
+        <span className="placeholder-icon">📷</span>
+        <span className="placeholder-text">Photo Coming Soon</span>
+      </div>
+    );
+  }
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div className="image-gallery">
+      <div className="gallery-container">
+        <img 
+          src={images[currentImageIndex]} 
+          alt={`${alt} - ${currentImageIndex + 1}`} 
+          className="gallery-image"
+        />
+        {images.length > 1 && (
+          <>
+            <button 
+              className="gallery-nav gallery-nav-left" 
+              onClick={goToPrevious}
+              aria-label="Previous image"
+            >
+              ‹
+            </button>
+            <button 
+              className="gallery-nav gallery-nav-right" 
+              onClick={goToNext}
+              aria-label="Next image"
+            >
+              ›
+            </button>
+            <div className="gallery-indicators">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
+                  onClick={() => setCurrentImageIndex(index)}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const MyStory = () => {
   const [activeSection, setActiveSection] = useState('intro');
   const [storyData, setStoryData] = useState(null);
@@ -66,17 +131,14 @@ const MyStory = () => {
 
         {/* Main Content */}
         <main className="mystory-content">
-          {/* Introduction */}
-          <section id="intro" className="story-chapter">
-            <h1 className="chapter-title">{storyData.intro.title}</h1>
-            <div className="chapter-content">
-              <p className="chapter-text">{storyData.intro.content}</p>
-              {storyData.intro.image && (
-                <div className="chapter-image">
-                  <img src={storyData.intro.image} alt="Introduction" />
-                </div>
-              )}
-            </div>
+          {/* Introduction - Highlighted Welcome Message */}
+          <section id="intro" className="welcome-section">
+            <div className="welcome-badge">Welcome!</div>
+            <h1 className="welcome-title">{storyData.intro.title}</h1>
+            <p className="welcome-message">{storyData.intro.content}</p>
+            {storyData.intro.images && storyData.intro.images.length > 0 && (
+              <ImageGallery images={storyData.intro.images} alt="Introduction" />
+            )}
           </section>
 
           {/* Professional Journey */}
@@ -89,17 +151,7 @@ const MyStory = () => {
                   <span className="chapter-period">{exp.period}</span>
                 </div>
                 <div className="chapter-content">
-                  {exp.image && (
-                    <div className="chapter-image">
-                      <img src={exp.image} alt={exp.title} />
-                    </div>
-                  )}
-                  {!exp.image && (
-                    <div className="chapter-image-placeholder">
-                      <span className="placeholder-icon">📷</span>
-                      <span className="placeholder-text">Photo Coming Soon</span>
-                    </div>
-                  )}
+                  <ImageGallery images={exp.images} alt={exp.title} />
                   <p className="chapter-story">{exp.story}</p>
                   <div className="chapter-highlights">
                     <h4>Key Highlights:</h4>
@@ -125,17 +177,7 @@ const MyStory = () => {
                 </div>
                 <div className="chapter-subtitle">{edu.institution}</div>
                 <div className="chapter-content">
-                  {edu.image && (
-                    <div className="chapter-image">
-                      <img src={edu.image} alt={edu.title} />
-                    </div>
-                  )}
-                  {!edu.image && (
-                    <div className="chapter-image-placeholder">
-                      <span className="placeholder-icon">📷</span>
-                      <span className="placeholder-text">Photo Coming Soon</span>
-                    </div>
-                  )}
+                  <ImageGallery images={edu.images} alt={edu.title} />
                   <p className="chapter-story">{edu.story}</p>
                   <div className="chapter-achievements">
                     <strong>Achievements:</strong> {edu.achievements}

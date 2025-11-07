@@ -27,7 +27,7 @@ const Products = () => {
 
   return (
     <div className="page-container products-page">
-      <h1 className="page-title">My Products</h1>
+      <h1 className="page-title">Products and Services</h1>
       <p className="page-subtitle">Showcasing some of my interesting products</p>
       
       <div className="products-grid">

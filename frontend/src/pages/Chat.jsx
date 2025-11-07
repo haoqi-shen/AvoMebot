@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './Chat.css';
 
 const Chat = () => {
+  const location = useLocation();
   const [messages, setMessages] = useState([
     {
       type: 'bot',
@@ -13,6 +15,7 @@ const Chat = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
+  const initialMessageHandled = useRef(false);
 
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
@@ -23,6 +26,14 @@ const Chat = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Handle initial message from intro page
+  useEffect(() => {
+    if (location.state?.initialMessage && !initialMessageHandled.current) {
+      initialMessageHandled.current = true;
+      setInputMessage(location.state.initialMessage);
+    }
+  }, [location.state]);
 
   const handleSendMessage = async (e) => {
     e.preventDefault();

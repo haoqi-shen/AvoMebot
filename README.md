@@ -7,7 +7,8 @@
 **All feature branches successfully merged!** The MVP is complete with:
 - ✅ Complete React frontend with avocado green theme
 - ✅ Python FastAPI backend with chat API
-- ✅ All pages: Intro, Products, Experience, Education, Certifications, Blog, Chat
+- ✅ All pages: Intro, Chat, Products and Services, My Story, Community
+- ✅ Interactive chatbox feature card on intro page
 - ✅ Footer component with call-to-action
 - ✅ Centered chat interface (ChatGPT-style)
 - ✅ Zero security vulnerabilities
@@ -18,7 +19,7 @@
 - 🎨 **现代化设计**: 使用React和Vite构建的响应式前端
 - 🐍 **强大后端**: 基于Python FastAPI的高性能后端API
 - 🤖 **AI聊天**: 集成MeBot聊天机器人，提供智能交互
-- 🧭 **页面导航**: 包含多个展示页面 - Intro, Projects, Experience, Education, Certifications, Blog
+- 🧭 **页面导航**: 包含多个展示页面 - Intro, Chat, Products and Services, My Story, Community
 - 📱 **响应式设计**: 完美适配移动端和桌面端
 
 ## 技术栈
@@ -43,14 +44,14 @@ Mebot/
 │   ├── src/
 │   │   ├── components/     # React组件
 │   │   │   ├── NavigationBar.jsx
+│   │   │   ├── Footer.jsx
 │   │   │   └── MeBot.jsx
 │   │   ├── pages/          # 页面组件
 │   │   │   ├── Intro.jsx
-│   │   │   ├── Projects.jsx
-│   │   │   ├── Experience.jsx
-│   │   │   ├── Education.jsx
-│   │   │   ├── Certifications.jsx
-│   │   │   └── Blog.jsx
+│   │   │   ├── Chat.jsx
+│   │   │   ├── Products.jsx
+│   │   │   ├── MyStory.jsx
+│   │   │   └── Community.jsx
 │   │   ├── App.jsx
 │   │   └── main.jsx
 │   └── package.json
@@ -138,12 +139,11 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 - 加载状态指示器
 
 ### 展示页面
-- **Intro**: 个人介绍和网站概览
-- **Projects**: 项目展示
-- **Experience**: 工作经验时间线
-- **Education**: 教育背景
-- **Certifications**: 专业认证
-- **Blog**: 博客文章列表
+- **Intro**: 个人介绍和网站概览，包含交互式聊天入口
+- **Chat**: 与AI助手MeBot实时对话
+- **Products and Services**: 项目和服务展示
+- **My Story**: 工作经验时间线和教育背景
+- **Community**: 社区文章和思想分享
 
 ## 配置
 

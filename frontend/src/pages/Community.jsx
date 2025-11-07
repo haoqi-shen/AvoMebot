@@ -1,6 +1,6 @@
-import './Blog.css';
+import './Community.css';
 
-const Blog = () => {
+const Community = () => {
   const blogPosts = [
     {
       id: 1,
@@ -27,7 +27,7 @@ const Blog = () => {
 
   return (
     <div className="page-container blog-page">
-      <h1 className="page-title">Blog</h1>
+      <h1 className="page-title">Community</h1>
       <p className="page-subtitle">My technical articles and thoughts</p>
       
       <div className="blog-list">
@@ -51,4 +51,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Community;

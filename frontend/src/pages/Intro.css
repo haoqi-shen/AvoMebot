@@ -115,6 +115,88 @@
   overflow: hidden;
 }
 
+/* Chat Entrance Section */
+.chat-entrance-section {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(139, 195, 74, 0.08) 0%, rgba(244, 224, 77, 0.05) 100%);
+  border-radius: 20px;
+  border: 2px solid rgba(139, 195, 74, 0.2);
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(86, 130, 3, 0.1);
+}
+
+.chat-entrance-title {
+  font-size: 2rem;
+  color: var(--avocado-green);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.chat-entrance-description {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.chat-entrance-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(86, 130, 3, 0.15);
+  border: 2px solid rgba(139, 195, 74, 0.3);
+  transition: all 0.3s;
+}
+
+.chat-entrance-form:focus-within {
+  border-color: var(--avocado-green);
+  box-shadow: 0 6px 24px rgba(86, 130, 3, 0.25);
+}
+
+.chat-entrance-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.chat-entrance-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.chat-entrance-button {
+  background: var(--avocado-green);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  flex-shrink: 0;
+}
+
+.chat-entrance-button:hover {
+  background: var(--avocado-green-dark);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.3);
+}
+
+.chat-entrance-button:active {
+  transform: scale(0.95);
+}
+
 /* Glass morphism highlight effect with yellow */
 .feature-card::before {
   content: '';
@@ -190,5 +272,32 @@
 
   .intro-features {
     grid-template-columns: 1fr;
+  }
+
+  .chat-entrance-section {
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .chat-entrance-title {
+    font-size: 1.5rem;
+  }
+
+  .chat-entrance-description {
+    font-size: 1rem;
+  }
+
+  .chat-entrance-form {
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 1rem;
+  }
+
+  .chat-entrance-input {
+    padding: 1rem;
+  }
+
+  .chat-entrance-button {
+    align-self: center;
   }
 }

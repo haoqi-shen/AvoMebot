@@ -1,12 +1,24 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Intro.css';
 
 const Intro = () => {
+  const navigate = useNavigate();
+  const [chatInput, setChatInput] = useState('');
+
+  const handleChatSubmit = (e) => {
+    e.preventDefault();
+    if (chatInput.trim()) {
+      navigate('/chat', { state: { initialMessage: chatInput.trim() } });
+    }
+  };
+
   return (
     <div className="page-container intro-page">
       <div className="intro-content">
         <div className="intro-hero">
           <h1 className="intro-title">
-            Hello, I'm <span className="highlight">MeBot</span>
+            Hello, I'm <span className="highlight">Haoqi</span>
           </h1>
           <p className="intro-subtitle">
             Welcome to My Personal Website
@@ -22,6 +34,27 @@ const Intro = () => {
             You can chat with my AI assistant MeBot through the Chat page in the navigation bar.
             It's trained to answer questions and converse just like me.
           </p>
+        </div>
+
+        <div className="chat-entrance-section">
+          <h2 className="chat-entrance-title">Chat with MeBot</h2>
+          <p className="chat-entrance-description">
+            Start a conversation with my AI assistant now
+          </p>
+          <form className="chat-entrance-form" onSubmit={handleChatSubmit}>
+            <input
+              type="text"
+              className="chat-entrance-input"
+              placeholder="Type your message and press Enter..."
+              value={chatInput}
+              onChange={(e) => setChatInput(e.target.value)}
+            />
+            <button type="submit" className="chat-entrance-button" aria-label="Send message">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </form>
         </div>
 
         <div className="intro-features">

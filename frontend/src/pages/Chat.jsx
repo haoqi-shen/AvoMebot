@@ -15,12 +15,15 @@ const Chat = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
+  const messagesContainerRef = useRef(null);
   const initialMessageHandled = useRef(false);
 
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+    }
   };
 
   useEffect(() => {
@@ -93,7 +96,7 @@ const Chat = () => {
           <p>Chat with my AI Assistant</p>
         </div>
 
-        <div className="chat-messages-area">
+        <div className="chat-messages-area" ref={messagesContainerRef}>
           {messages.map((message, index) => (
             <div key={index} className={`chat-message ${message.type}`}>
               <div className="chat-avatar">

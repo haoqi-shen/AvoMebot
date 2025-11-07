@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Intro.css';
 
 const Intro = () => {
   const navigate = useNavigate();
+  const [chatInput, setChatInput] = useState('');
 
-  const handleChatNavigate = () => {
-    navigate('/chat');
+  const handleChatSubmit = (e) => {
+    e.preventDefault();
+    if (chatInput.trim()) {
+      navigate('/chat');
+    }
   };
 
   return (
@@ -47,12 +52,27 @@ const Intro = () => {
             <h3>AI Assistant</h3>
             <p>Intelligent chatbot ready to serve you</p>
           </div>
-          <div className="feature-card chatbox-card" onClick={handleChatNavigate}>
-            <div className="feature-icon">💬</div>
-            <h3>Chat with MeBot</h3>
-            <p>Start a conversation with my AI assistant now</p>
-            <div className="chat-arrow">→</div>
-          </div>
+        </div>
+
+        <div className="chat-entrance-section">
+          <h2 className="chat-entrance-title">Chat with MeBot</h2>
+          <p className="chat-entrance-description">
+            Start a conversation with my AI assistant now
+          </p>
+          <form className="chat-entrance-form" onSubmit={handleChatSubmit}>
+            <input
+              type="text"
+              className="chat-entrance-input"
+              placeholder="Type your message and press Enter..."
+              value={chatInput}
+              onChange={(e) => setChatInput(e.target.value)}
+            />
+            <button type="submit" className="chat-entrance-button">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </div>

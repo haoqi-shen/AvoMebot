@@ -1,16 +1,16 @@
-.community-page {
+.lab-page {
   padding: 3rem 2rem;
   --sidebar-width: 380px;
 }
 
 /* Header Section */
-.community-header {
+.lab-header {
   max-width: 1400px;
   margin: 0 auto 3rem;
   text-align: center;
 }
 
-.community-description {
+.lab-description {
   color: var(--text-secondary);
   font-size: 1.1rem;
   line-height: 1.8;
@@ -89,7 +89,7 @@
 }
 
 /* Two-column layout */
-.community-layout {
+.lab-layout {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
@@ -224,7 +224,7 @@
   top: 2rem;
 }
 
-.community-spaces-compact {
+.lab-spaces-compact {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
@@ -299,7 +299,7 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .community-layout {
+  .lab-layout {
     grid-template-columns: 1fr;
   }
 
@@ -307,21 +307,21 @@
     position: static;
   }
 
-  .community-spaces-compact {
+  .lab-spaces-compact {
     margin-top: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .community-page {
+  .lab-page {
     padding: 2rem 1rem;
   }
 
-  .community-header {
+  .lab-header {
     margin-bottom: 2rem;
   }
 
-  .community-description {
+  .lab-description {
     font-size: 1rem;
   }
 

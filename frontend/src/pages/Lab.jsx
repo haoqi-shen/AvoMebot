@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
-import './Community.css';
+import './Lab.css';
 
-const Community = () => {
+const Lab = () => {
   const [content, setContent] = useState(null);
   const [articles, setArticles] = useState([]);
   const [activeFilter, setActiveFilter] = useState('all');
@@ -13,26 +13,26 @@ const Community = () => {
   };
 
   useEffect(() => {
-    // Load both community.json and articles.json
+    // Load both lab.json and articles.json
     Promise.all([
-      fetch('/data/community.json').then(res => res.json()),
+      fetch('/data/lab.json').then(res => res.json()),
       fetch('/data/articles.json').then(res => res.json())
     ])
-      .then(([communityData, articlesData]) => {
+      .then(([labData, articlesData]) => {
         // Calculate topic counts based on actual articles
-        const topicsWithCounts = communityData.topics.map(topic => {
+        const topicsWithCounts = labData.topics.map(topic => {
           const count = (articlesData.articles || []).filter(article => 
             normalizeTopicName(article.category) === topic.id
           ).length;
           return { ...topic, count };
         });
         
-        setContent({ ...communityData, topics: topicsWithCounts });
+        setContent({ ...labData, topics: topicsWithCounts });
         setArticles(articlesData.articles || []);
       })
       .catch(error => {
-        console.error('Error loading community content:', error);
-        setError('Failed to load community content. Please try again later.');
+        console.error('Error loading lab content:', error);
+        setError('Failed to load lab content. Please try again later.');
       });
   }, []);
 
@@ -44,7 +44,7 @@ const Community = () => {
 
   if (!content) {
     return (
-      <div className="page-container community-page">
+      <div className="page-container lab-page">
         {error ? error : 'Loading...'}
       </div>
     );
@@ -66,12 +66,12 @@ const Community = () => {
   const displayContent = getFilteredContent();
 
   return (
-    <div className="page-container community-page">
+    <div className="page-container lab-page">
       {/* Header Section */}
-      <div className="community-header">
+      <div className="lab-header">
         <h1 className="page-title">{content.pageTitle}</h1>
         <p className="page-subtitle">{content.pageSubtitle}</p>
-        <p className="community-description">{content.overview.description}</p>
+        <p className="lab-description">{content.overview.description}</p>
       </div>
 
       {/* Topics Filter Section - Moved to top */}
@@ -97,8 +97,8 @@ const Community = () => {
         </div>
       </section>
 
-      {/* Two-column layout: Content + Community Spaces */}
-      <div className="community-layout">
+      {/* Two-column layout: Content + Lab Spaces */}
+      <div className="lab-layout">
         {/* Main Content Column */}
         <section className="content-column">
           <h2 className="section-title">
@@ -145,15 +145,15 @@ const Community = () => {
           </div>
         </section>
 
-        {/* Community Spaces Sidebar */}
+        {/* Lab Spaces Sidebar */}
         <aside className="sidebar-column">
-          <section className="community-spaces-compact">
+          <section className="lab-spaces-compact">
             <h2 className="section-title">
-              <span className="section-icon">🏘️</span>
-              Community Spaces
+              <span className="section-icon">🧪</span>
+              Co-Lab
             </h2>
             <div className="spaces-list">
-              {(content.communitySpaces || []).map((space) => (
+              {(content.coLabSpaces || []).map((space) => (
                 <article key={space.id} className="space-card-compact">
                   <div className="space-icon">{space.icon}</div>
                   <div className="space-info">
@@ -174,4 +174,4 @@ const Community = () => {
   );
 };
 
-export default Community;
+export default Lab;

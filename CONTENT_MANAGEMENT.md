@@ -100,36 +100,67 @@ Lists products and services.
 ### 4. community.json
 **Location:** `frontend/public/data/community.json`
 
-Manages community sections and content areas.
+Manages community content with featured items, topics, and browsable content.
 
 **Structure:**
 ```json
 {
   "pageTitle": "Community",
-  "pageSubtitle": "Connect, share, and collaborate",
-  "sections": [
+  "pageSubtitle": "A living space for ideas and collaboration around MeBot",
+  "overview": {
+    "description": "Welcome description text"
+  },
+  "featured": {
+    "title": "Featured Content",
+    "items": [
+      {
+        "id": "feat-1",
+        "type": "conversation|post|project",
+        "title": "Content Title",
+        "excerpt": "Brief description",
+        "topic": "AI|Design|Product|Philosophy",
+        "author": "Author Name",
+        "date": "2024-01-15",
+        "image": null,
+        "likes": 42,
+        "comments": 12
+      }
+    ]
+  },
+  "topics": [
     {
-      "id": "section-id",
-      "title": "Section Title",
-      "icon": "✨",
-      "items": [
-        {
-          "id": "item-id",
-          "title": "Item Title",
-          "description": "Item description",
-          "count": 12
-        }
-      ]
+      "id": "topic-id",
+      "name": "Topic Name",
+      "icon": "🤖",
+      "description": "Topic description",
+      "count": 24
+    }
+  ],
+  "recentContent": [
+    {
+      "id": "post-1",
+      "type": "essay|note|lab|project|conversation",
+      "title": "Content Title",
+      "excerpt": "Brief description",
+      "topic": "AI|Design|Product|Philosophy",
+      "author": "Author Name",
+      "date": "2024-01-15",
+      "readTime": "8 min read",
+      "image": null,
+      "tags": ["Tag1", "Tag2"],
+      "likes": 34,
+      "comments": 7
     }
   ]
 }
 ```
 
-**Current Sections:**
-- **Highlights**: Featured Conversations, Hot Topics, MeBot Reactions
-- **Ideas & Posts**: Essays, Notes, Labs
-- **Collabs**: Open Projects, Brainstorming Threads, Contributor Wall
-- **Visitors**: Message Board, Conversations with MeBot, Analytics / Map
+**Features:**
+- **Overview Section**: Introduction to the community space
+- **Featured Content**: Highlighted posts, projects, and conversations
+- **Topic Filtering**: Browse content by AI, Design, Product, or Philosophy
+- **Content Cards**: Lightweight cards with metadata, tags, and engagement metrics
+- **Interactive Filtering**: Click topic buttons to filter content dynamically
 
 ### 5. footer.json
 **Location:** `frontend/public/data/footer.json`
@@ -239,34 +270,54 @@ Site-wide configuration settings.
 }
 ```
 
-### Add a community item:
+### Add a featured community item:
 1. Open `community.json`
-2. Add a new object to the `items` array within the desired section:
+2. Add a new object to the `featured.items` array:
 ```json
 {
-  "id": "new-item",
-  "title": "New Item Title",
-  "description": "Description of the item",
-  "count": 5
+  "id": "feat-4",
+  "type": "post",
+  "title": "New Featured Post",
+  "excerpt": "Brief description...",
+  "topic": "Design",
+  "author": "Author Name",
+  "date": "2024-01-20",
+  "image": null,
+  "likes": 15,
+  "comments": 3
 }
 ```
 
-### Add a new community section:
+### Add recent community content:
 1. Open `community.json`
-2. Add a new section object to the `sections` array:
+2. Add a new object to the `recentContent` array:
 ```json
 {
-  "id": "new-section",
-  "title": "New Section",
+  "id": "post-7",
+  "type": "essay",
+  "title": "New Content Title",
+  "excerpt": "Brief description...",
+  "topic": "Philosophy",
+  "author": "Author Name",
+  "date": "2024-01-20",
+  "readTime": "5 min read",
+  "image": null,
+  "tags": ["Tag1", "Tag2", "Tag3"],
+  "likes": 20,
+  "comments": 4
+}
+```
+
+### Add a new topic:
+1. Open `community.json`
+2. Add a new object to the `topics` array:
+```json
+{
+  "id": "newtopic",
+  "name": "New Topic",
   "icon": "🎯",
-  "items": [
-    {
-      "id": "item-1",
-      "title": "First Item",
-      "description": "Description",
-      "count": 10
-    }
-  ]
+  "description": "Topic description",
+  "count": 5
 }
 ```
 

@@ -1,106 +1,164 @@
 {
   "pageTitle": "Community",
-  "pageSubtitle": "Connect, share, and collaborate",
-  "sections": [
+  "pageSubtitle": "A living space for ideas and collaboration around MeBot",
+  "overview": {
+    "description": "Welcome to a space where thoughts meet technology, where conversations spark innovation, and where collaboration brings ideas to life. Join us in exploring AI, design, product thinking, and philosophy."
+  },
+  "featured": {
+    "title": "Featured Content",
+    "items": [
+      {
+        "id": "feat-1",
+        "type": "conversation",
+        "title": "The Future of AI-Human Collaboration",
+        "excerpt": "An in-depth discussion on how AI assistants are reshaping creative workflows and decision-making processes.",
+        "topic": "AI",
+        "author": "Haoqi",
+        "date": "2024-01-15",
+        "image": null,
+        "likes": 42,
+        "comments": 12
+      },
+      {
+        "id": "feat-2",
+        "type": "project",
+        "title": "Community Analytics Dashboard",
+        "excerpt": "Open project seeking contributors to build real-time community engagement analytics.",
+        "topic": "Product",
+        "author": "MeBot Team",
+        "date": "2024-01-12",
+        "image": null,
+        "likes": 28,
+        "comments": 8
+      },
+      {
+        "id": "feat-3",
+        "type": "post",
+        "title": "Design Principles for AI Interfaces",
+        "excerpt": "Exploring how to create intuitive and delightful experiences when humans interact with AI.",
+        "topic": "Design",
+        "author": "Haoqi",
+        "date": "2024-01-10",
+        "image": null,
+        "likes": 56,
+        "comments": 15
+      }
+    ]
+  },
+  "topics": [
     {
-      "id": "highlights",
-      "title": "Highlights",
-      "icon": "✨",
-      "items": [
-        {
-          "id": "featured-conversations",
-          "title": "Featured Conversations",
-          "description": "Explore noteworthy discussions and exchanges",
-          "count": 12
-        },
-        {
-          "id": "hot-topics",
-          "title": "Hot Topics",
-          "description": "Trending subjects in our community",
-          "count": 8
-        },
-        {
-          "id": "mebot-reactions",
-          "title": "MeBot Reactions",
-          "description": "AI-powered insights and responses",
-          "count": 25
-        }
-      ]
+      "id": "ai",
+      "name": "AI",
+      "icon": "🤖",
+      "description": "Artificial Intelligence, machine learning, and the future of technology",
+      "count": 24
     },
     {
-      "id": "ideas-posts",
-      "title": "Ideas & Posts",
-      "icon": "💡",
-      "items": [
-        {
-          "id": "essays",
-          "title": "Essays",
-          "description": "Long-form thoughts and technical articles",
-          "count": 5
-        },
-        {
-          "id": "notes",
-          "title": "Notes",
-          "description": "Quick insights and observations",
-          "count": 18
-        },
-        {
-          "id": "labs",
-          "title": "Labs",
-          "description": "Experimental projects and prototypes",
-          "count": 7
-        }
-      ]
+      "id": "design",
+      "name": "Design",
+      "icon": "🎨",
+      "description": "User experience, interface design, and creative thinking",
+      "count": 18
     },
     {
-      "id": "collabs",
-      "title": "Collabs",
-      "icon": "🤝",
-      "items": [
-        {
-          "id": "open-projects",
-          "title": "Open Projects",
-          "description": "Collaborative initiatives seeking contributors",
-          "count": 3
-        },
-        {
-          "id": "brainstorming-threads",
-          "title": "Brainstorming Threads",
-          "description": "Active ideation and discussion spaces",
-          "count": 9
-        },
-        {
-          "id": "contributor-wall",
-          "title": "Contributor Wall",
-          "description": "Recognizing community members",
-          "count": 42
-        }
-      ]
+      "id": "product",
+      "name": "Product",
+      "icon": "🚀",
+      "description": "Product development, strategy, and innovation",
+      "count": 15
     },
     {
-      "id": "visitors",
-      "title": "Visitors",
-      "icon": "👋",
-      "items": [
-        {
-          "id": "message-board",
-          "title": "Message Board",
-          "description": "Leave your thoughts and feedback",
-          "count": 31
-        },
-        {
-          "id": "conversations-mebot",
-          "title": "Conversations with MeBot",
-          "description": "Chat history and AI interactions",
-          "count": 156
-        },
-        {
-          "id": "analytics-map",
-          "title": "Analytics / Map",
-          "description": "Community statistics and visitor insights",
-          "count": null
-        }
-      ]
+      "id": "philosophy",
+      "name": "Philosophy",
+      "icon": "💭",
+      "description": "Deep thoughts, ethics, and the human experience",
+      "count": 12
+    }
+  ],
+  "recentContent": [
+    {
+      "id": "post-1",
+      "type": "essay",
+      "title": "Building Full-Stack Applications with React and Python",
+      "excerpt": "A comprehensive guide to modern web development using React and FastAPI...",
+      "topic": "Product",
+      "author": "Haoqi",
+      "date": "2024-01-15",
+      "readTime": "8 min read",
+      "image": null,
+      "tags": ["React", "Python", "FastAPI", "Tutorial"],
+      "likes": 34,
+      "comments": 7
+    },
+    {
+      "id": "post-2",
+      "type": "note",
+      "title": "Quick Thoughts on AI Ethics",
+      "excerpt": "Some reflections on responsible AI development and deployment in today's world...",
+      "topic": "Philosophy",
+      "author": "Haoqi",
+      "date": "2024-01-14",
+      "readTime": "3 min read",
+      "image": null,
+      "tags": ["AI", "Ethics", "Thoughts"],
+      "likes": 28,
+      "comments": 5
+    },
+    {
+      "id": "post-3",
+      "type": "lab",
+      "title": "Experimenting with Voice UI Patterns",
+      "excerpt": "Testing new interaction patterns for voice-based AI assistants...",
+      "topic": "Design",
+      "author": "Haoqi",
+      "date": "2024-01-13",
+      "readTime": "5 min read",
+      "image": null,
+      "tags": ["Voice UI", "Experiment", "Prototype"],
+      "likes": 19,
+      "comments": 3
+    },
+    {
+      "id": "post-4",
+      "type": "project",
+      "title": "Open Source MeBot SDK",
+      "excerpt": "Collaborate with us to build developer tools for MeBot integration...",
+      "topic": "Product",
+      "author": "MeBot Team",
+      "date": "2024-01-11",
+      "readTime": "6 min read",
+      "image": null,
+      "tags": ["Open Source", "SDK", "Developer Tools"],
+      "likes": 45,
+      "comments": 12
+    },
+    {
+      "id": "post-5",
+      "type": "conversation",
+      "title": "What Makes a Great AI Conversation?",
+      "excerpt": "Community discussion on the key elements of meaningful human-AI interactions...",
+      "topic": "AI",
+      "author": "Community",
+      "date": "2024-01-09",
+      "readTime": "4 min read",
+      "image": null,
+      "tags": ["Discussion", "AI", "UX"],
+      "likes": 52,
+      "comments": 18
+    },
+    {
+      "id": "post-6",
+      "type": "essay",
+      "title": "The Philosophy of Personal AI Assistants",
+      "excerpt": "Exploring the deeper implications of having AI companions in our daily lives...",
+      "topic": "Philosophy",
+      "author": "Haoqi",
+      "date": "2024-01-08",
+      "readTime": "10 min read",
+      "image": null,
+      "tags": ["Philosophy", "AI", "Future"],
+      "likes": 67,
+      "comments": 23
     }
   ]
 }

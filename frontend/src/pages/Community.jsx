@@ -87,6 +87,31 @@ const Community = () => {
         </div>
       </section>
 
+      {/* Community Spaces Section */}
+      {content.communitySpaces && (
+        <section className="community-spaces-section">
+          <h2 className="section-title">
+            <span className="section-icon">🏘️</span>
+            Community Spaces
+          </h2>
+          <div className="spaces-grid">
+            {content.communitySpaces.map((space) => (
+              <article key={space.id} className="space-card">
+                <div className="space-icon-large">{space.icon}</div>
+                <div className="space-content">
+                  <h3 className="space-title">{space.title}</h3>
+                  <p className="space-description">{space.description}</p>
+                  <div className="space-footer">
+                    <span className="space-category">{space.category}</span>
+                    <span className="space-count">{space.count} items</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Content Grid Section */}
       <section className="content-section">
         <h2 className="section-title">

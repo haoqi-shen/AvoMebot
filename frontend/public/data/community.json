@@ -75,6 +75,32 @@
       "count": 12
     }
   ],
+  "communitySpaces": [
+    {
+      "id": "brainstorming",
+      "title": "Brainstorming Threads",
+      "icon": "💭",
+      "description": "Active ideation and discussion spaces for collaborative thinking",
+      "count": 9,
+      "category": "collabs"
+    },
+    {
+      "id": "contributor-wall",
+      "title": "Contributor Wall",
+      "icon": "🏆",
+      "description": "Recognizing and celebrating our community members",
+      "count": 42,
+      "category": "collabs"
+    },
+    {
+      "id": "message-board",
+      "title": "Message Board",
+      "icon": "📌",
+      "description": "Leave your thoughts, feedback, and connect with others",
+      "count": 31,
+      "category": "visitors"
+    }
+  ],
   "recentContent": [
     {
       "id": "post-1",

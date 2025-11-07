@@ -100,24 +100,36 @@ Lists products and services.
 ### 4. community.json
 **Location:** `frontend/public/data/community.json`
 
-Manages blog posts and community content.
+Manages community sections and content areas.
 
 **Structure:**
 ```json
 {
   "pageTitle": "Community",
-  "pageSubtitle": "Subtitle text",
-  "blogPosts": [
+  "pageSubtitle": "Connect, share, and collaborate",
+  "sections": [
     {
-      "id": 1,
-      "title": "Post Title",
-      "date": "2024-01-15",
-      "excerpt": "Brief description...",
-      "readTime": "5 min read"
+      "id": "section-id",
+      "title": "Section Title",
+      "icon": "✨",
+      "items": [
+        {
+          "id": "item-id",
+          "title": "Item Title",
+          "description": "Item description",
+          "count": 12
+        }
+      ]
     }
   ]
 }
 ```
+
+**Current Sections:**
+- **Highlights**: Featured Conversations, Hot Topics, MeBot Reactions
+- **Ideas & Posts**: Essays, Notes, Labs
+- **Collabs**: Open Projects, Brainstorming Threads, Contributor Wall
+- **Visitors**: Message Board, Conversations with MeBot, Analytics / Map
 
 ### 5. footer.json
 **Location:** `frontend/public/data/footer.json`
@@ -227,16 +239,34 @@ Site-wide configuration settings.
 }
 ```
 
-### Add a new blog post:
+### Add a community item:
 1. Open `community.json`
-2. Add a new object to the `blogPosts` array:
+2. Add a new object to the `items` array within the desired section:
 ```json
 {
-  "id": 4,
-  "title": "New Post",
-  "date": "2024-01-20",
-  "excerpt": "Description...",
-  "readTime": "7 min read"
+  "id": "new-item",
+  "title": "New Item Title",
+  "description": "Description of the item",
+  "count": 5
+}
+```
+
+### Add a new community section:
+1. Open `community.json`
+2. Add a new section object to the `sections` array:
+```json
+{
+  "id": "new-section",
+  "title": "New Section",
+  "icon": "🎯",
+  "items": [
+    {
+      "id": "item-1",
+      "title": "First Item",
+      "description": "Description",
+      "count": 10
+    }
+  ]
 }
 ```
 

@@ -3,19 +3,38 @@ import './Community.css';
 
 const Community = () => {
   const [content, setContent] = useState(null);
+  const [articles, setArticles] = useState([]);
   const [activeFilter, setActiveFilter] = useState('all');
-
-  useEffect(() => {
-    fetch('/data/community.json')
-      .then(response => response.json())
-      .then(data => setContent(data))
-      .catch(error => console.error('Error loading community content:', error));
-  }, []);
+  const [error, setError] = useState(null);
 
   // Utility function to normalize topic names for comparison
   const normalizeTopicName = (topicName) => {
     return topicName.toLowerCase().replace(/\s+/g, '-');
   };
+
+  useEffect(() => {
+    // Load both community.json and articles.json
+    Promise.all([
+      fetch('/data/community.json').then(res => res.json()),
+      fetch('/data/articles.json').then(res => res.json())
+    ])
+      .then(([communityData, articlesData]) => {
+        // Calculate topic counts based on actual articles
+        const topicsWithCounts = communityData.topics.map(topic => {
+          const count = (articlesData.articles || []).filter(article => 
+            normalizeTopicName(article.category) === topic.id
+          ).length;
+          return { ...topic, count };
+        });
+        
+        setContent({ ...communityData, topics: topicsWithCounts });
+        setArticles(articlesData.articles || []);
+      })
+      .catch(error => {
+        console.error('Error loading community content:', error);
+        setError('Failed to load community content. Please try again later.');
+      });
+  }, []);
 
   // Memoize the active topic name to avoid recalculating on every render
   const activeTopicName = useMemo(() => {
@@ -24,7 +43,11 @@ const Community = () => {
   }, [content, activeFilter]);
 
   if (!content) {
-    return <div className="page-container community-page">Loading...</div>;
+    return (
+      <div className="page-container community-page">
+        {error ? error : 'Loading...'}
+      </div>
+    );
   }
 
   // Get content based on filter
@@ -33,9 +56,9 @@ const Community = () => {
       // Show featured content when no filter is applied
       return content.featured.items;
     } else {
-      // Filter recentContent by topic
-      return (content.recentContent || []).filter(item => 
-        normalizeTopicName(item.topic) === activeFilter
+      // Filter articles by category
+      return (articles || []).filter(article => 
+        normalizeTopicName(article.category) === activeFilter
       );
     }
   };
@@ -87,11 +110,19 @@ const Community = () => {
               <article key={item.id} className="content-card-compact">
                 <div className="card-content">
                   <div className="card-meta">
-                    <span className="card-topic">{item.topic}</span>
-                    <span className="card-type">{item.type}</span>
+                    <span className="card-topic">{item.topic || item.category}</span>
+                    {item.type && <span className="card-type">{item.type}</span>}
                     {item.readTime && <span className="card-read-time">{item.readTime}</span>}
                   </div>
-                  <h3 className="card-title">{item.title}</h3>
+                  <h3 className="card-title">
+                    {item.notionUrl ? (
+                      <a href={item.notionUrl} target="_blank" rel="noopener noreferrer">
+                        {item.title}
+                      </a>
+                    ) : (
+                      item.title
+                    )}
+                  </h3>
                   <p className="card-excerpt">{item.excerpt}</p>
                   {item.tags && (
                     <div className="card-tags">

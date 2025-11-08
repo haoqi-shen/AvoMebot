@@ -270,6 +270,7 @@
   color: var(--text-secondary);
   line-height: 1.6;
   flex: 1;
+  margin-bottom: 0;
 }
 
 .feature-cta-badge {
@@ -282,6 +283,7 @@
   display: inline-block;
   box-shadow: 0 4px 12px rgba(86, 130, 3, 0.3);
   transition: all 0.3s;
+  align-self: center;
 }
 
 .feature-card:hover .feature-cta-badge {

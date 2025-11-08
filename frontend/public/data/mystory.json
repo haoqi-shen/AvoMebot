@@ -6,67 +6,58 @@
   },
   "milestones": [
     {
-      "id": "northeastern",
-      "year": "2016",
-      "title": "Northeastern University",
-      "story": "Where it all began. I discovered my love for coding and technology. The foundation I built here continues to serve me well.",
-      "emotion": "Wonder & Discovery",
+      "id": "avomebot",
+      "year": "2025",
+      "title": "Avo.ai",
+      "story": "Focused on PMF and GTM for GenAI/LLM applications and recommendations",
       "image": null,
-      "category": "education"
+      "logo": "/avocado.svg",
+      "category": "current"
+    },
+    {
+      "id": "amazon",
+      "year": "2024",
+      "title": "Amazon (AI Science Team)",
+      "story": "Where I first connected with Web Agents; built a training sandbox and evaluation framework",
+      "image": null,
+      "logo": "/logos/amazon.svg",
+      "category": "work"
+    },
+    {
+      "id": "pingan",
+      "year": "2023",
+      "title": "PingAn AI Lab",
+      "story": "Led cross-functional delivery of a distributed multimodal anti-fraud system",
+      "image": null,
+      "logo": "/logos/pingan.svg",
+      "category": "work"
     },
     {
       "id": "johns-hopkins",
-      "year": "2020",
+      "year": "2022",
       "title": "Johns Hopkins University",
-      "story": "Diving deeper into the world of machine learning and artificial intelligence. This program challenged me to think critically and push the boundaries of what's possible.",
-      "emotion": "Challenge & Exploration",
+      "story": "Focused on HCI, cognitive psychology, and experimental research methods; built a searchable database for educators",
       "image": null,
-      "category": "education"
-    },
-    {
-      "id": "bytedance",
-      "year": "2020",
-      "title": "ByteDance",
-      "story": "My first step into the professional world. This is where I learned the fundamentals and developed my problem-solving skills. Every project was a learning opportunity.",
-      "emotion": "Growth & Learning",
-      "image": null,
+      "logo": "/logos/jhu.svg",
       "category": "work"
     },
     {
       "id": "tencent",
       "year": "2021",
-      "title": "Tencent",
-      "story": "Expanding my horizons and working on large-scale systems. Each challenge taught me new ways to approach complex problems.",
-      "emotion": "Expansion & Scale",
+      "title": "Tencent Ads",
+      "story": "Built a comprehensive foundation in computational advertising and monetization; deployed multi-objective optimization and embedding-based collaborative models to improve UX",
       "image": null,
+      "logo": "/logos/tencent.svg",
       "category": "work"
     },
     {
-      "id": "pingan",
-      "year": "2022",
-      "title": "Pingan AI Lab",
-      "story": "Exploring the cutting edge of artificial intelligence. This experience shaped my understanding of how technology can transform industries.",
-      "emotion": "Innovation & Discovery",
+      "id": "bytedance",
+      "year": "2020",
+      "title": "ByteDance",
+      "story": "Start of my tech journey; built a real-time diagnostic BI dashboard for Douyin monetization",
       "image": null,
+      "logo": "/logos/bytedance.svg",
       "category": "work"
-    },
-    {
-      "id": "amazon",
-      "year": "2023",
-      "title": "Amazon",
-      "story": "This is where my journey truly took off. Working on cutting-edge web applications, I discovered my passion for building solutions that make a difference. Each day brings new challenges and opportunities to grow.",
-      "emotion": "Passion & Purpose",
-      "image": null,
-      "category": "work"
-    },
-    {
-      "id": "avomebot",
-      "year": "Today",
-      "title": "AvoMeBot",
-      "story": "Today, I'm building AvoMeBot - a personal brand that reflects my journey and helps others discover their own path. It's not just about technology; it's about connection, growth, and making a difference.",
-      "emotion": "Vision & Creation",
-      "image": null,
-      "category": "current"
     }
   ],
   "philosophy": {

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Ping An shield/safe symbol -->
+  <path d="M50 15 L75 30 L75 55 Q75 75 50 85 Q25 75 25 55 L25 30 Z" fill="#E60012" stroke="#8B0000" stroke-width="2"/>
+  <path d="M50 25 L65 35 L65 52 Q65 65 50 72 Q35 65 35 52 L35 35 Z" fill="#FFFFFF"/>
+</svg>

@@ -1,12 +1,12 @@
 .mystory-page {
-  padding: 2rem;
+  padding: 1.5rem;
   max-width: 1400px;
 }
 
 .mystory-layout {
   display: grid;
   grid-template-columns: 280px 1fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -16,16 +16,16 @@
   top: 100px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 254, 240, 0.9) 100%);
   backdrop-filter: blur(10px);
-  padding: 2rem 1.5rem;
-  border-radius: 20px;
+  padding: 1.5rem;
+  border-radius: 16px;
   border: 2px solid rgba(139, 195, 74, 0.2);
   box-shadow: 0 8px 24px rgba(86, 130, 3, 0.1);
 }
 
 .sidebar-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--avocado-green);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
@@ -38,14 +38,24 @@
 .nav-item {
   background: transparent;
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 0.8rem;
   text-align: left;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: all 0.3s;
   color: var(--text-primary);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-item-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .nav-item:hover {
@@ -87,47 +97,47 @@
 /* Hero Section */
 .story-hero {
   text-align: center;
-  padding: 4rem 2rem 6rem;
+  padding: 2.5rem 2rem 3rem;
   background: linear-gradient(180deg, 
     rgba(139, 195, 74, 0.03) 0%, 
     rgba(255, 255, 255, 0) 100%);
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   position: relative;
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: var(--avocado-green);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
 .hero-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--text-secondary);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   font-weight: 400;
   font-style: italic;
 }
 
 .hero-quote {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--text-primary);
   font-style: italic;
   max-width: 700px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   border-left: 4px solid var(--avocado-green);
   background: rgba(244, 224, 77, 0.05);
   border-radius: 0 12px 12px 0;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 /* Timeline */
 .story-timeline {
   position: relative;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .story-timeline::before {
@@ -144,7 +154,7 @@
 
 .timeline-item {
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   padding-left: 140px;
 }
 
@@ -172,8 +182,8 @@
 
 .timeline-content {
   background: white;
-  border-radius: 16px;
-  padding: 2rem;
+  border-radius: 12px;
+  padding: 1.5rem;
   border: 2px solid rgba(139, 195, 74, 0.15);
   box-shadow: 0 4px 16px rgba(86, 130, 3, 0.08);
   transition: all 0.3s ease;
@@ -187,9 +197,9 @@
 
 .milestone-image {
   width: 100%;
-  height: 280px;
-  margin-bottom: 1.5rem;
-  border-radius: 12px;
+  height: 120px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
@@ -202,9 +212,9 @@
 
 .milestone-image-placeholder {
   width: 100%;
-  height: 280px;
-  margin-bottom: 1.5rem;
-  border-radius: 12px;
+  height: 120px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
   background: linear-gradient(135deg, 
     rgba(139, 195, 74, 0.05) 0%, 
     rgba(244, 224, 77, 0.05) 100%);
@@ -215,7 +225,7 @@
 }
 
 .placeholder-icon {
-  font-size: 3rem;
+  font-size: 2rem;
   opacity: 0.3;
 }
 
@@ -223,10 +233,24 @@
   padding: 0;
 }
 
-.milestone-title {
-  font-size: 1.5rem;
-  color: var(--avocado-green);
+.milestone-title-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin-bottom: 0.5rem;
+}
+
+.milestone-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.milestone-title {
+  font-size: 1.3rem;
+  color: var(--avocado-green);
+  margin: 0;
   font-weight: 600;
 }
 
@@ -239,8 +263,8 @@
 }
 
 .milestone-story {
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--text-primary);
   margin: 0;
 }
@@ -248,25 +272,25 @@
 /* Philosophy Section */
 .story-philosophy {
   text-align: center;
-  padding: 4rem 2rem;
-  margin-top: 4rem;
+  padding: 2.5rem 2rem;
+  margin-top: 2rem;
   background: linear-gradient(135deg, 
     rgba(139, 195, 74, 0.05) 0%, 
     rgba(244, 224, 77, 0.05) 100%);
-  border-radius: 20px;
+  border-radius: 16px;
   border: 2px solid rgba(139, 195, 74, 0.15);
 }
 
 .philosophy-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--avocado-green);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .philosophy-content {
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.6;
   color: var(--text-primary);
   max-width: 700px;
   margin: 0 auto;

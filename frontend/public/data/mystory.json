@@ -20,7 +20,7 @@
       "title": "Amazon (AI Science Team)",
       "story": "Where I first connected with Web Agents; built a training sandbox and evaluation framework",
       "image": null,
-      "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFqdm1TZ-RZKQ/company-logo_200_200/B4EZgOay6gHEAQ-/0/1752588562343/amazon_web_services_logo?e=1764201600&v=beta&t=sNcgAI91MZEQGq17euKMI3WQdx5mxllUZloKPNRuuJ4",
+      "logo": "/logos/amazon.svg",
       "category": "work"
     },
     {
@@ -29,7 +29,7 @@
       "title": "PingAn AI Lab",
       "story": "Led cross-functional delivery of a distributed multimodal anti-fraud system",
       "image": null,
-      "logo": "https://media.licdn.com/dms/image/v2/C510BAQGv9T31ruaZSg/company-logo_200_200/company-logo_200_200/0/1630615195164/ping_an_technology_logo?e=1764201600&v=beta&t=MPRmHUntRR6-tcdyQ76f_ckLu8alJBtkNNitKMlUec4",
+      "logo": "/logos/pingan.svg",
       "category": "work"
     },
     {
@@ -47,7 +47,7 @@
       "title": "Tencent Ads",
       "story": "Built a comprehensive foundation in computational advertising and monetization; deployed multi-objective optimization and embedding-based collaborative models to improve UX",
       "image": null,
-      "logo": "https://media.licdn.com/dms/image/v2/C560BAQGLiulTOZIebQ/company-logo_200_200/company-logo_200_200/0/1630648290063/tencentglobal_logo?e=1764201600&v=beta&t=SaECYm0tit_EgFoBdPOby9RsNp4PKc6LVgyiigAbdq0",
+      "logo": "/logos/tencent.svg",
       "category": "work"
     },
     {
@@ -56,7 +56,7 @@
       "title": "ByteDance",
       "story": "Start of my tech journey; built a real-time diagnostic BI dashboard for Douyin monetization",
       "image": null,
-      "logo": "https://media.licdn.com/dms/image/v2/C560BAQGA-1ynUGnhlA/company-logo_200_200/company-logo_200_200/0/1630658803864/bytedance_logo?e=1764201600&v=beta&t=kH-XYHcfp6f1WWncWUEv4rLAP-AZES5VKH0uwsJ8H-Y",
+      "logo": "/logos/bytedance.svg",
       "category": "work"
     }
   ],

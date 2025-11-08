@@ -38,60 +38,78 @@ const Intro = () => {
 
   return (
     <div className="page-container intro-page">
-      <div className="intro-content">
-        <div className="intro-hero">
-          <h1 className="intro-title">
-            {content.hero.title.replace('{name}', '')}
-            <span className="highlight">{content.hero.name}</span>
-          </h1>
-          <p className="intro-subtitle">
-            {content.hero.subtitle}
-          </p>
+      {/* Hero Section */}
+      <section className="intro-section intro-hero-section">
+        <div className="intro-content">
+          <div className="intro-hero">
+            <h1 className="intro-title">
+              {content.hero.title.replace('{name}', '')}
+              <span className="highlight">{content.hero.name}</span>
+            </h1>
+            <p className="intro-subtitle">
+              {content.hero.subtitle}
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="intro-description">
-          {content.description.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+      {/* Description Section */}
+      <section className="intro-section intro-description-section">
+        <div className="intro-section-content">
+          <div className="intro-description">
+            {content.description.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className="chat-entrance-section">
-          <h2 className="chat-entrance-title">{content.chatEntrance.title}</h2>
-          <p className="chat-entrance-description">
-            {content.chatEntrance.description}
-          </p>
-          <form className="chat-entrance-form" onSubmit={handleChatSubmit}>
-            <input
-              type="text"
-              className="chat-entrance-input"
-              placeholder={content.chatEntrance.placeholder}
-              value={chatInput}
-              onChange={(e) => setChatInput(e.target.value)}
-            />
-            <button type="submit" className="chat-entrance-button" aria-label="Send message">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </form>
+      {/* Chat Entrance Section */}
+      <section className="intro-section intro-chat-section">
+        <div className="intro-section-content">
+          <div className="chat-entrance-section">
+            <h2 className="chat-entrance-title">{content.chatEntrance.title}</h2>
+            <p className="chat-entrance-description">
+              {content.chatEntrance.description}
+            </p>
+            <form className="chat-entrance-form" onSubmit={handleChatSubmit}>
+              <input
+                type="text"
+                className="chat-entrance-input"
+                placeholder={content.chatEntrance.placeholder}
+                value={chatInput}
+                onChange={(e) => setChatInput(e.target.value)}
+              />
+              <button type="submit" className="chat-entrance-button" aria-label="Send message">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </form>
+          </div>
         </div>
+      </section>
 
-        <div className="intro-features">
-          {content.features.map((feature) => (
-            <div key={feature.id} className="feature-card">
-              <div className="feature-icon">{feature.icon}</div>
-              <h3>{feature.title}</h3>
-              {Array.isArray(feature.description) ? (
-                feature.description.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))
-              ) : (
-                <p>{feature.description}</p>
-              )}
-            </div>
-          ))}
+      {/* Features Section */}
+      <section className="intro-section intro-features-section">
+        <div className="intro-section-content">
+          <div className="intro-features">
+            {content.features.map((feature) => (
+              <div key={feature.id} className="feature-card">
+                <div className="feature-icon">{feature.icon}</div>
+                <h3>{feature.title}</h3>
+                {Array.isArray(feature.description) ? (
+                  feature.description.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))
+                ) : (
+                  <p>{feature.description}</p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

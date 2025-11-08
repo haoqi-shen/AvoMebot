@@ -1,21 +1,18 @@
 .page-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   min-height: calc(100vh - 80px);
 }
 
 .intro-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
 
 /* Subtle tech glow effect with yellow accent */
 .intro-page::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
@@ -44,22 +41,44 @@
   width: 100%;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Section 1: Hero Section - Full viewport height */
 .intro-hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin-bottom: 3rem;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.intro-hero::before {
+  content: '01';
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(139, 195, 74, 0.08);
+  line-height: 1;
+  z-index: -1;
 }
 
 .intro-title {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
   background: linear-gradient(135deg, var(--avocado-green) 0%, var(--avocado-green-light) 50%, var(--avocado-yellow) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   filter: drop-shadow(0 2px 8px rgba(86, 130, 3, 0.2));
   animation: titleGlow 3s ease-in-out infinite;
+  letter-spacing: -0.02em;
 }
 
 @keyframes titleGlow {
@@ -76,102 +95,176 @@
 }
 
 .intro-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: var(--text-secondary);
+  margin-bottom: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
 }
 
+/* Section 2: Description Section */
 .intro-description {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  font-size: 1.25rem;
+  line-height: 2;
   color: var(--text-primary);
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-description::before {
+  content: '02';
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(139, 195, 74, 0.08);
+  line-height: 1;
+  z-index: -1;
 }
 
 .intro-description p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
 }
 
+/* Section 4: Features Section - Presentation-style grid */
 .intro-features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  padding: 6rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.intro-features::before {
+  content: '04';
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(139, 195, 74, 0.08);
+  line-height: 1;
+  z-index: 0;
 }
 
 .feature-card-link {
   text-decoration: none;
   color: inherit;
   display: block;
+  height: 100%;
 }
 
 .feature-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 254, 240, 0.75) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 254, 240, 0.85) 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(232, 242, 216, 0.6);
-  box-shadow: 0 4px 16px rgba(86, 130, 3, 0.08),
+  border: 2px solid rgba(232, 242, 216, 0.6);
+  box-shadow: 0 6px 24px rgba(86, 130, 3, 0.1),
               inset 0 1px 0 rgba(255, 255, 255, 0.9);
   position: relative;
   overflow: hidden;
-  min-height: 320px;
+  min-height: 380px;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-/* Chat Entrance Section */
+/* Section 3: Chat Entrance Section - Prominent presentation style */
 .chat-entrance-section {
-  margin-top: 4rem;
-  padding: 3rem;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
   background: linear-gradient(135deg, rgba(139, 195, 74, 0.08) 0%, rgba(244, 224, 77, 0.05) 100%);
-  border-radius: 20px;
-  border: 2px solid rgba(139, 195, 74, 0.2);
+  border-radius: 0;
+  border: none;
+  border-top: 3px solid rgba(139, 195, 74, 0.2);
+  border-bottom: 3px solid rgba(139, 195, 74, 0.2);
   text-align: center;
-  box-shadow: 0 8px 24px rgba(86, 130, 3, 0.1);
+  box-shadow: inset 0 8px 24px rgba(86, 130, 3, 0.06);
+  position: relative;
+  margin: 0;
+}
+
+.chat-entrance-section::before {
+  content: '03';
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(139, 195, 74, 0.08);
+  line-height: 1;
+  z-index: 0;
 }
 
 .chat-entrance-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--avocado-green);
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.01em;
 }
 
 .chat-entrance-description {
   color: var(--text-secondary);
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
 }
 
 .chat-entrance-form {
-  max-width: 600px;
+  max-width: 700px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   gap: 1rem;
   background: white;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 50px;
-  box-shadow: 0 4px 16px rgba(86, 130, 3, 0.15);
+  box-shadow: 0 8px 32px rgba(86, 130, 3, 0.2);
   border: 2px solid rgba(139, 195, 74, 0.3);
   transition: all 0.3s;
+  position: relative;
+  z-index: 1;
 }
 
 .chat-entrance-form:focus-within {
   border-color: var(--avocado-green);
-  box-shadow: 0 6px 24px rgba(86, 130, 3, 0.25);
+  box-shadow: 0 12px 48px rgba(86, 130, 3, 0.3);
+  transform: translateY(-2px);
 }
 
 .chat-entrance-input {
   flex: 1;
   border: none;
   outline: none;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
+  padding: 1.25rem 2rem;
+  font-size: 1.1rem;
   background: transparent;
   color: var(--text-primary);
 }
@@ -185,8 +278,8 @@
   background: var(--avocado-green);
   border: none;
   border-radius: 50%;
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,13 +287,13 @@
   transition: all 0.3s;
   color: white;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.3);
+  box-shadow: 0 6px 16px rgba(86, 130, 3, 0.35);
 }
 
 .chat-entrance-button:hover {
   background: var(--avocado-green-dark);
   transform: scale(1.15);
-  box-shadow: 0 6px 20px rgba(86, 130, 3, 0.4);
+  box-shadow: 0 8px 24px rgba(86, 130, 3, 0.45);
 }
 
 .chat-entrance-button:active {
@@ -237,11 +330,11 @@
 }
 
 .feature-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 12px 32px rgba(86, 130, 3, 0.15),
-              0 0 0 1px rgba(139, 195, 74, 0.25),
+  transform: translateY(-16px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(86, 130, 3, 0.18),
+              0 0 0 2px rgba(139, 195, 74, 0.3),
               inset 0 1px 0 rgba(255, 255, 255, 1);
-  border-color: rgba(86, 130, 3, 0.3);
+  border-color: rgba(86, 130, 3, 0.4);
 }
 
 .feature-card:hover::after {
@@ -249,46 +342,52 @@
 }
 
 .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 2px 4px rgba(86, 130, 3, 0.2));
-  transition: filter 0.3s;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 8px rgba(86, 130, 3, 0.2));
+  transition: filter 0.3s, transform 0.3s;
 }
 
 .feature-card:hover .feature-icon {
-  filter: drop-shadow(0 4px 8px rgba(86, 130, 3, 0.3));
+  filter: drop-shadow(0 6px 12px rgba(86, 130, 3, 0.35));
+  transform: scale(1.1);
 }
 
 .feature-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--avocado-green);
   text-shadow: 0 1px 2px rgba(86, 130, 3, 0.1);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .feature-card p {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.8;
   flex: 1;
   margin-bottom: 0;
+  font-size: 1.05rem;
 }
 
 .feature-cta-badge {
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
   background: var(--avocado-green);
   color: white;
-  border-radius: 25px;
-  font-weight: 600;
+  border-radius: 30px;
+  font-weight: 700;
   display: inline-block;
-  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.3);
+  box-shadow: 0 6px 16px rgba(86, 130, 3, 0.35);
   transition: all 0.3s;
   align-self: center;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
 }
 
 .feature-card:hover .feature-cta-badge {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(86, 130, 3, 0.4);
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(86, 130, 3, 0.45);
   background: var(--avocado-green-dark);
 }
 
@@ -301,41 +400,73 @@
 
 @media (max-width: 768px) {
   .intro-title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
 
   .intro-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+  
+  .intro-hero {
+    min-height: 75vh;
+    padding: 3rem 1.5rem;
+  }
+  
+  .intro-hero::before,
+  .intro-description::before,
+  .chat-entrance-section::before,
+  .intro-features::before {
+    font-size: 4rem;
+    top: 1rem;
+  }
+  
+  .intro-description {
+    padding: 4rem 1.5rem;
+    font-size: 1.1rem;
+    min-height: auto;
   }
 
   .intro-features {
     grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+    gap: 2rem;
   }
 
   .chat-entrance-section {
-    padding: 2rem 1.5rem;
-    margin-top: 3rem;
+    padding: 4rem 1.5rem;
+    min-height: 60vh;
   }
 
   .chat-entrance-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .chat-entrance-description {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
   }
 
   .chat-entrance-form {
     flex-direction: column;
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 1rem;
   }
 
   .chat-entrance-input {
-    padding: 1rem;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
   }
 
   .chat-entrance-button {
     align-self: center;
+  }
+  
+  .feature-card {
+    min-height: 340px;
+    padding: 2.5rem 2rem;
+  }
+  
+  .feature-icon {
+    font-size: 3.5rem;
   }
 }

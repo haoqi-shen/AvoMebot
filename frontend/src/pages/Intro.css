@@ -1,41 +1,19 @@
 .page-container {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
   min-height: calc(100vh - 80px);
 }
 
 .intro-page {
   display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-/* Section styling */
-.intro-section {
-  position: relative;
-  width: 100%;
-}
-
-.intro-section-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Hero Section - Full viewport */
-.intro-hero-section {
-  min-height: calc(100vh - 80px);
-  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, #fafdf5 0%, #f8fced 50%, #fffef0 100%);
-  overflow: hidden;
 }
 
 /* Subtle tech glow effect with yellow accent */
-.intro-hero-section::before {
+.intro-page::before {
   content: '';
   position: absolute;
   top: 10%;
@@ -70,19 +48,18 @@
 
 .intro-hero {
   text-align: center;
-  padding: 4rem 2rem;
+  margin-bottom: 3rem;
 }
 
 .intro-title {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
   background: linear-gradient(135deg, var(--avocado-green) 0%, var(--avocado-green-light) 50%, var(--avocado-yellow) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   filter: drop-shadow(0 2px 8px rgba(86, 130, 3, 0.2));
   animation: titleGlow 3s ease-in-out infinite;
-  line-height: 1.2;
 }
 
 @keyframes titleGlow {
@@ -99,77 +76,21 @@
 }
 
 .intro-subtitle {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: var(--text-secondary);
-  font-weight: 400;
-}
-
-/* Description Section */
-.intro-description-section {
-  padding: 6rem 2rem;
-  background: linear-gradient(180deg, #ffffff 0%, #fafdf5 100%);
-  position: relative;
-}
-
-.intro-description-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(139, 195, 74, 0.2), transparent);
 }
 
 .intro-description {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.25rem;
-  line-height: 2;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
   color: var(--text-primary);
 }
 
 .intro-description p {
-  margin-bottom: 1.5rem;
-}
-
-.intro-description p:last-child {
-  margin-bottom: 0;
-}
-
-/* Chat Entrance Section */
-.intro-chat-section {
-  padding: 8rem 2rem;
-  background: linear-gradient(135deg, rgba(139, 195, 74, 0.05) 0%, rgba(244, 224, 77, 0.03) 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.intro-chat-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(244, 224, 77, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-}
-
-.intro-chat-section::after {
-  content: '';
-  position: absolute;
-  bottom: -50%;
-  left: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(139, 195, 74, 0.06) 0%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
+  margin-bottom: 1rem;
 }
 
 .intro-features {
@@ -179,41 +100,22 @@
   margin-top: 3rem;
 }
 
-/* Features Section */
-.intro-features-section {
-  padding: 8rem 2rem;
-  background: linear-gradient(180deg, #fafdf5 0%, #ffffff 100%);
-  position: relative;
-}
-
-.intro-features-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(139, 195, 74, 0.2), transparent);
-}
-
-.intro-features {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+.feature-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .feature-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 254, 240, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 254, 240, 0.75) 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 2.5rem;
-  border-radius: 20px;
+  padding: 2rem;
+  border-radius: 16px;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(232, 242, 216, 0.6);
-  box-shadow: 0 4px 20px rgba(244, 224, 77, 0.08),
+  box-shadow: 0 4px 16px rgba(86, 130, 3, 0.08),
               inset 0 1px 0 rgba(255, 255, 255, 0.9);
   position: relative;
   overflow: hidden;
@@ -224,60 +126,52 @@
 
 /* Chat Entrance Section */
 .chat-entrance-section {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0;
-  background: transparent;
-  border-radius: 0;
-  border: none;
+  margin-top: 4rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(139, 195, 74, 0.08) 0%, rgba(244, 224, 77, 0.05) 100%);
+  border-radius: 20px;
+  border: 2px solid rgba(139, 195, 74, 0.2);
   text-align: center;
-  box-shadow: none;
-  position: relative;
-  z-index: 1;
+  box-shadow: 0 8px 24px rgba(86, 130, 3, 0.1);
 }
 
 .chat-entrance-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--avocado-green);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
 .chat-entrance-description {
   color: var(--text-secondary);
-  font-size: 1.15rem;
-  margin-bottom: 2.5rem;
-  line-height: 1.8;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 .chat-entrance-form {
-  max-width: 650px;
+  max-width: 600px;
   margin: 0 auto;
   display: flex;
   gap: 1rem;
   background: white;
-  padding: 0.75rem;
+  padding: 0.5rem;
   border-radius: 50px;
-  box-shadow: 0 8px 32px rgba(86, 130, 3, 0.12), 0 0 0 1px rgba(139, 195, 74, 0.15);
-  border: 2px solid rgba(139, 195, 74, 0.2);
+  box-shadow: 0 4px 16px rgba(86, 130, 3, 0.15);
+  border: 2px solid rgba(139, 195, 74, 0.3);
   transition: all 0.3s;
 }
 
 .chat-entrance-form:focus-within {
   border-color: var(--avocado-green);
-  box-shadow: 0 12px 48px rgba(86, 130, 3, 0.2), 0 0 0 1px var(--avocado-green);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(86, 130, 3, 0.25);
 }
 
 .chat-entrance-input {
   flex: 1;
   border: none;
   outline: none;
-  padding: 1.25rem 1.75rem;
-  font-size: 1.05rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
   background: transparent;
   color: var(--text-primary);
 }
@@ -288,11 +182,11 @@
 }
 
 .chat-entrance-button {
-  background: linear-gradient(135deg, var(--avocado-green) 0%, var(--avocado-green-dark) 100%);
+  background: var(--avocado-green);
   border: none;
   border-radius: 50%;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -300,12 +194,12 @@
   transition: all 0.3s;
   color: white;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.25);
+  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.3);
 }
 
 .chat-entrance-button:hover {
-  background: linear-gradient(135deg, var(--avocado-green-dark) 0%, var(--avocado-green) 100%);
-  transform: scale(1.1) rotate(90deg);
+  background: var(--avocado-green-dark);
+  transform: scale(1.15);
   box-shadow: 0 6px 20px rgba(86, 130, 3, 0.4);
 }
 
@@ -343,11 +237,11 @@
 }
 
 .feature-card:hover {
-  transform: translateY(-16px);
-  box-shadow: 0 16px 48px rgba(244, 224, 77, 0.2),
-              0 0 0 1px rgba(139, 195, 74, 0.3),
+  transform: translateY(-12px);
+  box-shadow: 0 12px 32px rgba(86, 130, 3, 0.15),
+              0 0 0 1px rgba(139, 195, 74, 0.25),
               inset 0 1px 0 rgba(255, 255, 255, 1);
-  border-color: rgba(86, 130, 3, 0.35);
+  border-color: rgba(86, 130, 3, 0.3);
 }
 
 .feature-card:hover::after {
@@ -355,62 +249,76 @@
 }
 
 .feature-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
   filter: drop-shadow(0 2px 4px rgba(86, 130, 3, 0.2));
-  transition: all 0.3s;
+  transition: filter 0.3s;
 }
 
 .feature-card:hover .feature-icon {
-  filter: drop-shadow(0 4px 12px rgba(86, 130, 3, 0.35));
-  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(86, 130, 3, 0.3));
 }
 
 .feature-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
   color: var(--avocado-green);
   text-shadow: 0 1px 2px rgba(86, 130, 3, 0.1);
-  font-weight: 600;
 }
 
 .feature-card p {
   color: var(--text-secondary);
-  line-height: 1.7;
-  font-size: 1.05rem;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.feature-cta-badge {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--avocado-green);
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.3);
+  transition: all 0.3s;
+  align-self: center;
+}
+
+.feature-card:hover .feature-cta-badge {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(86, 130, 3, 0.4);
+  background: var(--avocado-green-dark);
+}
+
+.feature-cta-badge span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 @media (max-width: 768px) {
-  .intro-hero {
-    padding: 3rem 1.5rem;
-  }
-
   .intro-title {
     font-size: 2.5rem;
   }
 
   .intro-subtitle {
-    font-size: 1.3rem;
-  }
-
-  .intro-description-section,
-  .intro-chat-section,
-  .intro-features-section {
-    padding: 4rem 1.5rem;
-  }
-
-  .intro-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.2rem;
   }
 
   .intro-features {
     grid-template-columns: 1fr;
-    gap: 2rem;
+  }
+
+  .chat-entrance-section {
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
   }
 
   .chat-entrance-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .chat-entrance-description {
@@ -419,9 +327,8 @@
 
   .chat-entrance-form {
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 1rem;
-    max-width: 100%;
   }
 
   .chat-entrance-input {
@@ -430,10 +337,5 @@
 
   .chat-entrance-button {
     align-self: center;
-  }
-
-  .intro-hero-section {
-    min-height: auto;
-    padding: 4rem 0;
   }
 }

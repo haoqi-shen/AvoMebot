@@ -1,36 +1,36 @@
 {
   "hero": {
-    "name": "Avocado Lab",
-    "title": "Hello, This is {name}",
-    "subtitle": "Welcome to my playground"
+    "name": "Haoqi",
+    "title": "Hello, I'm {name}",
+    "subtitle": "Welcome to My Personal Website"
   },
   "description": [
-    "This is home to my digital twin, prototype projects, and curated learning notes.",
-    "Join the community for open-ended brainstorming and cyber coffee chats that blur the line between work and play."
+    "I'm a technology enthusiast and developer focused on building modern web applications. This website is built with React and Python, showcasing my projects, experience, and expertise.",
+    "You can chat with my AI assistant MeBot through the Chat page in the navigation bar. It's trained to answer questions and converse just like me."
   ],
   "chatEntrance": {
     "title": "Chat with MeBot",
-    "description": "Come chat with my Mebot, you can ask questions or simply start a conversation. It's trained to reflect my personality and way of thinking, but remember: AI can hallucinate. What it says doesn't represent my personal views.",
+    "description": "Start a conversation with my AI assistant now",
     "placeholder": "Type your message and press Enter..."
   },
   "features": [
     {
       "id": "feature-1",
       "icon": "🚀",
-      "title": "Awesome Collection",
-      "description": "My 0-to-1 notes on algorithms and AI (neural networks) — plus the ultimate Amazon interview bible that guarantees a pass once you've read it."
+      "title": "Modern Tech Stack",
+      "description": "Full-stack application built with React and Python"
     },
     {
       "id": "feature-2",
       "icon": "💡",
-      "title": "My Prototype Projects",
-      "description": "Early-stage product ideas, built with curiosity and collaboration in mind. Welcoming seed users and co-builders!"
+      "title": "Innovative Projects",
+      "description": "Showcasing various technical projects and creative works"
     },
     {
       "id": "feature-3",
       "icon": "🤖",
-      "title": "Cyber Coffee Chat",
-      "description": "New to tech or exploring career shifts? I've been there — let's talk and find clarity together. Founders and recruiters are also welcome to connect."
+      "title": "AI Assistant",
+      "description": "Intelligent chatbot ready to serve you"
     }
   ]
 }

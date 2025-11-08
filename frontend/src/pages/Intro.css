@@ -1,52 +1,160 @@
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  min-height: calc(100vh - 80px);
+/* Presentation-style container with scroll snapping */
+.intro-page-presentation {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  position: relative;
 }
 
-.intro-page {
+/* Each section takes full viewport height */
+.presentation-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  overflow: hidden;
 }
 
-/* Subtle tech glow effect with yellow accent */
-.intro-page::before {
-  content: '';
+/* Parallax backgrounds for each section */
+.parallax-bg {
   position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(244, 224, 77, 0.12) 0%, rgba(139, 195, 74, 0.08) 50%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(60px);
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
   pointer-events: none;
   z-index: 0;
-  animation: pulse 8s ease-in-out infinite;
+  transition: transform 0.1s ease-out;
 }
 
-@keyframes pulse {
+/* Hero section background with yellow glow */
+.hero-bg {
+  background: radial-gradient(circle at 50% 50%, rgba(244, 224, 77, 0.15) 0%, rgba(139, 195, 74, 0.1) 40%, transparent 70%);
+  animation: heroGlow 8s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
   0%, 100% {
-    opacity: 0.5;
-    transform: translateX(-50%) scale(1);
+    opacity: 0.6;
+    transform: scale(1);
   }
   50% {
-    opacity: 0.8;
-    transform: translateX(-50%) scale(1.1);
+    opacity: 1;
+    transform: scale(1.05);
   }
 }
 
-.intro-content {
-  width: 100%;
-  position: relative;
-  z-index: 1;
+/* Description section background */
+.description-bg {
+  background: radial-gradient(ellipse at 30% 50%, rgba(139, 195, 74, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(244, 224, 77, 0.08) 0%, transparent 60%);
+  animation: descriptionFloat 12s ease-in-out infinite;
 }
 
-.intro-hero {
+@keyframes descriptionFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.02);
+  }
+}
+
+/* Chat section background */
+.chat-bg {
+  background: radial-gradient(circle at 50% 30%, rgba(244, 224, 77, 0.12) 0%, rgba(139, 195, 74, 0.08) 50%, transparent 70%);
+  animation: chatPulse 10s ease-in-out infinite;
+}
+
+@keyframes chatPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15px);
+  }
+}
+
+/* Features section background */
+.features-bg {
+  background: radial-gradient(circle at 80% 40%, rgba(139, 195, 74, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 20% 60%, rgba(244, 224, 77, 0.1) 0%, transparent 50%);
+  animation: featuresRotate 15s linear infinite;
+}
+
+@keyframes featuresRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Content container for each section */
+.section-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll indicator for hero section */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  width: 30px;
+  height: 30px;
+  border-left: 3px solid var(--avocado-green);
+  border-bottom: 3px solid var(--avocado-green);
+  transform: rotate(-45deg);
+  opacity: 0.7;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* Hero section */
+.hero-section {
+  background: linear-gradient(135deg, rgba(255, 254, 240, 0.4) 0%, rgba(250, 253, 245, 0.6) 100%);
+}
+
+.hero-section .intro-hero {
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -93,11 +201,18 @@
   margin-bottom: 1rem;
 }
 
+/* Features section */
+.features-section {
+  background: linear-gradient(135deg, rgba(250, 253, 245, 0.7) 0%, rgba(255, 254, 240, 0.5) 100%);
+}
+
 .intro-features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .feature-card-link {
@@ -122,17 +237,84 @@
   min-height: 320px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
 }
 
-/* Chat Entrance Section */
-.chat-entrance-section {
-  margin-top: 4rem;
-  padding: 3rem;
-  background: linear-gradient(135deg, rgba(139, 195, 74, 0.08) 0%, rgba(244, 224, 77, 0.05) 100%);
-  border-radius: 20px;
-  border: 2px solid rgba(139, 195, 74, 0.2);
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Description section */
+.description-section {
+  background: linear-gradient(135deg, rgba(250, 253, 245, 0.6) 0%, rgba(255, 254, 240, 0.4) 100%);
+}
+
+.description-section .intro-description {
   text-align: center;
-  box-shadow: 0 8px 24px rgba(86, 130, 3, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInScale 1s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.description-paragraph {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.description-paragraph:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.description-paragraph:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Chat section */
+.chat-section {
+  background: linear-gradient(135deg, rgba(255, 254, 240, 0.5) 0%, rgba(250, 253, 245, 0.7) 100%);
+}
+
+.chat-section .chat-entrance-section {
+  margin-top: 0;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(139, 195, 74, 0.1) 0%, rgba(244, 224, 77, 0.08) 100%);
+  border-radius: 20px;
+  border: 2px solid rgba(139, 195, 74, 0.25);
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(86, 130, 3, 0.15);
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInScale 0.8s ease-out;
 }
 
 .chat-entrance-title {
@@ -310,11 +492,12 @@
 
   .intro-features {
     grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
-  .chat-entrance-section {
+  .chat-section .chat-entrance-section {
     padding: 2rem 1.5rem;
-    margin-top: 3rem;
+    margin-top: 0;
   }
 
   .chat-entrance-title {
@@ -337,5 +520,17 @@
 
   .chat-entrance-button {
     align-self: center;
+  }
+
+  .description-paragraph {
+    font-size: 1.2rem;
+  }
+
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+
+  .section-content {
+    padding: 1rem;
   }
 }

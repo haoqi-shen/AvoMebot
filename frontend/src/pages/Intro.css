@@ -251,12 +251,13 @@
   transition: all 0.3s;
   position: relative;
   z-index: 1;
+  will-change: transform;
 }
 
 .chat-entrance-form:focus-within {
   border-color: var(--avocado-green);
   box-shadow: 0 12px 48px rgba(86, 130, 3, 0.3);
-  transform: translateY(-2px);
+  transform: translate3d(0, -2px, 0);
 }
 
 .chat-entrance-input {
@@ -546,11 +547,18 @@
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .intro-hero,
+  .intro-title,
+  .intro-subtitle,
+  .intro-description,
+  .intro-description p,
+  .chat-entrance-section,
+  .feature-card {
+    animation: none !important;
+  }
+  
+  .feature-card,
+  .chat-entrance-form {
+    transition-duration: 0.1s !important;
   }
 }

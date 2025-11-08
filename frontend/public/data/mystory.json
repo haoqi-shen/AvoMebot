@@ -11,6 +11,7 @@
       "title": "Avo.ai",
       "story": "Focused on PMF and GTM for GenAI/LLM applications and recommendations",
       "image": null,
+      "logo": "/avocado.svg",
       "category": "current"
     },
     {
@@ -19,6 +20,7 @@
       "title": "Amazon (AI Science Team)",
       "story": "Where I first connected with Web Agents; built a training sandbox and evaluation framework",
       "image": null,
+      "logo": "/logos/amazon.svg",
       "category": "work"
     },
     {
@@ -27,6 +29,7 @@
       "title": "PingAn AI Lab",
       "story": "Led cross-functional delivery of a distributed multimodal anti-fraud system",
       "image": null,
+      "logo": "/logos/pingan.svg",
       "category": "work"
     },
     {
@@ -35,6 +38,7 @@
       "title": "Johns Hopkins University",
       "story": "Focused on HCI, cognitive psychology, and experimental research methods; built a searchable database for educators",
       "image": null,
+      "logo": "/logos/jhu.svg",
       "category": "work"
     },
     {
@@ -43,6 +47,7 @@
       "title": "Tencent Ads",
       "story": "Built a comprehensive foundation in computational advertising and monetization; deployed multi-objective optimization and embedding-based collaborative models to improve UX",
       "image": null,
+      "logo": "/logos/tencent.svg",
       "category": "work"
     },
     {
@@ -51,6 +56,7 @@
       "title": "ByteDance",
       "story": "Start of my tech journey; built a real-time diagnostic BI dashboard for Douyin monetization",
       "image": null,
+      "logo": "/logos/bytedance.svg",
       "category": "work"
     }
   ],

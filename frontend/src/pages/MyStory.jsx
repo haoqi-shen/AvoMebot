@@ -58,7 +58,14 @@ const MyStory = () => {
                 className={`nav-item ${activeSection === milestone.id ? 'active' : ''}`}
                 onClick={() => scrollToSection(milestone.id)}
               >
-                ✨ {milestone.title}
+                {milestone.logo && (
+                  <img 
+                    src={milestone.logo} 
+                    alt={`${milestone.title} logo`}
+                    className="nav-item-logo"
+                  />
+                )}
+                {milestone.title}
               </button>
             ))}
 
@@ -71,7 +78,14 @@ const MyStory = () => {
                     className={`nav-item sub-item ${activeSection === milestone.id ? 'active' : ''}`}
                     onClick={() => scrollToSection(milestone.id)}
                   >
-                    💼 {milestone.title}
+                    {milestone.logo && (
+                      <img 
+                        src={milestone.logo} 
+                        alt={`${milestone.title} logo`}
+                        className="nav-item-logo"
+                      />
+                    )}
+                    {milestone.title}
                   </button>
                 ))}
               </div>
@@ -106,7 +120,16 @@ const MyStory = () => {
                     )}
                   </div>
                   <div className="milestone-text">
-                    <h3 className="milestone-title">{milestone.title}</h3>
+                    <div className="milestone-title-container">
+                      {milestone.logo && (
+                        <img 
+                          src={milestone.logo} 
+                          alt={`${milestone.title} logo`}
+                          className="milestone-logo"
+                        />
+                      )}
+                      <h3 className="milestone-title">{milestone.title}</h3>
+                    </div>
                     <p className="milestone-story">{milestone.story}</p>
                   </div>
                 </div>

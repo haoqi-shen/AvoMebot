@@ -5,9 +5,9 @@
   },
   "navItems": [
     { "path": "/", "label": "Intro" },
+    { "path": "/lab", "label": "Lab" },
     { "path": "/chat", "label": "Chat" },
     { "path": "/products", "label": "Products and Services" },
-    { "path": "/mystory", "label": "My Story" },
-    { "path": "/community", "label": "Community" }
+    { "path": "/mystory", "label": "My Story" }
   ]
 }

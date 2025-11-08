@@ -1,45 +1,48 @@
 {
-  "pageTitle": "Community",
-  "pageSubtitle": "A living space for ideas and collaboration around MeBot",
+  "pageTitle": "Avo Lab",
+  "pageSubtitle": "Where ideas turn into experiments — and experiments turn into insights.",
   "overview": {
-    "description": "Welcome to a space where thoughts meet technology, where conversations spark innovation, and where collaboration brings ideas to life. Join us in exploring AI, design, product thinking, and philosophy."
+    "description": "A place to explore my ongoing projects, prototypes, and thought experiments around AI, design, and human collaboration."
   },
   "featured": {
-    "title": "Featured Content",
+    "title": "Featured Experiments",
     "items": [
       {
         "id": "feat-1",
-        "type": "conversation",
+        "type": "experiment",
         "title": "The Future of AI-Human Collaboration",
-        "excerpt": "An in-depth discussion on how AI assistants are reshaping creative workflows and decision-making processes.",
+        "excerpt": "An in-depth exploration of how AI assistants are reshaping creative workflows and decision-making processes in the modern workplace.",
         "topic": "Philosophy",
         "author": "Haoqi",
         "date": "2024-01-15",
         "image": null,
+        "tags": ["AI", "Collaboration", "Future"],
         "likes": 42,
         "comments": 12
       },
       {
         "id": "feat-2",
-        "type": "project",
-        "title": "Community Analytics Dashboard",
-        "excerpt": "Open project seeking contributors to build real-time community engagement analytics.",
-        "topic": "My Project",
-        "author": "MeBot Team",
+        "type": "product",
+        "title": "Behavioural Interview Insight Generator",
+        "excerpt": "An intelligent tool that helps candidates prepare for behavioral interviews using the STAR method and personalized feedback.",
+        "topic": "Product",
+        "author": "Haoqi",
         "date": "2024-01-12",
         "image": null,
+        "tags": ["Interview", "Career", "AI Tool"],
         "likes": 28,
         "comments": 8
       },
       {
         "id": "feat-3",
-        "type": "post",
-        "title": "Design Principles for AI Interfaces",
-        "excerpt": "Exploring how to create intuitive and delightful experiences when humans interact with AI.",
-        "topic": "Learning Material",
+        "type": "product",
+        "title": "Amazon LP Reflection Notebook",
+        "excerpt": "A structured workspace for reflecting on experiences through the lens of Amazon's Leadership Principles.",
+        "topic": "Product",
         "author": "Haoqi",
         "date": "2024-01-10",
         "image": null,
+        "tags": ["Amazon", "Leadership", "Reflection"],
         "likes": 56,
         "comments": 15
       }
@@ -47,58 +50,58 @@
   },
   "topics": [
     {
-      "id": "behavioural-interview",
-      "name": "Behavioural Interview",
-      "icon": "🎯",
-      "description": "STAR method, common questions, and behavioral interview strategies",
-      "count": 0
-    },
-    {
-      "id": "amazon-leadership-principle",
-      "name": "Amazon Leadership Principle",
-      "icon": "🏆",
-      "description": "Understanding and applying Amazon's leadership principles",
-      "count": 0
-    },
-    {
-      "id": "awesome-material",
-      "name": "Awesome Material",
-      "icon": "📚",
-      "description": "Comprehensive guides, tutorials, and learning resources",
-      "count": 0
-    },
-    {
       "id": "philosophy",
       "name": "Philosophy",
       "icon": "💭",
-      "description": "Deep thoughts, career reflections, and personal growth",
+      "description": "Deep thoughts on AI, human collaboration, and the future of work",
+      "count": 0
+    },
+    {
+      "id": "product",
+      "name": "Product",
+      "icon": "🎨",
+      "description": "Product experiments, prototypes, and design explorations",
+      "count": 0
+    },
+    {
+      "id": "mebot",
+      "name": "MeBot",
+      "icon": "🤖",
+      "description": "MeBot dialogues, insights, and collaborative conversations",
+      "count": 0
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "icon": "🔬",
+      "description": "Research notes, studies, and technical deep dives",
       "count": 0
     }
   ],
-  "communitySpaces": [
+  "coLabSpaces": [
     {
-      "id": "brainstorming",
-      "title": "Brainstorming Threads",
-      "icon": "💭",
-      "description": "Active ideation and discussion spaces for collaborative thinking",
-      "count": 9,
-      "category": "Collabs"
+      "id": "open-threads",
+      "title": "Open Threads",
+      "icon": "💬",
+      "description": "Join ongoing discussions and share your perspective on various topics.",
+      "count": 12,
+      "category": "Discussion"
     },
     {
-      "id": "contributor-wall",
-      "title": "Contributor Wall",
-      "icon": "🏆",
-      "description": "Recognizing and celebrating our community members",
-      "count": 42,
-      "category": "Collabs"
+      "id": "collaboration-board",
+      "title": "Collaboration Board",
+      "icon": "🤝",
+      "description": "Propose collaborations, find partners, and work together on experiments.",
+      "count": 5,
+      "category": "Projects"
     },
     {
-      "id": "message-board",
-      "title": "Message Board",
-      "icon": "📌",
-      "description": "Leave your thoughts, feedback, and connect with others",
-      "count": 31,
-      "category": "Visitors"
+      "id": "idea-submissions",
+      "title": "Idea Submissions",
+      "icon": "💡",
+      "description": "Submit your brain waves, suggestions, and experimental ideas for the lab.",
+      "count": 24,
+      "category": "Ideas"
     }
   ],
   "recentContent": [
@@ -107,7 +110,7 @@
       "type": "essay",
       "title": "Building Full-Stack Applications with React and Python",
       "excerpt": "A comprehensive guide to modern web development using React and FastAPI...",
-      "topic": "Learning Material",
+      "topic": "Research",
       "author": "Haoqi",
       "date": "2024-01-15",
       "readTime": "8 min read",
@@ -132,10 +135,10 @@
     },
     {
       "id": "post-3",
-      "type": "lab",
+      "type": "experiment",
       "title": "Experimenting with Voice UI Patterns",
       "excerpt": "Testing new interaction patterns for voice-based AI assistants...",
-      "topic": "Good Templates",
+      "topic": "Product",
       "author": "Haoqi",
       "date": "2024-01-13",
       "readTime": "5 min read",
@@ -149,7 +152,7 @@
       "type": "project",
       "title": "Open Source MeBot SDK",
       "excerpt": "Collaborate with us to build developer tools for MeBot integration...",
-      "topic": "My Project",
+      "topic": "MeBot",
       "author": "MeBot Team",
       "date": "2024-01-11",
       "readTime": "6 min read",
@@ -162,9 +165,9 @@
       "id": "post-5",
       "type": "conversation",
       "title": "What Makes a Great AI Conversation?",
-      "excerpt": "Community discussion on the key elements of meaningful human-AI interactions...",
-      "topic": "Philosophy",
-      "author": "Community",
+      "excerpt": "MeBot dialogue on the key elements of meaningful human-AI interactions...",
+      "topic": "MeBot",
+      "author": "MeBot & Haoqi",
       "date": "2024-01-09",
       "readTime": "4 min read",
       "image": null,
@@ -191,7 +194,7 @@
       "type": "template",
       "title": "React Component Design Patterns",
       "excerpt": "Best practices and reusable patterns for building React components...",
-      "topic": "Good Templates",
+      "topic": "Research",
       "author": "Haoqi",
       "date": "2024-01-07",
       "readTime": "7 min read",
@@ -205,7 +208,7 @@
       "type": "tutorial",
       "title": "Getting Started with FastAPI",
       "excerpt": "A beginner-friendly guide to building APIs with Python and FastAPI...",
-      "topic": "Learning Material",
+      "topic": "Research",
       "author": "Haoqi",
       "date": "2024-01-06",
       "readTime": "12 min read",

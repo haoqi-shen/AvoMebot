@@ -16,21 +16,27 @@
   "features": [
     {
       "id": "feature-1",
-      "icon": "🚀",
-      "title": "Modern Tech Stack",
-      "description": "Full-stack application built with React and Python"
+      "icon": "📚",
+      "title": "Awesome Collection",
+      "description": "My 0-to-1 notes on algorithms and AI (neural networks) — plus the ultimate Amazon interview bible that guarantees a pass once you've read it.",
+      "url": "/community",
+      "callToAction": "Explore Now"
     },
     {
       "id": "feature-2",
-      "icon": "💡",
-      "title": "Innovative Projects",
-      "description": "Showcasing various technical projects and creative works"
+      "icon": "🧪",
+      "title": "My Prototype Projects",
+      "description": "Early-stage product ideas, built with curiosity and collaboration in mind. Welcoming seed users and co-builders!",
+      "url": "/products",
+      "callToAction": "View Projects"
     },
     {
       "id": "feature-3",
-      "icon": "🤖",
-      "title": "AI Assistant",
-      "description": "Intelligent chatbot ready to serve you"
+      "icon": "📅",
+      "title": "Cyber Coffee Chat",
+      "description": "New to tech or exploring career shifts? I've been there — let's talk and find clarity together. Founders and recruiters are also welcome to connect.",
+      "url": "/chat",
+      "callToAction": "Book Now"
     }
   ]
 }

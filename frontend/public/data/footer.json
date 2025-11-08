@@ -1,7 +1,7 @@
 {
   "about": {
-    "heading": "About AvoMeBot",
-    "text": "Your personal AI-powered assistant for exploring skills, experience, and professional journey."
+    "heading": "About Avo.ai",
+    "text": "A place for give and take, where you can find interesting niche AI products, participate in co-building, innovation and creativity."
   },
   "quickLinks": {
     "heading": "Quick Links",
@@ -21,9 +21,9 @@
     ]
   },
   "cta": {
-    "heading": "Get Started",
-    "text": "Ready to explore? Start a conversation with AvoMeBot today!",
-    "buttonText": "Chat Now",
+    "heading": "Share Your Feedback",
+    "text": "Have suggestions or product feedback? We'd love to hear from you!",
+    "buttonText": "Send Feedback",
     "buttonUrl": "/chat"
   },
   "copyright": "AvoMeBot. All rights reserved.",

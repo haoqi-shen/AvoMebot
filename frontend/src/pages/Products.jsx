@@ -31,7 +31,7 @@ const Products = () => {
               ))}
             </div>
             <a href={product.link} className="product-link">
-              View Product →
+              {product.cta || "View Product →"}
             </a>
           </div>
         ))}

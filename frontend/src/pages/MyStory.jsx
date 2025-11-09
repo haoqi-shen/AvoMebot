@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import PhotoCarousel from '../components/PhotoCarousel';
 import './MyStory.css';
 
 const MyStory = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [storyData, setStoryData] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     fetch('/data/mystory.json')
@@ -34,9 +36,23 @@ const MyStory = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
+
+  // Handle URL hash for deep linking
+  useEffect(() => {
+    if (storyData && location.hash) {
+      const sectionId = location.hash.substring(1); // Remove the # symbol
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Wait a bit for the DOM to render
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+  }, [storyData, location.hash]);
 
   if (!storyData) {
     return <div className="page-container mystory-page">Loading...</div>;

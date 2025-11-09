@@ -15,7 +15,7 @@
   "contact": {
     "heading": "Contact",
     "items": [
-      { "icon": "📧", "text": "contact@avomebot.com" },
+      { "icon": "📧", "text": "avocadoingit@hotmail.com" },
       { "icon": "📱", "text": "Connect with us" },
       { "icon": "🌐", "text": "Follow on social media" }
     ]

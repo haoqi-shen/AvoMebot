@@ -58,10 +58,10 @@ const MyStory = () => {
     return <div className="page-container mystory-page">Loading...</div>;
   }
 
-  // Group milestones by category
-  const work = storyData.milestones.filter(m => m.category === 'work');
-  const current = storyData.milestones.filter(m => m.category === 'current');
-  const education = storyData.milestones.filter(m => m.category === 'education');
+  // Sort milestones by year in descending order (most recent first)
+  const sortedMilestones = [...storyData.milestones].sort((a, b) => {
+    return parseInt(b.year) - parseInt(a.year);
+  });
 
   return (
     <div className="page-container mystory-page">
@@ -70,7 +70,7 @@ const MyStory = () => {
         <aside className="mystory-sidebar">
           <h3 className="sidebar-title">Navigate My Story</h3>
           <nav className="sidebar-nav">
-            {current.length > 0 && current.map((milestone) => (
+            {sortedMilestones.map((milestone) => (
               <button
                 key={milestone.id}
                 className={`nav-item ${activeSection === milestone.id ? 'active' : ''}`}
@@ -86,50 +86,6 @@ const MyStory = () => {
                 {milestone.title}
               </button>
             ))}
-
-            {work.length > 0 && (
-              <div className="nav-section">
-                <span className="nav-section-label">Professional Journey</span>
-                {work.map((milestone) => (
-                  <button
-                    key={milestone.id}
-                    className={`nav-item sub-item ${activeSection === milestone.id ? 'active' : ''}`}
-                    onClick={() => scrollToSection(milestone.id)}
-                  >
-                    {milestone.logo && (
-                      <img 
-                        src={milestone.logo} 
-                        alt={`${milestone.title} logo`}
-                        className="nav-item-logo"
-                      />
-                    )}
-                    {milestone.title}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {education.length > 0 && (
-              <div className="nav-section">
-                <span className="nav-section-label">Education</span>
-                {education.map((milestone) => (
-                  <button
-                    key={milestone.id}
-                    className={`nav-item sub-item ${activeSection === milestone.id ? 'active' : ''}`}
-                    onClick={() => scrollToSection(milestone.id)}
-                  >
-                    {milestone.logo && (
-                      <img 
-                        src={milestone.logo} 
-                        alt={`${milestone.title} logo`}
-                        className="nav-item-logo"
-                      />
-                    )}
-                    {milestone.title}
-                  </button>
-                ))}
-              </div>
-            )}
           </nav>
         </aside>
 
@@ -146,7 +102,7 @@ const MyStory = () => {
 
           {/* Timeline */}
           <section className="story-timeline">
-            {storyData.milestones.map((milestone) => (
+            {sortedMilestones.map((milestone) => (
               <div key={milestone.id} id={milestone.id} className="timeline-item">
                 <div className="timeline-marker">
                   <span className="timeline-year">{milestone.year}</span>

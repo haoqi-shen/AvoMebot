@@ -4,24 +4,27 @@
   "products": [
     {
       "id": 1,
-      "title": "AI Text Detection Engine",
-      "description": "Detect AI text instantly. Fast, explainable, trustworthy.",
-      "technologies": ["Explainable AI", "Stylometric Features", "1D-CNN", "Random Forest", "Text Intelligence"],
-      "link": "#"
+      "title": "🤖 LiteDetect",
+      "description": "Detect AI-generated text instantly with explainable intelligence.",
+      "technologies": ["Explainable AI", "Stylometric Features", "Text Detection", "Trust & Safety"],
+      "link": "#",
+      "cta": "Try Demo →"
     },
     {
       "id": 2,
-      "title": "Example Product 2",
-      "description": "A sample product description showcasing technical skills and innovative thinking",
-      "technologies": ["JavaScript", "Node.js", "MongoDB"],
-      "link": "#"
+      "title": "🎨 ArtFusion",
+      "description": "Reimagine your photos with AI-powered style transfer.",
+      "technologies": ["Neural Style Transfer", "Computer Vision", "Generative AI", "CNN"],
+      "link": "#",
+      "cta": "Create Art →"
     },
     {
       "id": 3,
-      "title": "Example Product 3",
-      "description": "Another product demonstrating professional expertise",
-      "technologies": ["Python", "Django", "PostgreSQL"],
-      "link": "#"
+      "title": "📈 LaunchMate",
+      "description": "Your AI partner for go-to-market strategy and growth execution.",
+      "technologies": ["Marketing AI", "Agentic Workflow", "Market Intelligence", "Automation"],
+      "link": "#",
+      "cta": "Coming Soon →"
     }
   ]
 }

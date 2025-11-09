@@ -22,6 +22,13 @@
       "description": "Another product demonstrating professional expertise",
       "technologies": ["Python", "Django", "PostgreSQL"],
       "link": "#"
+    },
+    {
+      "id": 4,
+      "title": "JAIR AI Text Detection",
+      "description": "CPU-native, interpretable, and drift-resistant AI text detection engine — perfect for large-scale online scenarios and local/edge deployment.\n\n🚀 Lightweight & Cost-Effective: Built on ~68 stylometric/readability features with 1D-CNN (~25 MB) and Random Forest (~10.6 MB). No expensive LLM inference required. Standard CPU processes <100 ms per sample.\n\n🎯 Accurate & Robust: Achieved ~97% accuracy (CNN) and ~95% (RF) on Kaggle AI-vs-Human subset, with ROC-AUC up to ~99.5%. Includes confusion matrix, F1 scores, and calibration curves for comprehensive auditing.\n\n📊 Interpretable & Monitorable: Features extracted via spaCy + TextDescriptives provide transparent metrics: readability scores, POS distributions, syntactic complexity, lexical diversity, etc. Supports feature importance analysis and drift alerts.\n\n🔄 Cross-Domain Extensible: Unified extract-normalize-inference pipeline makes it easy to incrementally update feature sets and threshold configurations. Adapts to different domains: academic essays, social media posts, code comments.\n\n🔒 Privacy & Compliance Friendly: Extracts only statistical and stylistic features. Deployable locally without data leaving your network, meeting enterprise compliance requirements.",
+      "technologies": ["Python", "spaCy", "TextDescriptives", "1D-CNN", "Random Forest", "CPU-optimized"],
+      "link": "#"
     }
   ]
 }

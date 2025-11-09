@@ -5,6 +5,7 @@ const Lab = () => {
   const [content, setContent] = useState(null);
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(null);
+  const [selectedTopic, setSelectedTopic] = useState(null); // null means show all
 
   // Utility function to normalize topic names for comparison
   const normalizeTopicName = (topicName) => {
@@ -43,9 +44,18 @@ const Lab = () => {
     );
   }
 
-  // Get research notes (all articles) - show first 3 for compact preview
-  const researchNotes = articles || [];
+  // Get research notes - filter by selected topic if any
+  const filteredArticles = selectedTopic
+    ? articles.filter(article => normalizeTopicName(article.category) === selectedTopic)
+    : articles;
+  
+  const researchNotes = filteredArticles || [];
   const previewResearchNotes = researchNotes.slice(0, 3);
+
+  // Handler for topic filter clicks
+  const handleTopicClick = (topicId) => {
+    setSelectedTopic(selectedTopic === topicId ? null : topicId);
+  };
 
   return (
     <div className="page-container lab-page">
@@ -114,7 +124,11 @@ const Lab = () => {
           {/* Topic Filters */}
           <div className="topic-filters">
             {content.topics.map((topic) => (
-              <div key={topic.id} className="topic-filter-item">
+              <div 
+                key={topic.id} 
+                className={`topic-filter-item ${selectedTopic === topic.id ? 'active' : ''}`}
+                onClick={() => handleTopicClick(topic.id)}
+              >
                 <span className="topic-icon">{topic.icon}</span>
                 <div className="topic-info">
                   <h4 className="topic-name">{topic.name}</h4>
@@ -124,6 +138,18 @@ const Lab = () => {
               </div>
             ))}
           </div>
+          
+          {/* Active Filter Display */}
+          {selectedTopic && (
+            <div className="active-filter">
+              <span className="filter-text">
+                Showing: <strong>{content.topics.find(t => t.id === selectedTopic)?.name}</strong>
+              </span>
+              <button className="clear-filter" onClick={() => setSelectedTopic(null)}>
+                Clear Filter ✕
+              </button>
+            </div>
+          )}
 
           {/* Articles List - Show preview of 5 */}
           <div className="research-list">

@@ -97,7 +97,78 @@ Lists products and services.
 }
 ```
 
-### 4. community.json
+### 4. lab.json
+**Location:** `frontend/public/data/lab.json`
+
+Manages lab content with featured experiments, research topics, and collaborative spaces.
+
+**Structure:**
+```json
+{
+  "pageTitle": "Avo Lab",
+  "pageSubtitle": "Where ideas turn into experiments — and experiments turn into insights.",
+  "overview": {
+    "description": "A place to explore my ongoing projects, prototypes, and thought experiments around AI, design, and human collaboration."
+  },
+  "featured": {
+    "title": "Featured Experiments",
+    "items": [
+      {
+        "id": "feat-1",
+        "type": "experiment|product|prototype",
+        "title": "Content Title",
+        "excerpt": "Brief description",
+        "topic": "Philosophy|Product|MeBot|Research",
+        "author": "Author Name",
+        "date": "2024-01-15",
+        "image": null,
+        "tags": ["Tag1", "Tag2"],
+        "likes": 42,
+        "comments": 12
+      }
+    ]
+  },
+  "topics": [
+    {
+      "id": "philosophy",
+      "name": "Philosophy",
+      "icon": "💭",
+      "description": "Deep thoughts on AI, human collaboration, and the future of work",
+      "count": 0
+    }
+  ],
+  "coLabSpaces": [
+    {
+      "id": "open-threads",
+      "title": "Open Threads",
+      "icon": "💬",
+      "description": "Join ongoing discussions and share your perspective on various topics.",
+      "count": 12,
+      "category": "Discussion"
+    }
+  ]
+}
+```
+
+**Features:**
+- **Featured Experiments**: Showcase your latest projects, prototypes, and thought experiments
+- **Research Notes**: Display articles from `articles.json` with interactive topic filtering
+- **Topic Filtering**: Click on topic filter items to filter research notes by category (Philosophy, Product, MeBot, Research)
+- **Co-Lab Spaces**: Collaborative areas for discussions, projects, and idea submissions
+- **Dynamic Counts**: Topic counts are automatically calculated based on articles in `articles.json`
+- **Interactive Filtering**: Click topic buttons to filter articles; click again to clear the filter
+- **External Links**: Article titles are clickable and link to their Notion pages via `notionUrl`
+
+**How Topic Filtering Works:**
+1. Topic filters display all available categories with article counts
+2. Click a topic filter to show only articles from that category
+3. An active filter indicator appears showing the selected topic
+4. Click the "Clear Filter" button or click the active topic again to show all articles
+5. Categories in `articles.json` must match topic IDs in `lab.json` for proper filtering
+
+**Note:** Topic counts in `lab.json` are set to 0 as they are dynamically calculated from `articles.json` at runtime.
+
+### 5. community.json
 **Location:** `frontend/public/data/community.json`
 
 Manages community content with featured items, topics, and browsable content.
@@ -165,7 +236,7 @@ Manages community content with featured items, topics, and browsable content.
 
 **Note:** Topic counts in `community.json` are set to 0 as they are dynamically calculated from `articles.json` at runtime.
 
-### 4b. articles.json (NEW)
+### 5b. articles.json (NEW)
 **Location:** `frontend/public/data/articles.json`
 
 Manages all community articles with Notion integration. Each article belongs to a category that corresponds to a topic filter.
@@ -192,10 +263,10 @@ Manages all community articles with Notion integration. Each article belongs to 
 ```
 
 **Categories (Must match topic filters):**
-- **Behavioural Interview**: STAR method, interview questions, and behavioral interview strategies
-- **Amazon Leadership Principle**: Understanding and applying Amazon's leadership principles
-- **Awesome Material**: Comprehensive guides, tutorials, and learning resources
-- **Philosophy**: Deep thoughts, career reflections, and personal growth
+- **For Community Page**: Behavioural Interview, Amazon Leadership Principle, Awesome Material, Philosophy
+- **For Lab Page**: Philosophy, Product, MeBot, Research
+
+**Note:** The same `articles.json` file is used by both Community and Lab pages. Ensure article categories match the topics defined in the respective page's JSON file.
 
 **Fields:**
 - **id**: Unique identifier for the article
@@ -217,7 +288,7 @@ Manages all community articles with Notion integration. Each article belongs to 
 4. Clicking a filter shows only articles from that category
 5. Article titles link to their Notion pages when `notionUrl` is provided
 
-### 5. footer.json
+### 6. footer.json
 **Location:** `frontend/public/data/footer.json`
 
 Controls footer content and links.
@@ -254,7 +325,7 @@ Controls footer content and links.
 }
 ```
 
-### 6. navigation.json
+### 7. navigation.json
 **Location:** `frontend/public/data/navigation.json`
 
 Defines navigation menu structure.
@@ -272,7 +343,7 @@ Defines navigation menu structure.
 }
 ```
 
-### 7. site-config.json
+### 8. site-config.json
 **Location:** `frontend/public/data/site-config.json`
 
 Site-wide configuration settings.

@@ -1,0 +1,155 @@
+.photo-carousel {
+  width: 100%;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-container:active {
+  cursor: grabbing;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 0.5rem;
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 calc((100% - 1rem) / 3);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(135deg, 
+    rgba(139, 195, 74, 0.05) 0%, 
+    rgba(244, 224, 77, 0.05) 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.carousel-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  background: linear-gradient(135deg, 
+    rgba(139, 195, 74, 0.05) 0%, 
+    rgba(244, 224, 77, 0.05) 100%);
+  border: 2px dashed rgba(139, 195, 74, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.placeholder-icon {
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+.placeholder-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.carousel-button {
+  background: white;
+  border: 2px solid var(--avocado-green);
+  color: var(--avocado-green);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.carousel-button:hover:not(:disabled) {
+  background: var(--avocado-green);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(86, 130, 3, 0.3);
+}
+
+.carousel-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: rgba(139, 195, 74, 0.3);
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--avocado-green);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.indicator:hover {
+  background: rgba(139, 195, 74, 0.3);
+  transform: scale(1.2);
+}
+
+.indicator.active {
+  background: var(--avocado-green);
+  transform: scale(1.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-slide {
+    flex: 0 0 calc((100% - 1rem) / 2);
+  }
+  
+  .carousel-button {
+    width: 32px;
+    height: 32px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-slide {
+    flex: 0 0 100%;
+  }
+  
+  .carousel-track {
+    gap: 0;
+  }
+}

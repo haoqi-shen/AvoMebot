@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PhotoCarousel from '../components/PhotoCarousel';
 import './MyStory.css';
 
 const MyStory = () => {
@@ -112,13 +113,10 @@ const MyStory = () => {
                   <span className="timeline-year">{milestone.year}</span>
                 </div>
                 <div className="timeline-content">
-                  <div className={milestone.image ? "milestone-image" : "milestone-image-placeholder"}>
-                    {milestone.image ? (
-                      <img src={milestone.image} alt={milestone.title} />
-                    ) : (
-                      <span className="placeholder-icon">📷</span>
-                    )}
-                  </div>
+                  <PhotoCarousel 
+                    images={milestone.images || []} 
+                    altText={milestone.title}
+                  />
                   <div className="milestone-text">
                     <div className="milestone-title-container">
                       {milestone.logo && (

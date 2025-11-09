@@ -10,7 +10,11 @@
       "year": "2025",
       "title": "Avo.ai",
       "story": "Focused on PMF and GTM for GenAI/LLM applications and recommendations",
-      "image": null,
+      "images": [
+        "/mystory-photos/avomebot/placeholder-1.svg",
+        "/mystory-photos/avomebot/placeholder-2.svg",
+        "/mystory-photos/avomebot/placeholder-3.svg"
+      ],
       "logo": "/avocado.svg",
       "category": "current"
     },
@@ -19,7 +23,11 @@
       "year": "2024",
       "title": "Amazon (AI Science Team)",
       "story": "Where I first connected with Web Agents; built a training sandbox and evaluation framework",
-      "image": null,
+      "images": [
+        "/mystory-photos/amazon/placeholder-1.svg",
+        "/mystory-photos/amazon/placeholder-2.svg",
+        "/mystory-photos/amazon/placeholder-3.svg"
+      ],
       "logo": "/logos/amazon.svg",
       "category": "work"
     },
@@ -28,7 +36,11 @@
       "year": "2023",
       "title": "PingAn AI Lab",
       "story": "Led cross-functional delivery of a distributed multimodal anti-fraud system",
-      "image": null,
+      "images": [
+        "/mystory-photos/pingan/placeholder-1.svg",
+        "/mystory-photos/pingan/placeholder-2.svg",
+        "/mystory-photos/pingan/placeholder-3.svg"
+      ],
       "logo": "/logos/pingan.svg",
       "category": "work"
     },
@@ -37,7 +49,11 @@
       "year": "2022",
       "title": "Johns Hopkins University",
       "story": "Focused on HCI, cognitive psychology, and experimental research methods; built a searchable database for educators",
-      "image": null,
+      "images": [
+        "/mystory-photos/johns-hopkins/placeholder-1.svg",
+        "/mystory-photos/johns-hopkins/placeholder-2.svg",
+        "/mystory-photos/johns-hopkins/placeholder-3.svg"
+      ],
       "logo": "/logos/jhu.svg",
       "category": "work"
     },
@@ -46,7 +62,11 @@
       "year": "2021",
       "title": "Tencent Ads",
       "story": "Built a comprehensive foundation in computational advertising and monetization; deployed multi-objective optimization and embedding-based collaborative models to improve UX",
-      "image": null,
+      "images": [
+        "/mystory-photos/tencent/placeholder-1.svg",
+        "/mystory-photos/tencent/placeholder-2.svg",
+        "/mystory-photos/tencent/placeholder-3.svg"
+      ],
       "logo": "/logos/tencent.svg",
       "category": "work"
     },
@@ -55,7 +75,11 @@
       "year": "2020",
       "title": "ByteDance",
       "story": "Start of my tech journey; built a real-time diagnostic BI dashboard for Douyin monetization",
-      "image": null,
+      "images": [
+        "/mystory-photos/bytedance/placeholder-1.svg",
+        "/mystory-photos/bytedance/placeholder-2.svg",
+        "/mystory-photos/bytedance/placeholder-3.svg"
+      ],
       "logo": "/logos/bytedance.svg",
       "category": "work"
     }

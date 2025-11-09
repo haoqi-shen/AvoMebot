@@ -11,9 +11,9 @@
       "title": "Avo.ai",
       "story": "Focused on PMF and GTM for GenAI/LLM applications and recommendations",
       "images": [
-        "/mystory-photos/avomebot/placeholder-1.svg",
-        "/mystory-photos/avomebot/placeholder-2.svg",
-        "/mystory-photos/avomebot/placeholder-3.svg"
+        "/mystory-photos/avomebot/placeholder-1.png",
+        "/mystory-photos/avomebot/placeholder-2.png",
+        "/mystory-photos/avomebot/placeholder-3.png"
       ],
       "logo": "/avocado.svg",
       "category": "current"
@@ -24,12 +24,25 @@
       "title": "Amazon (AI Science Team)",
       "story": "Where I first connected with Web Agents; built a training sandbox and evaluation framework",
       "images": [
-        "/mystory-photos/amazon/placeholder-1.svg",
-        "/mystory-photos/amazon/placeholder-2.svg",
-        "/mystory-photos/amazon/placeholder-3.svg"
+        "/mystory-photos/amazon/placeholder-1.png",
+        "/mystory-photos/amazon/placeholder-2.png",
+        "/mystory-photos/amazon/placeholder-3.png"
       ],
       "logo": "/logos/amazon.svg",
       "category": "work"
+    },
+    {
+      "id": "northeastern",
+      "year": "2023",
+      "title": "Northeastern University",
+      "story": "Studied Computer Software Engineering",
+      "images": [
+        "/mystory-photos/northeastern/placeholder-1.png",
+        "/mystory-photos/northeastern/placeholder-2.png",
+        "/mystory-photos/northeastern/placeholder-3.png"
+      ],
+      "logo": "/logos/northeastern.svg",
+      "category": "education"
     },
     {
       "id": "pingan",
@@ -37,9 +50,9 @@
       "title": "PingAn AI Lab",
       "story": "Led cross-functional delivery of a distributed multimodal anti-fraud system",
       "images": [
-        "/mystory-photos/pingan/placeholder-1.svg",
-        "/mystory-photos/pingan/placeholder-2.svg",
-        "/mystory-photos/pingan/placeholder-3.svg"
+        "/mystory-photos/pingan/placeholder-1.png",
+        "/mystory-photos/pingan/placeholder-2.png",
+        "/mystory-photos/pingan/placeholder-3.png"
       ],
       "logo": "/logos/pingan.svg",
       "category": "work"
@@ -50,9 +63,9 @@
       "title": "Johns Hopkins University",
       "story": "Focused on HCI, cognitive psychology, and experimental research methods; built a searchable database for educators",
       "images": [
-        "/mystory-photos/johns-hopkins/placeholder-1.svg",
-        "/mystory-photos/johns-hopkins/placeholder-2.svg",
-        "/mystory-photos/johns-hopkins/placeholder-3.svg"
+        "/mystory-photos/johns-hopkins/placeholder-1.png",
+        "/mystory-photos/johns-hopkins/placeholder-2.png",
+        "/mystory-photos/johns-hopkins/placeholder-3.png"
       ],
       "logo": "/logos/jhu.svg",
       "category": "work"
@@ -63,9 +76,9 @@
       "title": "Tencent Ads",
       "story": "Built a comprehensive foundation in computational advertising and monetization; deployed multi-objective optimization and embedding-based collaborative models to improve UX",
       "images": [
-        "/mystory-photos/tencent/placeholder-1.svg",
-        "/mystory-photos/tencent/placeholder-2.svg",
-        "/mystory-photos/tencent/placeholder-3.svg"
+        "/mystory-photos/tencent/placeholder-1.png",
+        "/mystory-photos/tencent/placeholder-2.png",
+        "/mystory-photos/tencent/placeholder-3.png"
       ],
       "logo": "/logos/tencent.svg",
       "category": "work"
@@ -76,9 +89,9 @@
       "title": "ByteDance",
       "story": "Start of my tech journey; built a real-time diagnostic BI dashboard for Douyin monetization",
       "images": [
-        "/mystory-photos/bytedance/placeholder-1.svg",
-        "/mystory-photos/bytedance/placeholder-2.svg",
-        "/mystory-photos/bytedance/placeholder-3.svg"
+        "/mystory-photos/bytedance/placeholder-1.png",
+        "/mystory-photos/bytedance/placeholder-2.png",
+        "/mystory-photos/bytedance/placeholder-3.png"
       ],
       "logo": "/logos/bytedance.svg",
       "category": "work"

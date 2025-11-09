@@ -4,8 +4,8 @@
   "products": [
     {
       "id": 1,
-      "title": "LiteDetect — AI Text Detection Engine",
-      "description": "Instantly detect AI-generated text with explainable results. Fast, accurate, and trustworthy — see what's human, what's not.",
+      "title": "AI Text Detection Engine",
+      "description": "Detect AI text instantly. Fast, explainable, trustworthy.",
       "technologies": ["Explainable AI", "Stylometric Features", "1D-CNN", "Random Forest", "Text Intelligence"],
       "link": "#"
     },

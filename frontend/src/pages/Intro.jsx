@@ -79,7 +79,14 @@ const Intro = () => {
         <div className="intro-features">
           {content.features.map((feature) => {
             const FeatureWrapper = feature.url ? 'a' : 'div';
-            const wrapperProps = feature.url ? { href: feature.url, className: 'feature-card-link' } : {};
+            const isExternalUrl = feature.url && (feature.url.startsWith('http://') || feature.url.startsWith('https://'));
+            const wrapperProps = feature.url 
+              ? { 
+                  href: feature.url, 
+                  className: 'feature-card-link',
+                  ...(isExternalUrl && { target: '_blank', rel: 'noopener noreferrer' })
+                } 
+              : {};
             
             return (
               <FeatureWrapper key={feature.id} {...wrapperProps}>

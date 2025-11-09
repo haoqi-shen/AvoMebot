@@ -4,9 +4,9 @@
   "products": [
     {
       "id": 1,
-      "title": "AvoMeBot Personal Website",
-      "description": "Modern personal website built with React and Python, featuring integrated AI chat functionality",
-      "technologies": ["React", "Python", "FastAPI", "Vite"],
+      "title": "LiteDetect — AI Text Detection Engine",
+      "description": "Lightweight and explainable AI text detection system that distinguishes human and machine-written text with benchmark-level precision — built for trust, speed, and scalability.",
+      "technologies": ["Explainable AI", "Stylometric Features", "1D-CNN", "Random Forest", "Text Intelligence"],
       "link": "#"
     },
     {
